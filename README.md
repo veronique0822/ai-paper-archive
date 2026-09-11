@@ -23,3 +23,14 @@
 2. 更新 `data.js`：entries 头部插入 {type, date, title, url, summary, tags, companies, count}，并更新 `updated`
 3. `git add -A && git commit -m "..." && git push origin main`
 4. 聊天回复中必须附**可点击的网站版本卡片**；周报全文直接发聊天，日报只发简报+链接
+
+## 推送兜底
+
+若执行环境的 `git push` 不可用（无网络到 github.com:443 / dubious ownership / 超时），改用 Contents API 逐文件推送（token 见记忆配置，仅需 Contents 读写权限）：
+
+```
+PUT https://api.github.com/repos/veronique0822/ai-paper-archive/contents/<path>
+body: {"message": "...", "content": "<base64>", "branch": "main"}
+```
+
+注意：更新已有文件需带当前文件的 `sha`（先 GET 同一接口获取）。
