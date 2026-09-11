@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 论文猎手 · 个人学习档案馆</title>
+<style>
+  :root{--bg:#0f1115;--card:#1a1d24;--line:#2a2e38;--fg:#e8eaf0;--dim:#9aa1b0;--accent:#6ea8fe;--week:#a78bfa;--day:#34d399;--learn:#fbbf24}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--fg);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:920px;margin:0 auto;padding:32px 20px 80px}
+  header h1{font-size:26px} header p{color:var(--dim);margin-top:6px}
+  .stats{display:flex;gap:24px;margin:20px 0;flex-wrap:wrap}
+  .stats div b{font-size:22px;color:var(--accent)}
+  .stats div span{color:var(--dim);font-size:13px;margin-left:4px}
+  .controls{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .controls input{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:9px 14px;flex:1;min-width:200px;font-size:14px}
+  .chip{background:var(--card);border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer}
+  .chip.on{color:var(--fg);border-color:var(--accent)}
+  #list{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:block;text-decoration:none;color:var(--fg)}
+  .card:hover{border-color:var(--accent)}
+  .badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;margin-right:8px}
+  .b-week{background:rgba(167,139,250,.15);color:var(--week)} .b-day{background:rgba(52,211,153,.15);color:var(--day)} .b-learn{background:rgba(251,191,36,.15);color:var(--learn)}
+  .date{color:var(--dim);font-size:13px}
+  .card h2{font-size:17px;margin:8px 0 6px}
+  .card p{color:var(--dim);font-size:14px;line-height:1.6}
+  .tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+  .tags i{font-style:normal;font-size:12px;color:var(--dim);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+  .empty{color:var(--dim);text-align:center;padding:60px 0;border:1px dashed var(--line);border-radius:12px}
+  footer{margin-top:48px;color:var(--dim);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 AI 论文猎手 · 个人学习档案馆</h1>
+  <p>长期学习沉淀：每日晨检、每周精选、零基础科普，按时间线可全部回溯。</p>
+</header>
+<div class="stats" id="stats"></div>
+<div class="controls">
+  <input id="q" placeholder="搜索标题、摘要、标签、公司…" oninput="render()">
+  <button class="chip on" data-t="all" onclick="setType(this)">全部</button>
+  <button class="chip" data-t="week" onclick="setType(this)">周报</button>
+  <button class="chip" data-t="day" onclick="clickType(this)" onclick="setType(this)">日报</button>
+  <button class="chip" data-t="learn" onclick="setType(this)">科普</button>
+</div>
+<div id="list"></div>
+<footer>由「AI论文猎手」定时任务自动维护 · 每周一精选 / 周二至周六晨检</footer>
+<script src="data.js"></script>
+<script>
+const TYPE={week:'每周精选',day:'每日晨检',learn:'零基础科普'};
+let cur='all';
+function setType(el){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');cur=el.dataset.t;render();}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function render(){
+  const E=(window.ARCHIVE_DATA&&window.ARCHIVE_DATA.entries)||[];
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const show=E.filter(e=>(cur==='all'||e.type===cur)&&(!q||JSON.stringify(e).toLowerCase().includes(q)));
+  const c={week:0,day:0,learn:0};E.forEach(e=>c[e.type]=(c[e.type]||0)+1);
+  document.getElementById('stats').innerHTML=
+    `<div><b>${E.length}</b><span>期内容</span></div><div><b>${c.week||0}</b><span>周报</span></div><div><b>${c.day||0}</b><span>日报</span></div><div><b>${c.learn||0}</b><span>科普</span></div>`;
+  const list=document.getElementById('list');
+  if(!show.length){list.innerHTML='<div class="empty">档案馆虚位以待 —— 第一期内容将在下一次定时任务运行时自动生成。</div>';return;}
+  list.innerHTML=show.map(e=>`<a class="card" href="${esc(e.url)}">
+    <span class="badge b-${e.type}">${TYPE[e.type]}</span><span class="date">${esc(e.date)}</span>
+    <h2>${esc(e.title)}</h2><p>${esc(e.summary||'')}</p>
+    <div class="tags">${(e.tags||[]).map(t=>`<i>#${esc(t)}</i>`).join('')}${(e.companies||[]).map(t=>`<i>@${esc(t)}</i>`).join('')}</div>
+  </a>`).join('');
+}
+render();
+</script>
+</body>
+</html>
