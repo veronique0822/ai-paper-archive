@@ -10,7 +10,8 @@
 - `weeks/YYYY-Www/index.html` — 每周精选周报（周一生成，如 weeks/2026-W38/）
 - `learn/<slug>/index.html` — 零基础科普漫画文章（每周一篇，随周报发布）
 - `topics/<slug>/index.html` — 主题聚合页（可选，按 tags 归档趋势）
-- `assets/site.css` — 日报/周报/科普页共用样式
+- `assets/site.css` — 日报/周报/科普页共用样式（基于 Tabler，MIT）
+- `assets/tabler.min.css` — Tabler UI 框架（已 vendor，不依赖 CDN）
 - `assets/page-template.html` — 内容页模板与字段规范
 
 ## 论文条目必填字段
@@ -23,6 +24,8 @@
 2. 更新 `data.js`：entries 头部插入 {type, date, title, url, summary, tags, companies, count}，并更新 `updated`
 3. `git add -A && git commit -m "..." && git push origin main`
 4. 聊天回复中必须附**可点击的网站版本卡片**；周报全文直接发聊天，日报只发简报+链接
+
+界面皮肤基于 [Tabler](https://github.com/tabler/tabler)（MIT License），明暗主题可在 <html data-bs-theme="dark|light"> 切换。
 
 ## 推送兜底
 
