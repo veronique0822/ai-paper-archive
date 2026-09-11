@@ -1,44 +1,32 @@
 <!doctype html>
-<!-- 内容页模板（日报/周报/科普共用结构，Tabler 风格）。复制到目标目录后替换 {{...}} 占位符。 -->
-<html lang="zh-CN" data-bs-theme="dark">
+<!-- 内容页模板（日报/周报/科普共用结构，shadcn 风格，设计参考 Kiranism/next-shadcn-dashboard-starter, MIT）。复制到目标目录后替换 {{...}} 占位符。 -->
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>{{TITLE}} · AI 论文猎手档案馆</title>
-<link href="/assets/tabler.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="/assets/site.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="page">
-  <header class="navbar navbar-expand-sm navbar-dark d-print-none">
-    <div class="container-xl">
-      <a href="/" class="navbar-brand navbar-brand-autodark">← 返回档案馆主页</a>
-    </div>
-  </header>
-  <div class="page-wrapper">
-    <div class="page-header d-print-none">
-      <div class="container-xl">
-        <span class="badge {{BADGE_CLASS}}">{{TYPE_BADGE}}</span>
-        <h2 class="page-title mt-2">{{TITLE}}</h2>
-        <div class="text-secondary mt-1">{{DATE}} ｜ 本期 {{COUNT}} 条</div>
-        <p class="lead-text mt-3">{{LEAD_SUMMARY}}</p>
-      </div>
-    </div>
-    <div class="page-body">
-      <div class="container-xl">
-        <!-- 每个论文条目按此结构排列 -->
-        <div class="article-paper">
-          <h3><a href="{{PAPER_URL}}">{{PAPER_TITLE}}</a></h3>
-          <div class="text-secondary" style="font-size:13px">{{AUTHORS}} · {{PUBLISH_DATE}}</div>
-          <p class="mt-2 mb-1"><b>一句话：</b>{{ONE_LINE}}</p>
-          <p class="mb-1"><b>为什么值得看：</b>{{WHY_IT_MATTERS}}</p>
-          <div>{{TAGS}}{{COMPANIES}}</div>
-          <div class="text-secondary mt-2" style="font-size:12px">难度：{{LEVEL}}</div>
-        </div>
-        <div class="text-center text-secondary mt-4" style="font-size:12px">收录于 AI 论文猎手个人学习档案馆</div>
-      </div>
-    </div>
+<div class="topnav"><a href="/">← 返回档案馆主页</a></div>
+<div class="wrap">
+  <span class="badge-type">{{TYPE_BADGE}}</span>
+  <h1>{{TITLE}}</h1>
+  <div class="meta">{{DATE}} ｜ 本期 {{COUNT}} 条</div>
+  <p class="lead">{{LEAD_SUMMARY}}</p>
+
+  <!-- 每个论文条目按此结构排列 -->
+  <div class="paper">
+    <h2><a href="{{PAPER_URL}}">{{PAPER_TITLE}}</a></h2>
+    <div class="meta">{{AUTHORS}} · {{PUBLISH_DATE}}</div>
+    <p><b>一句话：</b>{{ONE_LINE}}</p>
+    <p class="why"><b>为什么值得看：</b>{{WHY_IT_MATTERS}}</p>
+    <div>{{TAGS}}{{COMPANIES}}</div>
+    <div class="meta">难度：{{LEVEL}}</div>
   </div>
+
+  <div class="foot">收录于 AI 论文猎手个人学习档案馆</div>
 </div>
 </body>
 </html>
