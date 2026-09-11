@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 内容页模板（日报/周报/科普共用结构）。复制本文件到目标目录后替换 {{...}} 占位符。 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<nav><a href="/">← 返回档案馆主页</a></nav>
+<article>
+  <span class="badge">{{TYPE_BADGE}}</span>
+  <h1>{{TITLE}}</h1>
+  <p class="meta">{{DATE}} ｜ 本期 N 条</p>
+  <p class="lead">{{LEAD_SUMMARY}}</p>
+
+  <!-- 每个论文条目按此结构排列 -->
+  <section class="item">
+    <h2><a href="{{PAPER_URL}}">{{PAPER_TITLE}}</a></h2>
+    <p class="meta">{{AUTHORS}} · {{PUBLISH_DATE}}</p>
+    <p><b>一句话：</b>{{ONE_LINE}}</p>
+    <p><b>为什么值得看：</b>{{WHY_IT_MATTERS}}</p>
+    <div class="tags">{{TAGS}} {{COMPANIES}}</div>
+    <p class="meta">难度：{{LEVEL}}</p>
+  </section>
+</article>
+<footer>收录于 AI 论文猎手个人学习档案馆</footer>
+</body>
+</html>
