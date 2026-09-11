@@ -1,71 +1,92 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-CN" data-bs-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>AI 论文猎手 · 个人学习档案馆</title>
+<link href="assets/tabler.min.css" rel="stylesheet"/>
 <style>
-  :root{--bg:#0f1115;--card:#1a1d24;--line:#2a2e38;--fg:#e8eaf0;--dim:#9aa1b0;--accent:#6ea8fe;--week:#a78bfa;--day:#34d399;--learn:#fbbf24}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--fg);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:920px;margin:0 auto;padding:32px 20px 80px}
-  header h1{font-size:26px} header p{color:var(--dim);margin-top:6px}
-  .stats{display:flex;gap:24px;margin:20px 0;flex-wrap:wrap}
-  .stats div b{font-size:22px;color:var(--accent)}
-  .stats div span{color:var(--dim);font-size:13px;margin-left:4px}
-  .controls{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
-  .controls input{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:9px 14px;flex:1;min-width:200px;font-size:14px}
-  .chip{background:var(--card);border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer}
-  .chip.on{color:var(--fg);border-color:var(--accent)}
-  #list{display:flex;flex-direction:column;gap:14px;margin-top:8px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:block;text-decoration:none;color:var(--fg)}
-  .card:hover{border-color:var(--accent)}
-  .badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;margin-right:8px}
-  .b-week{background:rgba(167,139,250,.15);color:var(--week)} .b-day{background:rgba(52,211,153,.15);color:var(--day)} .b-learn{background:rgba(251,191,36,.15);color:var(--learn)}
-  .date{color:var(--dim);font-size:13px}
-  .card h2{font-size:17px;margin:8px 0 6px}
-  .card p{color:var(--dim);font-size:14px;line-height:1.6}
-  .tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
-  .tags i{font-style:normal;font-size:12px;color:var(--dim);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
-  .empty{color:var(--dim);text-align:center;padding:60px 0;border:1px dashed var(--line);border-radius:12px}
-  footer{margin-top:48px;color:var(--dim);font-size:13px;text-align:center}
+  .tag-chip{display:inline-block;font-size:11px;border:1px solid var(--tblr-border-color);border-radius:var(--tblr-border-radius);padding:1px 7px;margin:3px 4px 0 0;color:var(--tblr-secondary-color)}
+  .entry-link{color:inherit;font-weight:500;text-decoration:none}
+  .entry-link:hover{color:var(--tblr-link-color)}
 </style>
 </head>
 <body>
-<header>
-  <h1>📚 AI 论文猎手 · 个人学习档案馆</h1>
-  <p>长期学习沉淀：每日晨检、每周精选、零基础科普，按时间线可全部回溯。</p>
-</header>
-<div class="stats" id="stats"></div>
-<div class="controls">
-  <input id="q" placeholder="搜索标题、摘要、标签、公司…" oninput="render()">
-  <button class="chip on" data-t="all" onclick="setType(this)">全部</button>
-  <button class="chip" data-t="week" onclick="setType(this)">周报</button>
-  <button class="chip" data-t="day" onclick="clickType(this)" onclick="setType(this)">日报</button>
-  <button class="chip" data-t="learn" onclick="setType(this)">科普</button>
+<div class="page">
+  <header class="navbar navbar-expand-sm navbar-dark d-print-none">
+    <div class="container-xl">
+      <h1 class="navbar-brand navbar-brand-autodark mb-0">📚 AI 论文猎手 · 档案馆</h1>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="https://github.com/veronique0822/ai-paper-archive" target="_blank" rel="noopener">GitHub 仓库</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="page-wrapper">
+    <div class="page-header d-print-none">
+      <div class="container-xl">
+        <div class="row g-2 align-items-center">
+          <div class="col">
+            <h2 class="page-title">个人学习档案馆</h2>
+            <div class="text-secondary mt-1">每日晨检 · 每周精选 · 零基础科普，全部可回溯</div>
+          </div>
+          <div class="col-12 col-md-auto">
+            <div class="input-icon">
+              <span class="input-icon-addon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+              </span>
+              <input id="q" class="form-control" placeholder="搜索标题、摘要、标签、公司…" oninput="render()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="container-xl">
+        <div class="row row-cards" id="stats"></div>
+        <div class="btn-list mb-3 mt-3" id="chips">
+          <button class="btn btn-sm btn-primary" data-t="all" onclick="setT(this)">全部</button>
+          <button class="btn btn-sm btn-outline-secondary" data-t="week" onclick="setT(this)">周报</button>
+          <button class="btn btn-sm btn-outline-secondary" data-t="day" onclick="setT(this)">日报</button>
+          <button class="btn btn-sm btn-outline-secondary" data-t="learn" onclick="setT(this)">科普</button>
+        </div>
+        <div id="list"></div>
+        <div class="text-center text-secondary mt-4" style="font-size:12px">由「AI论文猎手」定时任务自动维护 · 每周一 09:00 精选 / 周二至周六 09:00 晨检</div>
+      </div>
+    </div>
+  </div>
 </div>
-<div id="list"></div>
-<footer>由「AI论文猎手」定时任务自动维护 · 每周一精选 / 周二至周六晨检</footer>
 <script src="data.js"></script>
 <script>
-const TYPE={week:'每周精选',day:'每日晨检',learn:'零基础科普'};
+const TYPE={week:'周报',day:'日报',learn:'科普'};
+const BADGE={week:'bg-purple',day:'bg-green',learn:'bg-yellow'};
+const FG={week:'text-purple-fg',day:'text-green-fg',learn:'text-yellow-fg'};
 let cur='all';
-function setType(el){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');cur=el.dataset.t;render();}
+function setT(el){
+  document.querySelectorAll('#chips .btn').forEach(b=>{b.classList.remove('btn-primary');b.classList.add('btn-outline-secondary');});
+  el.classList.remove('btn-outline-secondary');el.classList.add('btn-primary');
+  cur=el.dataset.t;render();
+}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function render(){
   const E=(window.ARCHIVE_DATA&&window.ARCHIVE_DATA.entries)||[];
   const q=document.getElementById('q').value.trim().toLowerCase();
   const show=E.filter(e=>(cur==='all'||e.type===cur)&&(!q||JSON.stringify(e).toLowerCase().includes(q)));
   const c={week:0,day:0,learn:0};E.forEach(e=>c[e.type]=(c[e.type]||0)+1);
-  document.getElementById('stats').innerHTML=
-    `<div><b>${E.length}</b><span>期内容</span></div><div><b>${c.week||0}</b><span>周报</span></div><div><b>${c.day||0}</b><span>日报</span></div><div><b>${c.learn||0}</b><span>科普</span></div>`;
+  const stat=(label,val,t)=>`<div class="col-sm-6 col-lg-3"><a href="javascript:void(0)" class="card card-sm" onclick="filterStat('${t}')"><div class="card-body"><div class="h2 mb-0" style="font-variant-numeric:tabular-nums">${val}</div><div class="text-secondary" style="font-size:12px">${label}</div></div></div></a></div>`;
+  document.getElementById('stats').innerHTML=stat('期内容',E.length,'all')+stat('周报',c.week||0,'week')+stat('日报',c.day||0,'day')+stat('科普',c.learn||0,'learn');
   const list=document.getElementById('list');
-  if(!show.length){list.innerHTML='<div class="empty">档案馆虚位以待 —— 第一期内容将在下一次定时任务运行时自动生成。</div>';return;}
-  list.innerHTML=show.map(e=>`<a class="card" href="${esc(e.url)}">
-    <span class="badge b-${e.type}">${TYPE[e.type]}</span><span class="date">${esc(e.date)}</span>
-    <h2>${esc(e.title)}</h2><p>${esc(e.summary||'')}</p>
-    <div class="tags">${(e.tags||[]).map(t=>`<i>#${esc(t)}</i>`).join('')}${(e.companies||[]).map(t=>`<i>@${esc(t)}</i>`).join('')}</div>
-  </a>`).join('');
+  if(!show.length){list.innerHTML='<div class="empty"><p class="empty-title">档案馆虚位以待</p><p class="empty-subtitle text-secondary">第一期内容将在下一次定时任务运行时自动生成（周六 09:00 晨检 / 周一 09:00 周报）</p></div>';return;}
+  list.innerHTML=show.map(e=>`<div class="card mb-2"><div class="card-body py-3"><div class="row g-3 align-items-center">
+    <div class="col-auto"><span class="badge ${BADGE[e.type]} ${FG[e.type]}" style="width:3rem;justify-content:center">${TYPE[e.type]}</span></div>
+    <div class="col">
+      <a class="entry-link" href="${esc(e.url)}">${esc(e.title)}</a>
+      <div class="text-secondary" style="font-size:13px">${esc(e.summary||'')}</div>
+      <div>${(e.tags||[]).map(t=>`<span class="tag-chip">#${esc(t)}</span>`).join('')}${(e.companies||[]).map(t=>`<span class="tag-chip">@${esc(t)}</span>`).join('')}</div>
+    </div>
+    <div class="col-auto text-secondary text-end text-nowrap" style="font-size:12px">${esc(e.date)}<br>${e.count||0} 条</div>
+  </div></div></div>`).join('');
 }
+function filterStat(t){const btn=document.querySelector(`#chips .btn[data-t="${t}"]`);if(btn)setT(btn);}
 render();
 </script>
 </body>
