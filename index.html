@@ -1,240 +1,91 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8"/>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>AI 论文猎手 · 个人学习档案馆</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --background:0 0% 100%; --foreground:240 10% 3.9%;
-  --card:0 0% 100%; --card-foreground:240 10% 3.9%;
-  --primary:240 5.9% 10%; --primary-foreground:0 0% 98%;
-  --secondary:240 4.8% 95.9%; --secondary-foreground:240 5.9% 10%;
-  --muted:240 4.8% 95.9%; --muted-foreground:240 3.8% 46.1%;
-  --accent:240 4.8% 95.9%; --accent-foreground:240 5.9% 10%;
-  --border:240 5.9% 90%; --input:240 5.9% 90%; --radius:0.5rem;
-}
-.dark{
-  --background:240 10% 3.9%; --foreground:0 0% 98%;
-  --card:240 10% 3.9%; --card-foreground:0 0% 98%;
-  --primary:0 0% 98%; --primary-foreground:240 5.9% 10%;
-  --secondary:240 3.7% 15.9%; --secondary-foreground:0 0% 98%;
-  --muted:240 3.7% 15.9%; --muted-foreground:240 5% 64.9%;
-  --accent:240 3.7% 15.9%; --accent-foreground:0 0% 98%;
-  --border:240 3.7% 15.9%; --input:240 3.7% 15.9%;
-}
-*{box-sizing:border-box}
-body{margin:0;background:hsl(var(--background));color:hsl(var(--foreground));
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
-  font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer;font:inherit;color:inherit}
-.layout{display:flex;min-height:100vh}
-
-/* ---------- 侧边栏 ---------- */
-.sidebar{width:248px;flex-shrink:0;border-right:1px solid hsl(var(--border));padding:16px 12px}
-.brand{display:flex;gap:10px;align-items:center;padding:4px 8px 14px}
-.brand-logo{width:32px;height:32px;border:1px solid hsl(var(--border));border-radius:8px;display:grid;place-items:center;font-size:15px}
-.brand-name{font-size:14px;font-weight:600;line-height:1.3}
-.brand-sub{font-size:11px;color:hsl(var(--muted-foreground))}
-.nav-label{padding:16px 8px 4px;font-size:12px;color:hsl(var(--muted-foreground))}
-.nav-item{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;
-  color:hsl(var(--muted-foreground));font-size:14px;cursor:pointer}
-.nav-item svg{flex-shrink:0}
-.nav-item:hover{color:hsl(var(--foreground));background:hsl(var(--accent))}
-.nav-item.active{background:hsl(var(--secondary));color:hsl(var(--secondary-foreground));font-weight:500}
-
-/* ---------- 顶栏 ---------- */
-.main{flex:1;min-width:0;display:flex;flex-direction:column}
-.topbar{height:56px;border-bottom:1px solid hsl(var(--border));display:flex;align-items:center;
-  justify-content:space-between;gap:12px;padding:0 24px;position:sticky;top:0;background:hsl(var(--background));z-index:10}
-.crumb{font-size:14px;color:hsl(var(--muted-foreground))}
-.crumb b{color:hsl(var(--foreground));font-weight:500}
-.crumb span{margin:0 6px;color:hsl(var(--border))}
-.top-right{display:flex;align-items:center;gap:8px}
-.searchbox{display:flex;align-items:center;gap:8px;border:1px solid hsl(var(--input));border-radius:8px;
-  padding:6px 10px;width:240px;color:hsl(var(--muted-foreground))}
-.searchbox input{border:none;outline:none;background:transparent;width:100%;font-size:13px;color:hsl(var(--foreground))}
-kbd{font-family:inherit;font-size:11px;border:1px solid hsl(var(--border));border-radius:4px;padding:1px 5px;color:hsl(var(--muted-foreground))}
-.iconbtn{width:32px;height:32px;border:1px solid hsl(var(--border));border-radius:8px;background:transparent;
-  display:grid;place-items:center;color:hsl(var(--muted-foreground))}
-.iconbtn:hover{background:hsl(var(--accent));color:hsl(var(--foreground))}
-
-/* ---------- 内容区 ---------- */
-.content{padding:26px 28px;max-width:1100px;width:100%;margin:0 auto}
-.page-title{font-size:20px;font-weight:600;margin:0}
-.page-desc{font-size:14px;color:hsl(var(--muted-foreground));margin:5px 0 22px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:20px}
-.card{background:hsl(var(--card));border:1px solid hsl(var(--border));border-radius:var(--radius);
-  box-shadow:0 1px 2px rgba(0,0,0,.04)}
-a.stat{text-align:left}
-.stat{padding:18px 20px;transition:box-shadow .15s}
-.stat:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.stat-label{font-size:13px;color:hsl(var(--muted-foreground))}
-.stat-num{font-size:26px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
-.stat-sub{font-size:12px;color:hsl(var(--muted-foreground));margin-top:3px}
-
-.card-head{padding:15px 20px;border-bottom:1px solid hsl(var(--border));display:flex;
-  align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.card-title{font-size:15px;font-weight:500}
-.tabs{display:flex;gap:4px}
-.tab{padding:4px 12px;border-radius:6px;font-size:13px;color:hsl(var(--muted-foreground));background:transparent;border:none}
-.tab:hover{color:hsl(var(--foreground))}
-.tab.active{background:hsl(var(--secondary));color:hsl(var(--secondary-foreground))}
-
-.row{display:flex;gap:12px;align-items:flex-start;padding:14px 20px;border-bottom:1px solid hsl(var(--border))}
-.row:last-child{border-bottom:none}
-.row:hover{background:hsl(var(--accent))}
-.dot{width:8px;height:8px;border-radius:50%;margin-top:7px;flex-shrink:0}
-.d-week{background:#9333ea}.d-day{background:#059669}.d-learn{background:#d97706}
-.row-main{flex:1;min-width:0}
-.row-title{font-size:14px;font-weight:500}
-.row-title a:hover{text-decoration:underline}
-.row-sum{font-size:13px;color:hsl(var(--muted-foreground));margin-top:2px}
-.tagchip{display:inline-block;background:hsl(var(--secondary));border-radius:4px;padding:1px 8px;
-  font-size:12px;color:hsl(var(--muted-foreground));margin:7px 4px 0 0}
-.row-side{text-align:right;white-space:nowrap;font-size:12px;color:hsl(var(--muted-foreground));flex-shrink:0;padding-top:2px}
-.empty{margin:20px;border:1px dashed hsl(var(--border));border-radius:8px;padding:44px 20px;text-align:center}
-.empty-t{font-size:15px;font-weight:500}
-.empty-s{font-size:13px;color:hsl(var(--muted-foreground));margin-top:5px}
-.foot{text-align:center;font-size:12px;color:hsl(var(--muted-foreground));margin:30px 0 10px}
-
-@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:900px){
-  .layout{flex-direction:column}
-  .sidebar{width:100%;border-right:none;border-bottom:1px solid hsl(var(--border));padding:12px}
-  .brand{padding-bottom:8px}
-  .nav{display:flex;flex-wrap:wrap;gap:4px}
-  .nav-label{display:none}
-  .content{padding:20px 16px}
-  .searchbox{width:150px}
-}
-@media (max-width:560px){.grid{grid-template-columns:1fr}}
-</style>
-</head>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#fff;color:#1a1a1a;line-height:1.9}
+.wrap{max-width:680px;margin:0 auto;padding:56px 22px 80px}
+.kicker{font-size:13px;letter-spacing:.18em;color:#b0b0b0;margin-bottom:14px;font-weight:600}
+h1{font-size:30px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
+h2{font-size:19px;margin:38px 0 16px;padding-left:12px;border-left:4px solid #ff5a1f}
+.sub{font-size:14px;color:#999;margin-bottom:30px}
+.trend{background:#1a1a1a;color:#fff;border-radius:16px;padding:24px 26px;margin-bottom:36px;font-size:15px}
+.trend b{color:#ffb020}
+.trend div{margin:4px 0}
+.stats{display:flex;gap:12px;margin-bottom:36px;flex-wrap:wrap}
+.stat{flex:1;min-width:120px;border:1.5px solid #eee;border-radius:14px;padding:14px 16px;cursor:pointer;transition:border-color .15s}
+.stat:hover{border-color:#1a1a1a}
+.stat .n{font-size:26px;font-weight:800}
+.stat .l{font-size:12px;color:#999}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.inp{flex:1;min-width:180px;border:1.5px solid #eee;border-radius:12px;padding:9px 14px;font-size:14px;font-family:inherit;color:#1a1a1a}
+.inp:focus{outline:none;border-color:#ff5a1f}
+.fbtn{border:1.2px solid #ddd;background:#fff;border-radius:999px;padding:5px 14px;font-size:13px;color:#666}
+.fbtn.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.paper{padding:14px 0;border-bottom:1px dashed #e8e8e8}
+.paper:last-child{border-bottom:none}
+.ptitle{font-weight:600;font-size:15px;color:#1a1a1a;text-decoration:none;border-bottom:1px solid #ffb020}
+.ptitle:hover{color:#ff5a1f}
+.meta{font-size:12px;color:#999;margin:4px 0}
+.paper p{font-size:13.5px;color:#444}
+.chips{margin-top:6px}
+.chip{display:inline-block;font-size:11.5px;padding:1px 10px;border-radius:999px;margin-right:6px;margin-top:4px;border:1.2px solid}
+.c1{border-color:#ff5a1f;color:#ff5a1f}
+.c2{border-color:#d93a3a;color:#d93a3a}
+.c3{border-color:#2b6cb0;color:#2b6cb0}
+.cg{border-color:#bbb;color:#888}
+.end{background:#1a1a1a;color:#fff;border-radius:16px;padding:24px 26px;margin-top:40px}
+.end .t{color:#ffb020;font-weight:700;margin-bottom:10px;font-size:15px}
+.end p{font-size:13.5px;color:#ccc;margin-bottom:12px}
+.end p:last-child{margin-bottom:0}
+.snap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#f7f7f7;border:1px solid #eee;border-radius:12px;padding:16px 18px;white-space:pre-wrap;color:#555;line-height:1.7;margin-top:24px}
+.foot{font-size:12px;color:#bbb;margin-top:28px;line-height:1.7}
+.empty{border:1px dashed #e0e0e0;border-radius:14px;padding:44px 20px;text-align:center;color:#999;font-size:14px;margin:10px 0}
+.back{font-size:13px;color:#999;text-decoration:none;border-bottom:1px solid #ffb020}
+.back:hover{color:#ff5a1f}
+</style></head>
 <body>
-<div class="layout">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="brand-logo">📚</div>
-      <div><div class="brand-name">AI 论文猎手</div><div class="brand-sub">个人学习档案馆</div></div>
-    </div>
-    <nav class="nav">
-      <div class="nav-label">总览</div>
-      <a class="nav-item active" data-t="all" onclick="setT('all')">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        主页</a>
-      <div class="nav-label">内容</div>
-      <a class="nav-item" data-t="week" onclick="setT('week')">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
-        周报</a>
-      <a class="nav-item" data-t="day" onclick="setT('day')">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h21"/></svg>
-        日报</a>
-      <a class="nav-item" data-t="learn" onclick="setT('learn')">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        科普</a>
-      <div class="nav-label">外部</div>
-      <a class="nav-item" href="https://github.com/veronique0822/ai-paper-archive" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
-        GitHub 仓库</a>
-    </nav>
-  </aside>
-
-  <div class="main">
-    <header class="topbar">
-      <div class="crumb">档案馆 <span>/</span> <b id="crumbNow">主页</b></div>
-      <div class="top-right">
-        <div class="searchbox">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input id="q" placeholder="搜索标题、摘要、标签、公司…">
-          <kbd>⌘K</kbd>
-        </div>
-        <button class="iconbtn" onclick="toggleTheme()" title="切换明暗主题">
-          <svg id="iconMoon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg id="iconSun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-        </button>
-      </div>
-    </header>
-
-    <main class="content">
-      <h1 class="page-title" id="pageTitle">主页</h1>
-      <p class="page-desc">每日晨检 · 每周精选 · 零基础科普，按时间线全部可回溯。</p>
-      <div class="grid" id="stats"></div>
-      <div class="card">
-        <div class="card-head">
-          <div class="card-title">内容时间线</div>
-          <div class="tabs" id="tabs">
-            <button class="tab active" data-t="all" onclick="setT('all')">全部</button>
-            <button class="tab" data-t="week" onclick="setT('week')">周报</button>
-            <button class="tab" data-t="day" onclick="setT('day')">日报</button>
-            <button class="tab" data-t="learn" onclick="setT('learn')">科普</button>
-          </div>
-        </div>
-        <div id="list"></div>
-      </div>
-      <div class="foot">由「AI论文猎手」定时任务自动维护 · 每周一 09:00 精选 / 周二至周六 09:00 晨检</div>
-    </main>
+<div class="wrap">
+  <div class="kicker">AI PAPER SCOUT · PERSONAL ARCHIVE</div>
+  <h1>AI 论文猎手 · 档案馆</h1>
+  <div class="sub">每日晨检 · 每周精选 · 零基础科普 ｜ 长期学习沉淀，全部可回溯</div>
+  <div class="trend"><div>📌 这是你的<b>固定入口</b>：每周一 09:00 精选周报、周二至周六 09:00 晨检日报自动更新并归档到这里。</div><div>🔍 用下方搜索或药丸按钮筛选，点任意条目进入<b>完整版</b>（含入选理由与标签）。</div></div>
+  <div class="stats" id="stats"></div>
+  <div class="bar">
+    <input class="inp" id="q" placeholder="搜索标题、摘要、标签、公司…"/>
+    <button class="fbtn on" data-t="all" onclick="setT('all')">全部</button>
+    <button class="fbtn" data-t="week" onclick="setT('week')">周报</button>
+    <button class="fbtn" data-t="day" onclick="setT('day')">日报</button>
+    <button class="fbtn" data-t="learn" onclick="setT('learn')">科普</button>
   </div>
+  <h2>内容时间线</h2>
+  <div id="list"></div>
+  <div class="foot">由「AI论文猎手」定时任务自动维护 · 每周一 09:00 精选 / 周二至周六 09:00 晨检 · <a href="https://github.com/veronique0822/ai-paper-archive" style="color:#bbb">GitHub 仓库</a></div>
 </div>
-
 <script src="data.js"></script>
 <script>
-const TYPE={week:'周报',day:'日报',learn:'科普'};
+const TL={week:'周报',day:'日报',learn:'科普'};
 let cur='all';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function setT(t){
-  cur=t;
-  document.querySelectorAll('.nav-item[data-t]').forEach(a=>a.classList.toggle('active',a.dataset.t===t));
-  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.t===t));
-  document.getElementById('crumbNow').textContent=t==='all'?'主页':TYPE[t];
-  document.getElementById('pageTitle').textContent=t==='all'?'主页':TYPE[t]+'归档';
-  render();
-}
+function setT(t){cur=t;document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('on',b.dataset.t===t));render();}
 function render(){
   const E=(window.ARCHIVE_DATA&&window.ARCHIVE_DATA.entries)||[];
   const q=document.getElementById('q').value.trim().toLowerCase();
   const show=E.filter(e=>(cur==='all'||e.type===cur)&&(!q||JSON.stringify(e).toLowerCase().includes(q)));
   const c={week:0,day:0,learn:0};E.forEach(e=>c[e.type]=(c[e.type]||0)+1);
-  const stat=(label,val,sub,t)=>`<a class="card stat" href="javascript:void(0)" onclick="setT('${t}')"><div class="stat-label">${label}</div><div class="stat-num">${val}</div><div class="stat-sub">${sub}</div></a>`;
-  document.getElementById('stats').innerHTML=
-    stat('期内容',E.length,'点击查看全部','all')+
-    stat('周报',c.week||0,'每周一 09:00 更新','week')+
-    stat('日报',c.day||0,'周二至周六更新','day')+
-    stat('科普',c.learn||0,'随周报发布','learn');
+  const stat=(label,val,sub,t)=>`<div class="stat" onclick="setT('${t}')"><div class="n">${val}</div><div class="l">${label} · ${sub}</div></div>`;
+  document.getElementById('stats').innerHTML=stat('期内容',E.length,'全部','all')+stat('周报',c.week||0,'每周一','week')+stat('日报',c.day||0,'周二至周六','day')+stat('科普',c.learn||0,'随周报','learn');
   const list=document.getElementById('list');
-  if(!show.length){
-    list.innerHTML='<div class="empty"><div class="empty-t">档案馆虚位以待</div><div class="empty-s">第一期内容将在下一次定时任务运行时自动生成（周六 09:00 晨检 / 周一 09:00 周报）</div></div>';
-    return;
-  }
-  list.innerHTML=show.map(e=>`<div class="row">
-    <span class="dot d-${e.type}"></span>
-    <div class="row-main">
-      <div class="row-title"><a href="${esc(e.url)}">${esc(e.title)}</a></div>
-      <div class="row-sum">${esc(e.summary||'')}</div>
-      <div>${(e.tags||[]).map(t=>`<span class="tagchip">#${esc(t)}</span>`).join('')}${(e.companies||[]).map(t=>`<span class="tagchip">@${esc(t)}</span>`).join('')}</div>
-    </div>
-    <div class="row-side">${esc(e.date)}<br>${e.count||0} 条</div>
+  if(!show.length){list.innerHTML='<div class="empty">档案馆虚位以待 —— 第一期内容将在下一次定时任务运行时自动生成。</div>';return;}
+  list.innerHTML=show.map(e=>`<div class="paper">
+    <div class="meta"><span class="chip c1">${TL[e.type]}</span> ${esc(e.date)} · ${e.count||0} 条</div>
+    <a class="ptitle" href="${esc(e.url)}">${esc(e.title)}</a>
+    <p>${esc(e.summary||'')}</p>
+    <div class="chips">${(e.tags||[]).map(t=>`<span class="chip c3">#${esc(t)}</span>`).join('')}{(e.companies||[]).map(t=>`<span class="chip c2">@${esc(t)}</span>`).join('')}</div>
   </div>`).join('');
 }
-function toggleTheme(){
-  const h=document.documentElement,dark=h.classList.toggle('dark');
-  localStorage.setItem('archive-theme',dark?'dark':'light');
-  document.getElementById('iconMoon').style.display=dark?'none':'block';
-  document.getElementById('iconSun').style.display=dark?'block':'none';
-}
-if(localStorage.getItem('archive-theme')==='dark'){
-  document.documentElement.classList.add('dark');
-  document.getElementById('iconMoon').style.display='none';
-  document.getElementById('iconSun').style.display='block';
-}
-document.addEventListener('keydown',e=>{
-  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();document.getElementById('q').focus();}
-});
 document.getElementById('q').addEventListener('input',render);
 render();
 </script>
-</body>
-</html>
+</body></html>

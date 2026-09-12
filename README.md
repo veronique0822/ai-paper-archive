@@ -24,7 +24,7 @@
 3. `git add -A && git commit -m "..." && git push origin main`
 4. 聊天回复中必须附**可点击的网站版本卡片**；周报全文直接发聊天，日报只发简报+链接
 
-界面风格参考 [Kiranism/next-shadcn-dashboard-starter](https://github.com/Kiranism/next-shadcn-dashboard-starter)（MIT，纯静态还原，无构建依赖）；主页支持明暗主题切换（右上角），选择记忆在浏览器本地。
+界面为「AI Paper Scout」自研编辑风格（白底 680px 单列、橘红 #ff5a1f 强调 + 琥珀 #ffb020 下划线、粗描边卡片、深色引言块、药丸标签），样式内联于 index.html 与 assets/site.css，无外部依赖。
 
 ## 推送兜底
 
