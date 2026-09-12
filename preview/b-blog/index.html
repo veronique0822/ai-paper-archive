@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>预览 B · Bootstrap Blog 杂志风</title>
+<link href="assets/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/blog.css" rel="stylesheet"/>
+<style>
+.nav-scroller [data-filter]{border:none;background:none;color:#6c757d;font-size:.95rem;padding:.25rem .75rem;border-radius:6px}
+.nav-scroller [data-filter].active{background:#212529;color:#fff}
+</style></head><body>
+<div class="container">
+ <header class="border-bottom lh-1 py-3">
+  <div class="row flex-nowrap justify-content-between align-items-center">
+   <div class="col-8"><a class="blog-header-logo text-dark text-decoration-none fs-4 fw-semibold" href="index.html">📚 AI 论文猎手 · 档案馆</a></div>
+   <div class="col-4 d-flex justify-content-end align-items-center"><a class="btn btn-sm btn-outline-secondary" href="https://github.com/veronique0822/ai-paper-archive">GitHub 仓库</a></div>
+  </div>
+ </header>
+ <div class="nav-scroller py-2 mb-3 d-flex justify-content-between align-items-center gap-2">
+  <nav class="d-flex gap-1">
+   <button class="active" data-filter="all" onclick="fl('all')">全部</button>
+   <button data-filter="week" onclick="fl('week')">周报</button>
+   <button data-filter="day" onclick="fl('day')">日报</button>
+   <button data-filter="learn" onclick="fl('learn')">科普</button>
+  </nav>
+  <input id="q" class="form-control form-control-sm" style="max-width:230px" placeholder="搜索标题、摘要、标签、公司…"/>
+ </div>
+</div>
+<main class="container">
+ <div class="row g-5">
+  <div class="col-md-8" id="posts">
+   <article class="card mb-4" data-t="week"><div class="card-body"><h2 class="card-title h4"><a href="detail.html" class="text-decoration-none">每周精选 · 第 38 周：智能体协作与推理模型新进展</a> <span class="badge text-bg-light fw-normal">周报</span></h2><div class="small text-muted mb-2">2026-09-14 · 7 条</div><p class="card-text">5 篇论文 + 2 条行业资讯，附漫画科普《什么是推理模型》。</p><div><span class="badge text-bg-secondary text-decoration-none">#智能体</span> <span class="badge text-bg-secondary text-decoration-none">#推理模型</span> <span class="badge text-bg-light text-decoration-none border">@DeepMind</span> <span class="badge text-bg-light text-decoration-none border">@Anthropic</span> </div></div></article><article class="card mb-4" data-t="learn"><div class="card-body"><h2 class="card-title h4"><a href="detail.html" class="text-decoration-none">漫画科普：什么是推理模型？</a> <span class="badge text-bg-light fw-normal">科普</span></h2><div class="small text-muted mb-2">2026-09-14 · 1 条</div><p class="card-text">用"考试时先打草稿"的类比讲清 test-time compute，配小黑漫画插图。</p><div><span class="badge text-bg-secondary text-decoration-none">#推理模型</span> <span class="badge text-bg-secondary text-decoration-none">#入门</span> </div></div></article><article class="card mb-4" data-t="day"><div class="card-body"><h2 class="card-title h4"><a href="detail.html" class="text-decoration-none">每日晨检 · 2026-09-12</a> <span class="badge text-bg-light fw-normal">日报</span></h2><div class="small text-muted mb-2">2026-09-12 · 4 条</div><p class="card-text">4 条值得看：DeepSeek-V4.1-Flash 开源、Anthropic 审计等。</p><div><span class="badge text-bg-secondary text-decoration-none">#MoE</span> <span class="badge text-bg-secondary text-decoration-none">#AI安全</span> <span class="badge text-bg-light text-decoration-none border">@DeepSeek</span> <span class="badge text-bg-light text-decoration-none border">@Anthropic</span> </div></div></article><article class="card mb-4" data-t="day"><div class="card-body"><h2 class="card-title h4"><a href="detail.html" class="text-decoration-none">每日晨检 · 2026-09-11（首期试跑）</a> <span class="badge text-bg-light fw-normal">日报</span></h2><div class="small text-muted mb-2">2026-09-11 · 9 条</div><p class="card-text">9 条：DeepSeek-V4.1-Flash、Φ-Bench、京东云 10 万卡国产集群等。</p><div><span class="badge text-bg-secondary text-decoration-none">#国产算力</span> <span class="badge text-bg-secondary text-decoration-none">#Agent</span> <span class="badge text-bg-light text-decoration-none border">@京东</span> <span class="badge text-bg-light text-decoration-none border">@NVIDIA</span> </div></div></article><article class="card mb-4" data-t="week"><div class="card-body"><h2 class="card-title h4"><a href="detail.html" class="text-decoration-none">每周精选 · 第 37 周</a> <span class="badge text-bg-light fw-normal">周报</span></h2><div class="small text-muted mb-2">2026-09-07 · 7 条</div><p class="card-text">6 篇论文 + 1 条行业资讯，附漫画科普《什么是 KV Cache》。</p><div><span class="badge text-bg-secondary text-decoration-none">#推理优化</span> <span class="badge text-bg-light text-decoration-none border">@OpenAI</span> <span class="badge text-bg-light text-decoration-none border">@智谱</span> </div></div></article>
+  </div>
+  <div class="col-md-4">
+   <div class="position-sticky" style="top:1rem">
+    <div class="p-4 mb-3 bg-body-tertiary rounded">
+     <h4 class="fst-italic">关于</h4>
+     <p class="mb-0">每日晨检 · 每周精选 · 零基础科普。个人长期学习沉淀，按时间线全部可回溯。</p>
+    </div>
+    <div class="p-4">
+     <h4 class="fst-italic">周报归档</h4>
+     <ol class="list-unstyled mb-0">
+      <li><a href="detail.html" class="text-decoration-none">2026-W38 智能体协作与推理模型</a></li>
+      <li><a href="detail.html" class="text-decoration-none">2026-W37 推理优化专题</a></li>
+     </ol>
+    </div>
+    <div class="p-4">
+     <h4 class="fst-italic">标签</h4>
+     <span class="badge text-bg-secondary">#智能体</span> <span class="badge text-bg-secondary">#MoE</span> <span class="badge text-bg-secondary">#AI安全</span> <span class="badge text-bg-secondary">#国产算力</span> <span class="badge text-bg-secondary">#入门</span>
+    </div>
+   </div>
+  </div>
+ </div>
+ <footer class="py-4 text-muted text-center small border-top mt-4">由「AI论文猎手」定时任务自动维护 · 示例数据仅供预览样式</footer>
+</main>
+<script src="assets/bootstrap.bundle.min.js"></script>
+<script>let cur='all';
+function fl(t){cur=t;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter===t));apply();}
+function apply(){const el=document.getElementById('q');const q=el?el.value.trim().toLowerCase():'';
+document.querySelectorAll('[data-t]').forEach(x=>{const okT=cur==='all'||x.dataset.t===cur;const okQ=!q||x.textContent.toLowerCase().includes(q);x.style.display=(okT&&okQ)?'':'none';});}
+document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('q');if(q)q.addEventListener('input',apply);});
+</script>
+</body></html>
