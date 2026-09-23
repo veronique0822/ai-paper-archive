@@ -76,7 +76,7 @@ h1{font-size:30px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
   </div>
   <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
 </div>
-<script src="data.js"></script>
+<script src="data.js" onerror="document.getElementById('main').innerHTML='<div class=&quot;empty&quot;>data.js 加载失败，请刷新重试</div>'"></script>
 <script>
 var D=window.ARCHIVE_DATA, ITEMS=D.items, ISSUES=D.issues;
 var KINDS=["全部","论文","资讯","科普"], KCLS={"论文":"k-paper","资讯":"k-news","科普":"k-learn"};
@@ -86,7 +86,7 @@ var view="items", curDay=dayIssues.length?dayIssues[0].date:null, curWeek=weekIs
 var f={kind:"全部",df:{},comp:{},tag:{}};
 function has(s,v){return s.hasOwnProperty(v)}
 function tog(o,v){if(has(o,v))delete o[v];else o[v]=1}
-function uniq(k){var s={};ITEMS.forEach(function(e){(e[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s)}
+function uniq(k){var s={};ITEMS.forEach(function(e){var v=e[k];(Array.isArray(v)?v:[v]).forEach(function(x){s[x]=1})});return Object.keys(s)}
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
 function paper(e){var h='<div class="paper"><span class="kpill '+KCLS[e.kind]+'">'+e.kind+'</span>';
   h+='<a class="ptitle" href="'+e.url+'" target="_blank">'+esc(e.title)+'</a>';
@@ -117,7 +117,8 @@ function renderSide(){var s="";
   }
   document.getElementById("side").innerHTML=s}
 function render(){
-  renderNav();renderSide();
+  try{renderNav()}catch(e){}
+  try{renderSide()}catch(e){}
   var el=document.getElementById("main");
   if(view==="items"){
     var rows=ITEMS.filter(function(e){return(f.kind==="全部"||e.kind===f.kind)
