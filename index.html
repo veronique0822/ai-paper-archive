@@ -5,7 +5,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#fff;color:#1a1a1a;line-height:1.9}
-.wrap{max-width:760px;margin:0 auto;padding:56px 22px 80px}
+.wrap{max-width:1280px;margin:0 auto;padding:56px 40px 80px}
 .kicker{font-size:13px;letter-spacing:.18em;color:#b0b0b0;margin-bottom:14px;font-weight:600}
 h1{font-size:30px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
 .sub{font-size:14px;color:#999;margin-bottom:22px}
@@ -14,7 +14,7 @@ h1{font-size:30px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
 .nbtn.on{color:#1a1a1a;border-bottom-color:#ff5a1f}
 .nbtn .n{font-size:12px;color:#bbb;font-weight:400;margin-left:4px}
 .layout{display:flex;gap:24px;align-items:flex-start}
-.side{width:170px;flex-shrink:0;position:sticky;top:16px}
+.side{width:200px;flex-shrink:0;position:sticky;top:16px}
 .side .g{margin-bottom:16px}
 .side .gt{font-size:12px;font-weight:600;color:#bbb;letter-spacing:.1em;margin-bottom:8px}
 .mbtn{display:block;width:100%;border:none;background:none;font-size:13.5px;color:#666;padding:4px 0;cursor:pointer;text-align:left;font-family:inherit}
@@ -56,7 +56,12 @@ h1{font-size:30px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
 .end p{font-size:13.5px;color:#ccc;margin-bottom:12px}
 .end p:last-child{margin-bottom:0}
 .empty{border:1px dashed #e0e0e0;border-radius:14px;padding:40px 20px;text-align:center;color:#999;font-size:14px;margin:10px 0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+.cards .paper{border:1.5px solid #eee;border-radius:14px;padding:14px 16px;margin:0}
+.cards .paper:last-child{border-bottom:1.5px solid #eee}
+.reading{max-width:760px;margin:0 auto}
 .foot{font-size:12px;color:#bbb;margin-top:28px;line-height:1.7}
+@media (max-width:1024px){.wrap{padding:48px 24px 64px}.cards{grid-template-columns:1fr}.cards .paper{border:none;border-bottom:1px dashed #e8e8e8;border-radius:0;padding:13px 0}.reading{max-width:none}}
 @media (max-width:640px){.layout{flex-direction:column}.side{width:100%;position:static}}
 </style></head>
 <body>
@@ -126,24 +131,24 @@ function render(){
       &&(!Object.keys(f.comp).length||e.companies.some(function(c){return has(f.comp,c)}))
       &&(!Object.keys(f.tag).length||e.tags.some(function(t){return has(f.tag,t)}))})
       .sort(function(a,b){return b.date.localeCompare(a.date)});
-    el.innerHTML='<input class="inp" placeholder="搜索标题、摘要、入选理由…" oninput="q=this.value;renderMainItems()"/><div id="ilist"></div>';
+    el.innerHTML='<input class="inp" placeholder="搜索标题、摘要、入选理由…" oninput="q=this.value;renderMainItems()"/><div id="ilist" class="cards"></div>';
     window._rows=rows;renderMainItems();
   }else if(view==="days"){
     var iss=dayIssues.filter(function(i){return i.date===curDay})[0];
     if(!iss){el.innerHTML='<div class="empty">尚无日报，周一至周五 08:00 自动更新</div>';return}
     var rows=ITEMS.filter(function(e){return e.firstSeen===iss.date}).sort(function(a,b){return a.id.localeCompare(b.id)});
-    el.innerHTML='<div class="isshead"><div class="t">'+esc(iss.title)+'</div><div class="m">'+iss.date+" ｜ "+iss.count+' 条 ｜ <a href="'+iss.url+'">'+iss.url+" 独立页 ↗</a></div></div>"+rows.map(paper).join("");
+    el.innerHTML='<div class="reading"><div class="isshead"><div class="t">'+esc(iss.title)+'</div><div class="m">'+iss.date+" ｜ "+iss.count+' 条 ｜ <a href="'+iss.url+'">'+iss.url+" 独立页 ↗</a></div></div>"+rows.map(paper).join("")+"</div>";
   }else{
     var wk=weekIssues.filter(function(i){return i.date===curWeek})[0];
     if(!wk){el.innerHTML='<div class="empty">尚无周报，每周一 09:00 自动更新</div>';return}
     var rows=ITEMS.filter(function(e){return e.weekly===wk.date}).sort(function(a,b){return a.id.localeCompare(b.id)});
     var learns=rows.filter(function(e){return e.kind==="科普"});
-    var h='<div class="isshead"><div class="t">'+esc(wk.title)+'</div><div class="m">'+wk.date+" ｜ "+wk.count+' 条精选 ｜ <a href="'+wk.url+'">'+wk.url+" 独立页 ↗</a></div></div>";
+    var h='<div class="reading"><div class="isshead"><div class="t">'+esc(wk.title)+'</div><div class="m">'+wk.date+" ｜ "+wk.count+' 条精选 ｜ <a href="'+wk.url+'">'+wk.url+" 独立页 ↗</a></div></div>";
     if(wk.theme)h+='<div class="theme">📌 本期主题：<b>'+esc(wk.theme)+"</b></div>";
     h+=rows.filter(function(e){return e.kind!=="科普"}).map(paper).join("");
     if(wk.learn)h+='<div class="theme learn">🐾 本期科普：<b>'+esc(wk.learn)+'</b>（完整漫画见 learn/ 页）</div>';
     else if(learns.length)h+='<div class="theme learn">🐾 本期科普：'+learns.map(function(e){return "<b>"+esc(e.title)+"</b>"}).join("、")+"（完整漫画见 learn/ 页）</div>";
-    el.innerHTML=h;
+    el.innerHTML=h+"</div>";
   }
 }
 function renderMainItems(){
