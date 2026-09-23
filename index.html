@@ -5,87 +5,150 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#fff;color:#1a1a1a;line-height:1.9}
-.wrap{max-width:680px;margin:0 auto;padding:56px 22px 80px}
+.wrap{max-width:760px;margin:0 auto;padding:56px 22px 80px}
 .kicker{font-size:13px;letter-spacing:.18em;color:#b0b0b0;margin-bottom:14px;font-weight:600}
 h1{font-size:30px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
-h2{font-size:19px;margin:38px 0 16px;padding-left:12px;border-left:4px solid #ff5a1f}
-.sub{font-size:14px;color:#999;margin-bottom:30px}
-.trend{background:#1a1a1a;color:#fff;border-radius:16px;padding:24px 26px;margin-bottom:36px;font-size:15px}
-.trend b{color:#ffb020}
-.trend div{margin:4px 0}
-.stats{display:flex;gap:12px;margin-bottom:36px;flex-wrap:wrap}
-.stat{flex:1;min-width:120px;border:1.5px solid #eee;border-radius:14px;padding:14px 16px;cursor:pointer;transition:border-color .15s}
-.stat:hover{border-color:#1a1a1a}
-.stat .n{font-size:26px;font-weight:800}
-.stat .l{font-size:12px;color:#999}
-.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.inp{flex:1;min-width:180px;border:1.5px solid #eee;border-radius:12px;padding:9px 14px;font-size:14px;font-family:inherit;color:#1a1a1a}
+.sub{font-size:14px;color:#999;margin-bottom:22px}
+.nav{display:flex;gap:6px;border-bottom:2px solid #1a1a1a;margin-bottom:20px;flex-wrap:wrap}
+.nbtn{border:none;background:none;font-size:15px;font-weight:600;color:#999;padding:8px 16px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;font-family:inherit}
+.nbtn.on{color:#1a1a1a;border-bottom-color:#ff5a1f}
+.nbtn .n{font-size:12px;color:#bbb;font-weight:400;margin-left:4px}
+.layout{display:flex;gap:24px;align-items:flex-start}
+.side{width:170px;flex-shrink:0;position:sticky;top:16px}
+.side .g{margin-bottom:16px}
+.side .gt{font-size:12px;font-weight:600;color:#bbb;letter-spacing:.1em;margin-bottom:8px}
+.mbtn{display:block;width:100%;border:none;background:none;font-size:13.5px;color:#666;padding:4px 0;cursor:pointer;text-align:left;font-family:inherit}
+.mbtn.on{color:#ff5a1f;font-weight:600}
+.mbtn .n{color:#bbb;font-size:12px;margin-left:4px}
+.cbtn{border:1.2px solid #ddd;background:#fff;border-radius:999px;padding:2px 10px;font-size:12px;color:#666;cursor:pointer;margin:0 6px 6px 0;font-family:inherit}
+.cbtn.on{border-color:#ff5a1f;color:#ff5a1f}
+.main{flex:1;min-width:0}
+.inp{width:100%;box-sizing:border-box;border:1.5px solid #eee;border-radius:12px;padding:8px 12px;font-size:13.5px;color:#1a1a1a;margin-bottom:14px;font-family:inherit}
 .inp:focus{outline:none;border-color:#ff5a1f}
-.fbtn{border:1.2px solid #ddd;background:#fff;border-radius:999px;padding:5px 14px;font-size:13px;color:#666}
-.fbtn.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
-.paper{padding:14px 0;border-bottom:1px dashed #e8e8e8}
-.paper:last-child{border-bottom:none}
-.ptitle{font-weight:600;font-size:15px;color:#1a1a1a;text-decoration:none;border-bottom:1px solid #ffb020}
+.isshead{margin-bottom:6px}
+.isshead .t{font-size:20px;font-weight:700}
+.isshead .m{font-size:13px;color:#999;margin:2px 0 14px}
+.isshead .m a{color:#ff5a1f;text-decoration:none;border-bottom:1px solid #ffb020}
+.theme{background:#1a1a1a;color:#fff;border-radius:14px;padding:16px 20px;font-size:13.5px;margin-bottom:16px}
+.theme b{color:#ffb020}
+.theme.learn{background:#fff7ef;color:#1a1a1a}
+.theme.learn b{color:#2b6cb0}
+.paper{padding:13px 0;border-bottom:1px dashed #e8e8e8}
+.ptitle{font-weight:600;font-size:15.5px;color:#1a1a1a;text-decoration:none;border-bottom:1px solid #ffb020;cursor:pointer}
 .ptitle:hover{color:#ff5a1f}
 .meta{font-size:12px;color:#999;margin:4px 0}
 .paper p{font-size:13.5px;color:#444}
+.reason{font-size:13px;color:#1a1a1a;background:#fff7ef;border-left:3px solid #ffb020;border-radius:0 8px 8px 0;padding:6px 12px;margin-top:8px}
+.reason b{color:#ff5a1f}
 .chips{margin-top:6px}
 .chip{display:inline-block;font-size:11.5px;padding:1px 10px;border-radius:999px;margin-right:6px;margin-top:4px;border:1.2px solid}
 .c1{border-color:#ff5a1f;color:#ff5a1f}
-.c2{border-color:#d93a3a;color:#d93a3a}
 .c3{border-color:#2b6cb0;color:#2b6cb0}
 .cg{border-color:#bbb;color:#888}
-.end{background:#1a1a1a;color:#fff;border-radius:16px;padding:24px 26px;margin-top:40px}
+.kpill{display:inline-block;font-size:11px;padding:0 8px;border-radius:999px;margin-right:6px}
+.k-paper{background:#fff1e8;color:#ff5a1f}
+.k-news{background:#f2f2f2;color:#777}
+.k-learn{background:#eef4fb;color:#2b6cb0}
+.back{font-size:12px;color:#999;margin-top:6px}
+.back a{color:#ff5a1f;text-decoration:none;border-bottom:1px solid #ffb020;cursor:pointer}
+.end{background:#1a1a1a;color:#fff;border-radius:16px;padding:24px 26px;margin-top:44px}
 .end .t{color:#ffb020;font-weight:700;margin-bottom:10px;font-size:15px}
 .end p{font-size:13.5px;color:#ccc;margin-bottom:12px}
 .end p:last-child{margin-bottom:0}
-.snap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#f7f7f7;border:1px solid #eee;border-radius:12px;padding:16px 18px;white-space:pre-wrap;color:#555;line-height:1.7;margin-top:24px}
+.empty{border:1px dashed #e0e0e0;border-radius:14px;padding:40px 20px;text-align:center;color:#999;font-size:14px;margin:10px 0}
 .foot{font-size:12px;color:#bbb;margin-top:28px;line-height:1.7}
-.empty{border:1px dashed #e0e0e0;border-radius:14px;padding:44px 20px;text-align:center;color:#999;font-size:14px;margin:10px 0}
-.back{font-size:13px;color:#999;text-decoration:none;border-bottom:1px solid #ffb020}
-.back:hover{color:#ff5a1f}
+@media (max-width:640px){.layout{flex-direction:column}.side{width:100%;position:static}}
 </style></head>
 <body>
 <div class="wrap">
   <div class="kicker">AI PAPER SCOUT · PERSONAL ARCHIVE</div>
   <h1>AI 论文猎手 · 档案馆</h1>
-  <div class="sub">每日晨检 · 每周精选 · 零基础科普 ｜ 长期学习沉淀，全部可回溯</div>
-  <div class="trend"><div>📌 这是你的<b>固定入口</b>：每周一 09:00 精选周报、周二至周六 09:00 晨检日报自动更新并归档到这里。</div><div>🔍 用下方搜索或药丸按钮筛选，点任意条目进入<b>完整版</b>（含入选理由与标签）。</div></div>
-  <div class="stats" id="stats"></div>
-  <div class="bar">
-    <input class="inp" id="q" placeholder="搜索标题、摘要、标签、公司…"/>
-    <button class="fbtn on" data-t="all" onclick="setT('all')">全部</button>
-    <button class="fbtn" data-t="week" onclick="setT('week')">周报</button>
-    <button class="fbtn" data-t="day" onclick="setT('day')">日报</button>
-    <button class="fbtn" data-t="learn" onclick="setT('learn')">科普</button>
+  <div class="sub">条目 · 日报 · 周报 ｜ 三种看法，一份数据 ｜ 长期学习沉淀，全部可回溯</div>
+  <div class="nav" id="nav"></div>
+  <div class="layout">
+    <aside class="side" id="side"></aside>
+    <div class="main" id="main"></div>
   </div>
-  <h2>内容时间线</h2>
-  <div id="list"></div>
-  <div class="foot">由「AI论文猎手」定时任务自动维护 · 每周一 09:00 精选 / 周二至周六 09:00 晨检 · <a href="https://github.com/veronique0822/ai-paper-archive" style="color:#bbb">GitHub 仓库</a></div>
+  <div class="end">
+    <div class="t">关于本馆</div>
+    <p>由「AI论文猎手」定时任务自动维护：周一至周五 08:00 晨检日报沉淀条目素材，周一 09:00 汇成每周精选周报与零基础科普漫画。</p>
+    <p>所有内容按 ARCHIVE_PROTOCOL.md 归档；条目是最小颗粒度，日报/周报是时间的汇编，期次独立页保留作为永久链接。</p>
+  </div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
 </div>
 <script src="data.js"></script>
 <script>
-const TL={week:'周报',day:'日报',learn:'科普'};
-let cur='all';
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function setT(t){cur=t;document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('on',b.dataset.t===t));render();}
+var D=window.ARCHIVE_DATA, ITEMS=D.items, ISSUES=D.issues;
+var KINDS=["全部","论文","资讯","科普"], KCLS={"论文":"k-paper","资讯":"k-news","科普":"k-learn"};
+var dayIssues=ISSUES.filter(function(i){return i.type==="day"}).sort(function(a,b){return b.date.localeCompare(a.date)});
+var weekIssues=ISSUES.filter(function(i){return i.type==="week"}).sort(function(a,b){return b.date.localeCompare(a.date)});
+var view="items", curDay=dayIssues.length?dayIssues[0].date:null, curWeek=weekIssues.length?weekIssues[0].date:null;
+var f={kind:"全部",df:{},comp:{},tag:{}};
+function has(s,v){return s.hasOwnProperty(v)}
+function tog(o,v){if(has(o,v))delete o[v];else o[v]=1}
+function uniq(k){var s={};ITEMS.forEach(function(e){(e[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s)}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function paper(e){var h='<div class="paper"><span class="kpill '+KCLS[e.kind]+'">'+e.kind+'</span>';
+  h+='<a class="ptitle" href="'+e.url+'" target="_blank">'+esc(e.title)+'</a>';
+  h+='<div class="meta">'+e.date+" ｜ "+(e.companies.length?e.companies.join(" · "):"—")+" ｜ 难度 "+e.difficulty+"</div>";
+  h+="<p>"+esc(e.summary)+"</p>";
+  h+='<div class="reason"><b>为什么值得看</b> ｜ '+esc(e.reason)+"</div>";
+  h+='<div class="chips">'+e.tags.map(function(t){return '<span class="chip cg">'+esc(t)+"</span>"}).join("");
+  h+=e.companies.map(function(c){return '<span class="chip c1">'+esc(c)+"</span>"}).join("")+"</div>";
+  if(e.learn)h+='<div class="back">🐾 完整漫画版：<a href="'+e.learn+'">'+e.learn+"</a></div>";
+  else if(e.weekly)h+='<div class="back">入选 <a href="weeks/'+e.weekly+'/">'+e.weekly+" 周报</a></div>";
+  return h+"</div>"}
+function renderNav(){document.getElementById("nav").innerHTML=[["items","条目",ITEMS.length],["days","日报",dayIssues.length],["weeks","周报",weekIssues.length]].map(function(a){
+  return '<button class="nbtn '+(view===a[0]?"on":"")+'" onclick="view=\''+a[0]+'\';render()">'+a[1]+'<span class="n">'+a[2]+"</span></button>"}).join("")}
+function renderSide(){var s="";
+  if(view==="items"){
+    s+='<div class="g"><div class="gt">类型</div>'+KINDS.map(function(v){return '<button class="mbtn '+(f.kind===v?"on":"")+'" onclick="f.kind=\''+v+'\';render()">'+v+"</button>"}).join("")+"</div>";
+    s+='<div class="g"><div class="gt">难度</div>'+uniq("difficulty").map(function(v){return '<button class="mbtn '+(has(f.df,v)?"on":"")+'" onclick="tog(f.df,\''+v+'\');render()">'+v+"</button>"}).join("")+"</div>";
+    s+='<div class="g"><div class="gt">公司</div>'+uniq("companies").map(function(v){return '<button class="cbtn '+(has(f.comp,v)?"on":"")+'" onclick="tog(f.comp,\''+v+'\');render()">'+v+"</button>"}).join("")+"</div>";
+    s+='<div class="g"><div class="gt">方向</div>'+uniq("tags").map(function(v){return '<button class="cbtn '+(has(f.tag,v)?"on":"")+'" onclick="tog(f.tag,\''+v+'\');render()">'+v+"</button>"}).join("")+"</div>";
+  }
+  if(view==="days"){
+    s+='<div class="g"><div class="gt">期次</div>'+(dayIssues.length?dayIssues.map(function(i){
+      return '<button class="mbtn '+(curDay===i.date?"on":"")+'" onclick="curDay=\''+i.date+'\';render()">'+i.date+'<span class="n">'+i.count+" 条</span></button>"}).join(""):'<div style="font-size:12.5px;color:#999">尚无日报</div>')+"</div>";
+  }
+  if(view==="weeks"){
+    s+='<div class="g"><div class="gt">期次</div>'+(weekIssues.length?weekIssues.map(function(i){
+      return '<button class="mbtn '+(curWeek===i.date?"on":"")+'" onclick="curWeek=\''+i.date+'\';render()">'+i.date+'<span class="n">'+i.count+" 条</span></button>"}).join(""):'<div style="font-size:12.5px;color:#999;line-height:1.8">尚无周报<br>周一 09:00 首发</div>')+"</div>";
+  }
+  document.getElementById("side").innerHTML=s}
 function render(){
-  const E=(window.ARCHIVE_DATA&&window.ARCHIVE_DATA.entries)||[];
-  const q=document.getElementById('q').value.trim().toLowerCase();
-  const show=E.filter(e=>(cur==='all'||e.type===cur)&&(!q||JSON.stringify(e).toLowerCase().includes(q)));
-  const c={week:0,day:0,learn:0};E.forEach(e=>c[e.type]=(c[e.type]||0)+1);
-  const stat=(label,val,sub,t)=>`<div class="stat" onclick="setT('${t}')"><div class="n">${val}</div><div class="l">${label} · ${sub}</div></div>`;
-  document.getElementById('stats').innerHTML=stat('期内容',E.length,'全部','all')+stat('周报',c.week||0,'每周一','week')+stat('日报',c.day||0,'周二至周六','day')+stat('科普',c.learn||0,'随周报','learn');
-  const list=document.getElementById('list');
-  if(!show.length){list.innerHTML='<div class="empty">档案馆虚位以待 —— 第一期内容将在下一次定时任务运行时自动生成。</div>';return;}
-  list.innerHTML=show.map(e=>`<div class="paper">
-    <div class="meta"><span class="chip c1">${TL[e.type]}</span> ${esc(e.date)} · ${e.count||0} 条</div>
-    <a class="ptitle" href="${esc(e.url)}">${esc(e.title)}</a>
-    <p>${esc(e.summary||'')}</p>
-    <div class="chips">${(e.tags||[]).map(t=>`<span class="chip c3">#${esc(t)}</span>`).join('')}{(e.companies||[]).map(t=>`<span class="chip c2">@${esc(t)}</span>`).join('')}</div>
-  </div>`).join('');
+  renderNav();renderSide();
+  var el=document.getElementById("main");
+  if(view==="items"){
+    var rows=ITEMS.filter(function(e){return(f.kind==="全部"||e.kind===f.kind)
+      &&(!Object.keys(f.df).length||has(f.df,e.difficulty))
+      &&(!Object.keys(f.comp).length||e.companies.some(function(c){return has(f.comp,c)}))
+      &&(!Object.keys(f.tag).length||e.tags.some(function(t){return has(f.tag,t)}))})
+      .sort(function(a,b){return b.date.localeCompare(a.date)});
+    el.innerHTML='<input class="inp" placeholder="搜索标题、摘要、入选理由…" oninput="q=this.value;renderMainItems()"/><div id="ilist"></div>';
+    window._rows=rows;renderMainItems();
+  }else if(view==="days"){
+    var iss=dayIssues.filter(function(i){return i.date===curDay})[0];
+    if(!iss){el.innerHTML='<div class="empty">尚无日报，周一至周五 08:00 自动更新</div>';return}
+    var rows=ITEMS.filter(function(e){return e.firstSeen===iss.date}).sort(function(a,b){return a.id.localeCompare(b.id)});
+    el.innerHTML='<div class="isshead"><div class="t">'+esc(iss.title)+'</div><div class="m">'+iss.date+" ｜ "+iss.count+' 条 ｜ <a href="'+iss.url+'">'+iss.url+" 独立页 ↗</a></div></div>"+rows.map(paper).join("");
+  }else{
+    var wk=weekIssues.filter(function(i){return i.date===curWeek})[0];
+    if(!wk){el.innerHTML='<div class="empty">尚无周报，每周一 09:00 自动更新</div>';return}
+    var rows=ITEMS.filter(function(e){return e.weekly===wk.date}).sort(function(a,b){return a.id.localeCompare(b.id)});
+    var learns=rows.filter(function(e){return e.kind==="科普"});
+    var h='<div class="isshead"><div class="t">'+esc(wk.title)+'</div><div class="m">'+wk.date+" ｜ "+wk.count+' 条精选 ｜ <a href="'+wk.url+'">'+wk.url+" 独立页 ↗</a></div></div>";
+    if(wk.theme)h+='<div class="theme">📌 本期主题：<b>'+esc(wk.theme)+"</b></div>";
+    h+=rows.filter(function(e){return e.kind!=="科普"}).map(paper).join("");
+    if(wk.learn)h+='<div class="theme learn">🐾 本期科普：<b>'+esc(wk.learn)+'</b>（完整漫画见 learn/ 页）</div>';
+    else if(learns.length)h+='<div class="theme learn">🐾 本期科普：'+learns.map(function(e){return "<b>"+esc(e.title)+"</b>"}).join("、")+"（完整漫画见 learn/ 页）</div>";
+    el.innerHTML=h;
+  }
 }
-document.getElementById('q').addEventListener('input',render);
+function renderMainItems(){
+  var q=(window.q||"").trim().toLowerCase();
+  var rows=window._rows.filter(function(e){return!q||(e.title+e.summary+e.reason).toLowerCase().indexOf(q)>=0});
+  document.getElementById("ilist").innerHTML=rows.length?rows.map(paper).join(""):'<div class="empty">没有匹配的条目，试试放宽筛选</div>'}
 render();
 </script>
 </body></html>

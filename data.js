@@ -1,17 +1,21 @@
-// 档案馆索引数据。每期新内容发布后，在 entries 数组头部插入一条记录。
-// 字段：type(week|day|learn)、date(YYYY-MM-DD)、title、url、summary、tags[]、companies[]、count
+// 档案馆数据。条目库 items[] 是最小颗粒度；期次索引 issues[] 是容器目录。
+// 日报任务：按 url 去重追加 items，并登记 day 期次；周报任务：标记入选条目的 weekly 字段并登记 week 期次。
+// item 字段：id, title, url, date, kind(论文|资讯|科普), summary, reason, tags[], companies[], difficulty,
+//            firstSeen(收录日报 YYYY-MM-DD), weekly(入选周报 YYYY-Www 或 null), learn(科普页路径或 null)
 window.ARCHIVE_DATA = {
-  "updated": "2026-09-11",
-  "entries": [
-    {
-      "type": "day",
-      "date": "2026-09-11",
-      "title": "每日晨检 · 2026-09-11（首期试跑）",
-      "url": "days/2026-09-11/",
-      "summary": "DeepSeek-V4.1-Flash 开源、Φ-Bench 基准、Anthropic 安全审计交 METR、Apple 新 Siri 定档、京东云 10 万卡国产集群等 9 条。",
-      "tags": ["MoE", "AI安全", "国产算力", "端侧AI", "Agent"],
-      "companies": ["DeepSeek", "Anthropic", "Apple", "NVIDIA", "Google", "京东"],
-      "count": 9
-    }
+  "updated": "2026-09-23",
+  "items": [
+    {"id":"2026-09-11-1","title":"DeepSeek-V4.1-Flash 开源：552B MoE，每 token 仅激活 8B","url":"#","date":"2026-09-10","kind":"资讯","summary":"MIT 协议开源的多模态混合专家模型：prefill 激活 8B、decode 激活 16B 参数，支持 100 万 token 上下文，KV cache 每 token 仅 890 字节。","reason":"长上下文 + 极致稀疏激活是长 agent 工作流的关键效率方向；MIT 协议意味着可自由商用，预计会迅速成为 agent infra 的默认底座之一。","tags":["MoE","推理效率","长上下文"],"companies":["DeepSeek"],"difficulty":"进阶","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-2","title":"Φ-Bench：最强的 AI 也只能完成 36.5% 的 AI 基础设施构建任务","url":"#","date":"2026-09-10","kind":"论文","summary":"85 个仓库级任务，覆盖训练、推理、serving、kernel、I/O、硬件与可靠性保障；Claude Opus 5 得 36.53%，Kimi K3 28.12%，GPT-5.6 Sol 24.51%。","reason":"低得分天花板暴露了前沿模型在真实系统工程上的差距——模型会写代码和模型能搭系统之间还有很长的路，做 agent 工程的人应重点关注。","tags":["基准测试","Agent","AI基础设施"],"companies":["Anthropic","Moonshot","OpenAI"],"difficulty":"入门","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-3","title":"Anthropic 披露四起模型未授权访问事件，交 METR 独立审计","url":"#","date":"2026-09-10","kind":"资讯","summary":"涉及 Claude Opus 4.6、Opus 4.7、一个内部研究模型和 Mythos 5；METR 扫描了约 14.1 万条评测转录和 4.81 亿条生产转录。","reason":"上市前夕把 4.81 亿条生产转录交给第三方审计是前所未有的透明度；模型失控风险正从论文议题变成公开记录。","tags":["AI安全","对齐","审计"],"companies":["Anthropic","METR"],"difficulty":"入门","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-4","title":"Apple 新版 Siri 定档 9 月 14 日：用 Gemini 训练的苹果智能","url":"#","date":"2026-09-10","kind":"资讯","summary":"rebuilt Siri 基于 Gemini 训练，iPhone 15 Pro 及以上可用；同期发布全球首个 2nm 手机芯片 A20 Pro，32 核神经引擎原生支持 8-bit 浮点。","reason":"史上最大规模的消费级 AI 部署，且是竞合样本：苹果保留界面与用户关系，模型能力外购。8-bit FP 原生支持意味着端侧推理吞吐翻倍。","tags":["端侧AI","消费电子"],"companies":["Apple","Google"],"difficulty":"入门","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-5","title":"美国司法部对 Nvidia–Groq 200 亿美元授权协议启动反垄断调查","url":"#","date":"2026-09-10","kind":"资讯","summary":"质疑点：非独家授权是否以规避合并审查的方式达到收购效果；参议院同步调查。背景还包括 Nvidia 129.3 亿美元收购 Hugging Face。","reason":"Nvidia 正在测试不做收购声明也能获得控制权的边界；如果 Hugging Face 收购被一并审查，开源权重分发层可能落入硬件霸主之手。","tags":["反垄断","芯片"],"companies":["NVIDIA","Groq","HuggingFace"],"difficulty":"入门","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-6","title":"京东云建成首个 10 万卡国产 GPU 集群（摩尔线程）","url":"#","date":"2026-09-10","kind":"资讯","summary":"用于大模型训练、推理和具身智能；此前 Z.ai 已披露 GLM-5.3-Flash 在全国产芯片上以每日 100 万亿 token 训练与服务。","reason":"一个月内两个 10 万卡级国产集群落地，说明出口管制的约束假设正在失效：单芯片差距仍在，但系统工程能力补上了。","tags":["国产算力","基础设施"],"companies":["京东","摩尔线程","Z.ai"],"difficulty":"入门","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-7","title":"Google 130 亿欧元押注芬兰：数据中心 + 核电站延寿","url":"#","date":"2026-09-09","kind":"资讯","summary":"两年内在 Hamina 等地建/扩数据中心，与 Fortum 签 22 年协议支持 Loviisa 核电站延寿并购买至多 50% 发电量，另配 94MW 电池储能。","reason":"AI 竞争的约束正从芯片转向能源；hyperscaler 开始把算力选址和能源战略打包决策，算力搬到有电的地方成为结构性趋势。","tags":["数据中心","能源"],"companies":["Google"],"difficulty":"入门","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-8","title":"Show-Harness：现成视觉模型零样本控制机器人，无需机器人训练","url":"#","date":"2026-09-10","kind":"论文","summary":"通过语义动作接口（模型输出拿起红积木这样的意图，由传统控制器转译），通用视觉语言模型即可跨多种机器人本体零样本控制。","reason":"如果通用模型+接口抽象能替代昂贵的机器人数据采集，困扰领域十年的数据瓶颈会大幅缓解——具身智能路线之争中的重要一击。","tags":["机器人","多模态","具身智能"],"companies":[],"difficulty":"进阶","firstSeen":"2026-09-11","weekly":null,"learn":null},
+    {"id":"2026-09-11-9","title":"Anthropic 经济情景报告：AI 可使美国 GDP +32%，但劳动者收入份额 60%→45%","url":"#","date":"2026-09-10","kind":"论文","summary":"极端情景推演（非预测）：2030 年美国 GDP 达 44.4 万亿美元（+32.4%），失业率接近 12%，劳动收入占比从约 60% 降至 45.2%。","reason":"即使总量蛋糕做大，分配结构也可能剧变——理解生产力增长≠劳动者受益的传导机制，是评估 AI 对职业影响时最值得读的框架之一。","tags":["AI经济影响","对齐"],"companies":["Anthropic"],"difficulty":"入门","firstSeen":"2026-09-11","weekly":null,"learn":null}
+  ],
+  "issues": [
+    {"type":"day","date":"2026-09-11","title":"每日晨检 · 2026-09-11（首期试跑）","url":"days/2026-09-11/","count":9,"summary":"DeepSeek-V4.1-Flash 开源、Φ-Bench 基准、Anthropic 安全审计交 METR、Apple 新 Siri 定档、京东云 10 万卡国产集群等 9 条。"}
   ]
 };

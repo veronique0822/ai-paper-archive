@@ -8,46 +8,53 @@
 本仓库是唯一长期留痕站点（GitHub Pages），所有定时任务产出的可留痕内容必须归档至此，
 不允许只留在聊天或云端临时目录。
 
+## 信息架构（两层模型）
+
+- **条目（items）= 最小颗粒度**：一篇论文、一条资讯、一篇科普文章，是查询的基本单位；
+- **期次（issues）= 容器目录**：日报/周报是按时间切片的汇编视图，主页内联渲染，独立页保留作永久链接。
+
+主页三个视图：**条目**（五维筛选 + 搜索）/ **日报**（侧栏切期次，主区内联正文，默认最新）/ **周报**（同左，含本期主题与科普）。科普是 `kind=科普` 的条目，不单独设顶级视图。
+
 ## 目录与分类
 
 | 目录 | 内容 | 维护任务 |
 |---|---|---|
-| `days/YYYY-MM-DD/` | 每日晨检日报 | 论文猎手·日报 |
-| `weeks/YYYY-Www/` | 每周精选周报 | 论文猎手·周报 |
-| `learn/<slug>/` | 零基础科普漫画 | 论文猎手·周报（随刊发布） |
-| `topics/<slug>/` | 主题/公司聚合页 | 各任务在归档日报/周报时按 tags/companies 增量更新 |
+| `days/YYYY-MM-DD/` | 日报独立页（永久链接） | 论文猎手·日报 |
+| `weeks/YYYY-Www/` | 周报独立页（永久链接） | 论文猎手·周报 |
+| `learn/<slug>/` | 科普漫画完整页 | 论文猎手·周报（随刊发布） |
+| `topics/<slug>/` | 主题/公司聚合页（暂缓，由主页筛选覆盖） | 待定 |
 | `<新分类>/` | 未来任务的新分类 | 必须先在本表登记，再创建任务 |
 
-## 统一索引 `data.js`
+## 统一数据 `data.js`
 
-每期在 `entries` **头部**插入一条记录，字段：
+双数组结构，`updated` 为最近更新日期：
 
-```
-{type, date, title, url, summary, tags[], companies[], count, source, updated}
-```
-
-- `source`：产出任务标识（`daily` / `weekly` / `learn` / 未来任务自定），供总站按来源筛选
-- 同步更新文件顶部的 `updated` 时间戳
-- `type` 取值：`day` | `week` | `learn` | `topic`
+- `items[]` 条目库（**按 url 去重追加，不修改已存在条目**，周报只补标记）：
+  `{id, title, url, date, kind(论文|资讯|科普), summary(一句话), reason(入选理由),
+    tags[], companies[], difficulty(入门|进阶|前沿),
+    firstSeen(收录日报 YYYY-MM-DD), weekly(入选周报 YYYY-Www 或 null), learn(科普页路径或 null)}`
+- `issues[]` 期次索引（新期次在**头部**插入）：
+  - 日报：`{type:"day", date, title, url, count, summary}`
+  - 周报：`{type:"week", date(YYYY-Www), title, url, count, theme(本期主题), learn(本期科普标题)}`
 
 ## 各任务登记（唯一数据流）
 
-| 任务 | 归档目录 | 素材池 | 聊天输出 |
+| 任务 | 归档动作 | 素材池 | 聊天输出 |
 |---|---|---|---|
-| 日报（周一至周五 8:00） | `days/` | 写入任务 `state/`，供周报读取 | 简报 + 链接 + 网站卡片（不发全文） |
-| 周报（周一 9:00） | `weeks/` + `learn/` | 读取日报素材池，不回写 | 全文 + 网站卡片 |
+| 日报（周一至周五 8:00） | 条目去重追加进 `items[]`（`firstSeen`=当日）；生成 `days/` 独立页；登记 day 期次 | 任务 `state/` 存当日原始条目，供周报读取 | 简报 + 链接 + 网站卡片（不发全文） |
+| 周报（周一 9:00） | 从素材池选 8-15 条，把入选条目的 `weekly` 字段标为当期周号（不重写条目）；生成 `weeks/` 与 `learn/` 独立页；登记 week 期次（含 theme、learn） | 读日报素材池，不回写 | 全文 + 网站卡片 |
 
 ## 页面规范
 
-- 一律基于 `assets/page-template.html` 生成
+- 一律基于 `assets/page-template.html` 生成独立页；主页三视图样式见 `index.html`
 - 站内链接全部用相对路径（Pages 挂在 `/ai-paper-archive/` 子路径，绝对路径会 404）
-- 论文条目必填：标题、作者/机构、发布日期、原文链接、一句话摘要、入选理由、主题标签、公司标签、难度（入门/进阶/前沿）
-- 视觉：白底 680px 单列、橘红 `#ff5a1f` 强调，共用 `assets/site.css`
+- 论文条目必填：标题、作者/机构、发布日期、原文链接、一句话摘要、入选理由、主题标签、公司标签、难度
+- 视觉：白底 680px 单列、橘红 `#ff5a1f` 强调 + 琥珀 `#ffb020` 下划线、深色引言块、药丸标签，共用 `assets/site.css`
 
 ## 发布与兜底
 
-1. 生成当期页面
-2. 更新 `data.js`（头部插入 + `updated`）
+1. 更新 `data.js`（追加条目 / 插期次 / 改 `updated`）
+2. 生成当期独立页（days/ 或 weeks/ + learn/）
 3. `git add -A && git commit && git push origin main`（remote 与 token 见记忆配置）
 4. 聊天回复必须附**可点击的网站版本卡片**
 5. push 失败改用 Contents API 逐文件推送（需先 GET 取文件 `sha`）；再失败保存到工作目录并提醒用户手动备份
