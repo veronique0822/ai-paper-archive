@@ -46,7 +46,7 @@
 
 ## 页面规范
 
-- 一律基于 `assets/page-template.html` 生成独立页；主页三视图样式见 `index.html`
+- 一律基于 `assets/page-template.html` 生成独立页；主页三视图样式见 `index.html` + `assets/app.css` + `assets/app.js`（骨架/样式/逻辑已分离）
 - 站内链接全部用相对路径（Pages 挂在 `/ai-paper-archive/` 子路径，绝对路径会 404）
 - 论文条目必填：标题、作者/机构、发布日期、原文链接、一句话摘要、入选理由、主题标签、公司标签、难度
 - 视觉：白底 680px 单列、橘红 `#ff5a1f` 强调 + 琥珀 `#ffb020` 下划线、深色引言块、药丸标签，共用 `assets/site.css`
@@ -63,3 +63,11 @@
 
 登记分类与目录 → 在任务 content 中写"按 ARCHIVE_PROTOCOL.md 归档" → 创建任务。
 协议未登记的分类不得写入。
+
+## 工程纪律（防改崩）
+
+1. **任务永远只写 `data.js` 和期次独立页，永远不碰 `index.html` / `assets/app.js` / `assets/app.css`**；页面改动只发生在人工 UI 迭代；
+2. **数据契约以本文档的字段表为准**；修改 schema 必须同步完成三件事：更新协议、更新 `assets/validate.js`、迁移存量 data.js；
+3. **渲染层对白名单字段容错**：data.js 新增字段不得导致主页报错，取不到的字段降级显示；
+4. **人工改完页面或数据后，推送前必跑 `node assets/validate.js`**，通过才能 push；
+5. 条目 `url` 必须是真实原文链接；确实没有链接时用 `"#"`，渲染层会显示为纯文本标题而非链接。
