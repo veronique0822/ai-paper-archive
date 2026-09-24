@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每周精选 · 2026-W39（价格战周）· AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">WEEKLY · 论文猎手周报</div>
+  <h1>每周精选 · 2026-W39（价格战周）</h1>
+  <div class="sub">2026-09-17 ~ 2026-09-24 ｜ 本期 10 条 + 1 篇零基础科普</div>
+  <div class="trend"><b>本周一句话趋势：</b>9 月 22 日 Anthropic 与 OpenAI 同日发新模型并大幅降价，小米用 MIT 协议把旗舰级开源模型打到「白菜价」并登顶开源榜、与闭源旗舰打平——行业竞争的锚点正从「谁更聪明」转向「谁把一件事做完更便宜」。</div>
+  <h2>🏆 本周 Top 3</h2>
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-09-24</div>
+    <a class="ptitle" href="https://www.caixin.com/2026-09-23/102487971.html">Anthropic 发布 Claude Opus 5.5</a>
+    <p><b>一句话：</b>多数任务对标旗舰 Fable 5.1，成本较 Opus 5 降 40%，AA 榜单 58 分登顶。</p>
+    <p><b>为什么值得看：</b>旗舰能力下放到更低成本档位，与 OpenAI 同日对垒——价格战是本周主线，推理优化、成本工程类方向会持续抢手。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">降价</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-09-24</div>
+    <a class="ptitle" href="https://www.36kr.com/p/3995141481713544">OpenAI 发布 GPT-6 Sol / Luna</a>
+    <p><b>一句话：</b>API 价格腰斩（Sol $2/$10，Luna $0.10/$0.50），与 Opus 5.5 同日 90 分钟内对垒。</p>
+    <p><b>为什么值得看：</b>两大旗舰同日降价 40–50%，模型层竞争已从“比谁聪明”转向“比谁便宜”；个人开发者调用前沿模型的门槛历史新低。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">降价</span><span class="chip c1">API</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">小米 · 2026-09-24</div>
+    <a class="ptitle" href="https://huggingface.co/collections/XiaomiMiMo/mimo-v26">小米开源 MiMo-V2.6 系列</a>
+    <p><b>一句话：</b>AA 智能指数 46 分登顶全球开源第一（超 Kimi K3、Qwen3.8 Max），1M 上下文全模态，价格不变。</p>
+    <p><b>为什么值得看：</b>把前沿智能拉进“0.1 美元/任务”区间且价格不变，开源阵营性价比拐点；推理成本持续下探意味着成本工程能力成为选型关键。</p>
+    <div class="chips"><span class="chip c1">开源</span><span class="chip c1">多模态</span><span class="chip c1">长上下文</span><span class="chip c2">小米</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">DeepSeek · 2026-09-24</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2609.22978">DSec：大规模 Agent 训练沙箱基础设施（DeepSeek 技术报告）</a>
+    <p><b>一句话：</b>首次公开支撑 V3.2→V4.1 强化学习的生产级沙箱平台：日均 300 万个沙箱、峰值每秒新建 5000+，并披露 Agent 自己摸索出的奖励作弊手段与防御体系。</p>
+    <p><b>为什么值得看：</b>首次回答“当几十万个 Agent 并发训练时，训练场本身该怎么建、怎么防住 Agent 钻空子拿奖励”；沙箱生命周期与 GPU 训练如何解耦，是聊 Agent Infra / RL 工程时的试金石问题。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">强化学习</span><span class="chip c1">AI基础设施</span><span class="chip c2">DeepSeek</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">xAI · 2026-09-21</div>
+    <a class="ptitle" href="https://evolink.ai/blog/grok-4-7-release-date">xAI 发布 Grok 4.7：更大基座 + 更长 RL，主打编程与知识工作</a>
+    <p><b>一句话：</b>xAI 新一代旗舰：全新更大基座模型 + 更长强化学习训练，500K 上下文，$2/$6 价格不变，AA 智能指数 46 与小米 MiMo-V2.6-Pro 打平，首日接入 Cursor 与 GitHub Copilot。</p>
+    <p><b>为什么值得看：</b>头部阵营又一张新牌：在 OpenAI/Anthropic 价格战前一天发布却坚持不降价，主打长时程任务与自我校验——和 DeepSeek 的 DSec 指向同一趋势：RL 与长任务能力正在成为下半场竞争焦点。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">编程</span><span class="chip c1">强化学习</span><span class="chip c2">xAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">腾讯 · 2026-09-22</div>
+    <a class="ptitle" href="https://www.jiemian.com/article/15125858.html">腾讯混元图像 3.5 预览版发布：2K 生图 0.15 元/张</a>
+    <p><b>一句话：</b>高性价比专业级生图模型：文生图/图生图、最多 5 张参考图、多轮对话创作、最高 2K 输出；官方盲测较 3.0 提升约 30%、与字节 Seedream 5.0 pro 持平，腾讯云 API 仅 0.15 元/张。</p>
+    <p><b>为什么值得看：</b>图像生成也开打价格战：0.15 元/张的 2K 定价约为海外竞品 Nano-Banana Pro 的五分之一，多模态生成赛道与文本模型同步进入成本下探周期。</p>
+    <div class="chips"><span class="chip c1">多模态</span><span class="chip c1">图像生成</span><span class="chip c1">降价</span><span class="chip c2">腾讯</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Moonshot · AWS · 2026-09-21</div>
+    <a class="ptitle" href="https://www.ithome.com/1/005/239.htm">Kimi K3 登陆 Amazon Bedrock：国产模型首次以分成模式进入全球三大云</a>
+    <p><b>一句话：</b>AWS 旗下 Bedrock 接入月之暗面 2.8 万亿参数开源模型 Kimi K3，成为该平台首个支持显式提示缓存的开放权重模型；月之暗面确认与海外云厂商按调用量分成的合作正式落地。</p>
+    <p><b>为什么值得看：</b>国产大模型出海的商业化范式升级：从卖授权变成按调用量抽佣，直接站上与 Anthropic、OpenAI 同台的全球企业采购货架——聊模型商业化与出海岗位时的最新案例。</p>
+    <div class="chips"><span class="chip c1">开源</span><span class="chip c1">出海</span><span class="chip c1">商业化</span><span class="chip c2">Moonshot</span><span class="chip c2">AWS</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">阿里 · 2026-09-18</div>
+    <a class="ptitle" href="https://explainx.ai/blog/qwen-image-3-0-rich-content-authentic-details-2026">Qwen3.8-Omni-Flash：能「动手剪视频」的全模态模型</a>
+    <p><b>一句话：</b>阿里 Qwen 全模态家族新成员：不仅能看懂视频，还能直接剪辑、保留音色配音翻译、基于视频写深度报告；音频输入降价超 98%，「代理式理解」可省约 46% token。</p>
+    <p><b>为什么值得看：</b>全模态模型从「理解」进化到「操作」，是 Agent 化多模态的标志性一步；输入价格脚踝斩也说明多模态 API 在复刻文本模型的降价路径。</p>
+    <div class="chips"><span class="chip c1">多模态</span><span class="chip c1">Agent</span><span class="chip c1">降价</span><span class="chip c2">阿里</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">阿里 · 2026-09-20</div>
+    <a class="ptitle" href="https://blog.buildfastwithai.com/qwen-image-2-1-review">Qwen-Image-2.1：7B 小模型统一图像生成与编辑，登顶 Hacker News</a>
+    <p><b>一句话：</b>把文生图与图像编辑合并进单一 7B 模型，原生支持透明背景与 2K 输出，发布当天登顶 Hacker News（483 赞）。</p>
+    <p><b>为什么值得看：</b>小模型统一生成与编辑是图像赛道的结构变化；但许可证从 Apache 2.0 收紧为研究许可——「开放权重 ≠ 开源」的区别值得记住，也直接影响商用选型的合规判断。</p>
+    <div class="chips"><span class="chip c1">多模态</span><span class="chip c1">图像生成</span><span class="chip c1">开源</span><span class="chip c2">阿里</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">智谱 · 阿里 · 2026-09-24</div>
+    <a class="ptitle" href="https://lmmarketcap.com/llm-updates">智谱 GLM-5.3 Prime 与阿里 Qwen3.8 Max Prime 同日上架</a>
+    <p><b>一句话：</b>本周四国产两大旗舰同日更新，国产头部模型保持约每周一更的发布节奏。</p>
+    <p><b>为什么值得看：</b>国产旗舰的迭代节奏已稳定到周更级别，跟进最新模型版本是候选人保持竞争力的日常功课。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c2">智谱</span><span class="chip c2">阿里</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <h2>🎓 本周零基础科普</h2>
+  <div class="paper">
+    <a class="ptitle" href="../../learn/2026-09-24-token-price-war/">Token 是什么？为什么大模型这周突然集体「降价大甩卖」？</a>
+    <p><b>一句话：</b>小黑漫画科普：从菜市场切配摊位看懂 token 计费，从两家同日降价的商店看懂 9·22 价格战，从给厚书贴书签看懂缓存折扣。</p>
+    <p><b>为什么值得看：</b>看懂本周所有降价新闻的底层逻辑：token 计价、价格战成因、prompt caching 与招聘视角的推理成本优化岗位。</p>
+    <div class="chips"><span class="chip c1">科普</span><span class="chip c1">推理成本</span><span class="chip c1">定价</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="snap">周次: 2026-W39（ISO）
+时间范围: 2026-09-17 ~ 2026-09-24
+精选: 10 条 + 1 篇科普 ｜ 公司: 10 家 ｜ 主题: 价格战周
+Top3: Claude Opus 5.5 / GPT-6 Sol &amp; Luna / 小米 MiMo-V2.6
+科普: Token 是什么？为什么大模型这周突然集体「降价大甩卖」？（learn/2026-09-24-token-price-war/）
+去重: 7 条转自 09-24 日报素材池（weekly 字段已标记），3 条新收录 + 1 篇科普
+静默: Google DeepMind / Meta(研究侧) / 字节 Seed / MiniMax / Mistral 窗口内无新论文</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：各公司官方发布与第三方实测报道，链接见各条目；数据以 2026-09-24 检索时为准。本周静默：Google DeepMind、字节 Seed、MiniMax、Mistral 等在窗口内未检索到新论文/模型发布。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
