@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每周精选 · 2026-W40（智能体上岗周）· AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">WEEKLY · 论文猎手周报</div>
+  <h1>每周精选 · 2026-W40（智能体上岗周）</h1>
+  <div class="sub">2026-09-21 ~ 2026-09-28 ｜ 本期 11 条 + 1 篇零基础科普</div>
+  <div class="trend"><b>本周一句话趋势：</b>AI 从「会回答」变成「会做事」——950 个 Claude 智能体 21 小时发现一种新酶、coding agent 不写规划器直接碾压手工机器人规划、340M 小模型开始接管 Agent 管道的判断层；大洋彼岸，谷歌确认 Gemini 4 已进入后训练、目标远早于年底发布。</div>
+  <h2>🏆 本周 Top 3</h2>
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-09-23</div>
+    <a class="ptitle" href="https://www.ithome.com/1/006/524.htm">Claude 自主发现新型酶系统 ART：Anthropic 生命科学实验室首个成果</a>
+    <p><b>一句话：</b>约 950 个 Claude 智能体 21 小时扫描约 19 亿个蛋白质簇，发现此前未被记录的类 CRISPR 酶系统 ART；人类只负责下大方向和湿实验验证——但官方承认重跑 10 次均未能复现。</p>
+    <p><b>为什么值得看：</b>前沿模型第一次公开走完「计算发现→湿实验验证」全链条，AI for Science 从口号变成预印本；「重跑 10 次全失手」的诚实披露，是聊 Agent 可靠性时的绝佳案例。</p>
+    <div class="chips"><span class="chip c1">AI for Science</span><span class="chip c1">Agent</span><span class="chip c1">多智能体</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Google DeepMind · 2026-09-24</div>
+    <a class="ptitle" href="https://www.tradingkey.com/zh-hans/analysis/stocks/us-stock/262184057-gemini-4-launch-fast-google-openai-anthropic-tradingkey">Google DeepMind 确认 Gemini 4 进入后训练：目标「远早于年底」发布</a>
+    <p><b>一句话：</b>Gemini 4 已完成预训练、进入后训练早期（行为优化+安全测试），内部已在驱动 Antigravity 编程工具；谷歌跳过 Gemini 3.5 Pro，全部资源押注 4 代。</p>
+    <p><b>为什么值得看：</b>谷歌对 OpenAI/Anthropic 双线压制的正式回应；「后训练进度」正成为判断旗舰发布时间的信号灯，和人选聊模型生命周期时必备。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">后训练</span><span class="chip c2">Google</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">普林斯顿 · 2026-09-24</div>
+    <a class="ptitle" href="https://www.tmtpost.com/8152902.html">AgenticGenTAMP：不给求解器只给仿真器，coding agent 碾压手工机器人规划</a>
+    <p><b>一句话：</b>普林斯顿 PRPL 实验室：只给通用 coding agent 任务描述和仿真器访问权，让其在 9.8 万次评估中自主迭代编程，成功率 82%–95%，远超手工规划器的 47%。</p>
+    <p><b>为什么值得看：</b>「让 Agent 自己写代码解决问题」替代「人类手工造规划器」，机器人规划范式的反转信号；编程 Agent 能力边界的最新坐标。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">机器人</span><span class="chip c1">编程</span><span class="chip c2">普林斯顿</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <h2>📋 其余入选</h2>
+  <div class="paper">
+    <div class="meta">Black Forest Labs · 2026-09-22</div>
+    <a class="ptitle" href="https://bfl.ai/models/flux-3-action">FLUX 3 Action：生图起家的 BFL 发布 7B 开源「世界动作模型」</a>
+    <p><b>一句话：</b>输入摄像头画面、机器人状态和一句自然语言指令，一次预测未来 32 步动作及画面演变；RoboLab-120 成功率 42.92% 登顶，参数量仅为对标模型的 44%，开源权重。</p>
+    <p><b>为什么值得看：</b>「会生成视频就会控制机器人」路线拿到开源实锤；具身智能岗位的能力画像正在合并「生成模型」与「控制」两个方向。</p>
+    <div class="chips"><span class="chip c1">具身智能</span><span class="chip c1">开源</span><span class="chip c1">多模态</span><span class="chip c2">Black Forest Labs</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Fastino · 2026-09-24</div>
+    <a class="ptitle" href="https://www.marktechpost.com/2026/09/24/fastino-releases-gliner2-5-decide-a-340m-open-weight-decision-model-that-runs-on-cpu/">GLiNER2.5-Decide：340M 小模型跑在 CPU 上，接管 Agent 管道的「判断层」</a>
+    <p><b>一句话：</b>一次前向传播同时完成意图识别、路由决策、护栏检查并返回置信度；17 数据集基准 60.1% 领先 4B 级解码模型，纯 CPU 延迟 167ms，Apache 2.0 可商用。</p>
+    <p><b>为什么值得看：</b>Agent 系统正从「一个大模型包揽一切」走向「大模型思考、小模型判断」的分工架构——路由/分诊/护栏层的岗位画像该更新了。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">小模型</span><span class="chip c1">开源</span><span class="chip c2">Fastino</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">阿里 · 2026-09-24</div>
+    <a class="ptitle" href="https://damodev.csdn.net/6ab753fa05257b085713261f.html">Qwen-Audio-3.1 系列发布：全双工语音 + 工具调用，API 再降价</a>
+    <p><b>一句话：</b>覆盖语音识别、音频理解、语音合成与实时交互；TTS-Next 一次生成语音+音效+环境声，Realtime 支持全双工语音交互与工具调用，API 价格大幅下调。</p>
+    <p><b>为什么值得看：</b>语音 Agent 基建层又降一档价、上一档能力；「全双工语音+工具调用」是电话客服、语音助理场景的技能关键词。</p>
+    <div class="chips"><span class="chip c1">多模态</span><span class="chip c1">语音</span><span class="chip c1">降价</span><span class="chip c2">阿里</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-09-24</div>
+    <a class="ptitle" href="https://www.toutiao.com/w/1877172577726467/">OpenAI 个人智能体 Aeon 曝光：独立身份、持久任务、可操作本地电脑</a>
+    <p><b>一句话：</b>ChatGPT 客户端代码显示 OpenAI 正开发个人智能体 Aeon：与用户账户并立的独立身份，可持久化执行任务，并保留驱动本地电脑与浏览器的能力。</p>
+    <p><b>为什么值得看：</b>继 Meta Muse 登顶之后，OpenAI 的个人智能体也浮出水面——「常驻型个人 Agent」正成为头部厂商标配产品线。</p>
+    <div class="chips"><span class="chip c1">个人智能体</span><span class="chip c1">Agent</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">微软 · 2026-09-26</div>
+    <a class="ptitle" href="https://zicode.com/blog/microsoft-copilot-autopilot-runtime/">微软 Copilot 大改版：重构为 Home / Code / Autopilot 三大能力</a>
+    <p><b>一句话：</b>Copilot 统一移动端与桌面端入口，内部助手 Scout 更名 Autopilot，从「聊天助手」正式转向主动式、常驻云端的 Agent 计算。</p>
+    <p><b>为什么值得看：</b>办公软件之王把聊天助手改组为常驻 Agent，企业级 AI 交互范式定型——聊 ToB AI 岗位时要能说清这三分法。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">企业应用</span><span class="chip c2">微软</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">阿里 · 2026-09-24</div>
+    <a class="ptitle" href="https://www.donews.com/news/detail/1/6719560.html">阿里云栖大会：真武 V900 芯片 + 通义路线图</a>
+    <p><b>一句话：</b>真武 V900 性能 3 倍于上代、支持 50 万卡组网；官宣 5–10 万亿参数通义模型路线图。</p>
+    <p><b>为什么值得看：</b>国产算力集群规模再上一个量级，叠加超大参数路线图，「单芯片差距靠系统工程补」的路径再次被验证。</p>
+    <div class="chips"><span class="chip c1">国产算力</span><span class="chip c1">芯片</span><span class="chip c1">基础设施</span><span class="chip c2">阿里</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Meta · 2026-09-24</div>
+    <a class="ptitle" href="https://m.jiemian.com/article/15127574.html">Meta 个人智能体 Muse 上线两周登顶美区 App Store 免费榜</a>
+    <p><b>一句话：</b>Meta 面向消费者的个人智能体 Muse 上线仅两周即登顶美国区 App Store 免费榜，首周用户突破 50 万。</p>
+    <p><b>为什么值得看：</b>消费级 AI 爆发的标志性事件——个人智能体从极客玩具变成大众产品，值得持续跟踪其留存与变现路径。</p>
+    <div class="chips"><span class="chip c1">消费级AI</span><span class="chip c1">个人智能体</span><span class="chip c2">Meta</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Snorkel AI · 2026-09-24</div>
+    <a class="ptitle" href="https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/">Snorkel AI 完成 3.5 亿美元 E 轮（估值 35 亿美元）</a>
+    <p><b>一句话：</b>数据标注与 AI 数据基建公司 Snorkel AI 完成 3.5 亿美元 E 轮融资，估值达 35 亿美元。</p>
+    <p><b>为什么值得看：</b>数据基建赛道持续火热，印证「高质量数据仍是模型迭代瓶颈」——做数据工程与评测的方向值得关注。</p>
+    <div class="chips"><span class="chip c1">融资</span><span class="chip c1">数据基建</span><span class="chip c2">Snorkel AI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <h2>🎓 本周零基础科普</h2>
+  <div class="paper">
+    <a class="ptitle" href="../../learn/2026-09-28-agent-science/">950 个 AI 智能体 21 小时发现新酶：Agent 是怎么「组队做科研」的？</a>
+    <p><b>一句话：</b>小黑漫画科普：从「一个老师傅带 950 个学徒翻图书馆」看懂多智能体科研，从「三层筛子」看懂 20 万候选如何收敛成 1 个发现，以及「重跑 10 次全失手」教我们的可复现性常识。</p>
+    <p><b>为什么值得看：</b>看懂本周头条（Claude 发现 ART 酶系统）需要的全部背景：什么是 Agent、它们怎么分工、为什么惊喜和运气只有一线之隔。</p>
+    <div class="chips"><span class="chip c1">科普</span><span class="chip c1">Agent</span><span class="chip c1">AI for Science</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="snap">周次: 2026-W40（ISO）
+时间范围: 2026-09-21 ~ 2026-09-28
+精选: 11 条 + 1 篇科普 ｜ 公司/机构: 11 家 ｜ 主题: 智能体上岗周
+Top3: Claude 发现 ART 酶系统 / Gemini 4 进入后训练 / AgenticGenTAMP
+科普: 950 个 AI 智能体 21 小时发现新酶（learn/2026-09-28-agent-science/）
+去重: 3 条转自素材池（weekly 字段已标记），8 条本周新检索收录 + 1 篇科普；上周 W39 已入选条目不重复出现
+静默: DeepSeek / 字节 Seed / MiniMax / Mistral / xAI 窗口内未检索到够入选标准的新论文或发布</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：各公司官方发布与第三方报道，链接见各条目；数据以 2026-09-28 检索时为准。本周静默：DeepSeek、字节 Seed、MiniMax、Mistral、xAI 等在窗口内未检索到符合入选标准的新论文/发布。随刊科普配图由小黑（ian-xiaohei-illustrations）演绎。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
