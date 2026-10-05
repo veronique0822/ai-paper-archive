@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每周精选 · 2026-W41（算账周）· AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">WEEKLY · 论文猎手周报</div>
+  <h1>每周精选 · 2026-W41（算账周）</h1>
+  <div class="sub">2026-09-28 ~ 2026-10-05 ｜ 本期 12 条 + 1 篇零基础科普</div>
+  <div class="trend"><b>本周一句话趋势：</b>三大旗舰同周换代——Gemini 4 Argon 追平 GPT-6 Astra、OpenAI 发五折的 GPT-6.1 Sol 与常驻智能体 Dots、Sonnet 5.5 提速三成；买卖双方都重新报价：AMD 82 亿买世界模型公司，Anthropic 845 亿租 SpaceX 算力，Kimi K3 首次进入 OpenAI 企业账单；同一周白宫协议与 FTC 调查落地，行业开始为速度补护栏。</div>
+  <h2>🏆 本周 Top 3</h2>
+  <div class="paper">
+    <div class="meta">Google DeepMind · 2026-10-01</div>
+    <a class="ptitle" href="https://hub.baai.ac.cn/view/58412">谷歌发布 Gemini 4 Argon：追平 GPT-6 Astra，幻觉率 15% 全场最低</a>
+    <p><b>一句话：</b>谷歌 7 个月来首款非 Flash 级前沿模型：AA 智能指数 53 追平 GPT-6 Astra，幻觉率 15% 为高分模型最低，输出上限从 6.4 万提升到 100 万 token，DeepSWE v1.1 软件工程 77.9% 登顶；介绍价 $2/$10，单任务成本约 $1.99，为 Astra 的 60%；先经 Fairwind 计划向网络防御者开放。</p>
+    <p><b>为什么值得看：</b>谷歌重回智能第一梯队，「分数追平、账单六成」直接冲击企业选型算盘；研究员一条「模型超越了我」的秒删推文同时引爆 RSI 讨论——本周热度与技术含量双高的事件。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">价格战</span><span class="chip c1">Agent</span><span class="chip c2">Google</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-09-29</div>
+    <a class="ptitle" href="https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements">OpenAI DevDay 三连：GPT-6.1 Sol、常驻智能体 Dots、150ms 决策 API</a>
+    <p><b>一句话：</b>旧金山 DevDay 一日三连：GPT-6.1 Sol 以 Astra 五分之一的价格（$2/$10）提供接近旗舰的智能体编程与电脑操作能力；常驻式个人智能体 Dots 自带云电脑与浏览器、接入 4000+ 应用；Decisions API 约 150 毫秒延迟做实时分类与路由。同场宣布 ChatGPT 周活 12 亿、上线 $500/月 Pro 档。</p>
+    <p><b>为什么值得看：</b>模型、Agent、路由三层同日出牌，正好对应模型工程、Agent 产品、推理 Infra 三类岗位的招聘需求——一场发布会就是一张岗位地图。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">个人智能体</span><span class="chip c1">API</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">AMD × World Labs · 2026-09-28</div>
+    <a class="ptitle" href="https://m.huxiu.com/article/4895331.html">AMD 82 亿美元收购 World Labs，李飞飞出任 AMD 执行副总裁兼首席科学家</a>
+    <p><b>一句话：</b>AMD 以约 82 亿美元全股票收购李飞飞创办的世界模型公司（成立仅两年、约 70 名员工、估值两年涨 8 倍），李飞飞直接向苏姿丰汇报；AMD 史上第二大收购，预计年底前完成。</p>
+    <p><b>为什么值得看：</b>芯片厂直接买下模型团队，「算力+模型」垂直整合再下一城；两年 8 倍估值的退出样本，聊 AI 人才流动与并购趋势时的头条案例。</p>
+    <div class="chips"><span class="chip c1">并购</span><span class="chip c1">世界模型</span><span class="chip c1">芯片</span><span class="chip c2">AMD</span><span class="chip c2">World Labs</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <h2>📋 其余入选</h2>
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-09-28</div>
+    <a class="ptitle" href="https://hassannazir.dev/blogs/anthropic-claude-models-october-2026-lineup-roadmap">Claude Sonnet 5.5：提速 30%、电脑操作 80.1%，中杯标配旗舰安全件</a>
+    <p><b>一句话：</b>较 Sonnet 5 快 30%、单任务成本最多省 30%，OSWorld 2.1 电脑操作 80.1%（上代 57.0%），Terminal-Bench 4.0 70.6%，价格维持 $2/$10；首个搭载网络防护与反蒸馏分类器的 Sonnet 档位模型。</p>
+    <p><b>为什么值得看：</b>中杯标配「旗舰级安全件」，电脑操作一年跳档；Sonnet 是企业落地主力档位，能力-成本曲线变化直接影响采购与招聘。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">Agent</span><span class="chip c1">AI安全</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Moonshot × Baseten · 2026-09-30</div>
+    <a class="ptitle" href="https://www.cls.cn/detail/2496389">Kimi K3 接入 OpenAI Codex 企业通道：中国大模型首次进入 OpenAI 企业付费结算体系</a>
+    <p><b>一句话：</b>Baseten 成为 OpenAI B2B 市场首批开源模型推理服务商：企业用户可在 Codex 与 Responses API 中调用 Kimi K3、GLM 5.3，费用计入企业已有的 OpenAI 采购承诺额度；承诺美国服务器运行、提示词零数据保留。</p>
+    <p><b>为什么值得看：</b>继上周登陆 AWS Bedrock 后，国产模型出海从「上架」升级为「进入采购清单」——两周连起来看就是趋势。</p>
+    <div class="chips"><span class="chip c1">开源</span><span class="chip c1">出海</span><span class="chip c1">商业化</span><span class="chip c2">Moonshot</span><span class="chip c2">智谱</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">DeepSeek × 华为 · 2026-09-30</div>
+    <a class="ptitle" href="https://www.tmtpost.com/8158700.html">DeepSeek 开源昇腾基础组件：编译工具、计算库、通信库全套对齐英伟达</a>
+    <p><b>一句话：</b>开源面向华为昇腾平台的 TileLang 编译工具、计算库、分布式通信库，与英伟达平台组件一一对应；双方合作推进昇腾 950 的 128 卡超节点方案。</p>
+    <p><b>为什么值得看：</b>国产算力生态从「能跑」走向「官方深度适配」；编译器、通信库这类底层工程是国产算力链上最稀缺的人才类型。</p>
+    <div class="chips"><span class="chip c1">国产算力</span><span class="chip c1">开源</span><span class="chip c1">基础设施</span><span class="chip c2">DeepSeek</span><span class="chip c2">华为</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Anthropic × SpaceX · 2026-09-30</div>
+    <a class="ptitle" href="https://www.ithome.com/1/008/589.htm">Anthropic 与 SpaceX 签署最高 845 亿美元算力协议，90 天可解约</a>
+    <p><b>一句话：</b>IPO 文件披露：每月 12.5 亿美元租用 Colossus 一/二号数据中心英伟达 GPU，付费至 2029 年 5 月，合同上限 845 亿美元；Anthropic 未来十年基建投入至少 5180 亿美元，马斯克计划年底前上线超 100 万张 GPU。</p>
+    <p><b>为什么值得看：</b>算力军备进入「千亿美元长约」时代；90 天解约条款说明买方也在对冲不确定性——聊算力供需时的最佳数字样本。</p>
+    <div class="chips"><span class="chip c1">算力</span><span class="chip c1">基础设施</span><span class="chip c1">IPO</span><span class="chip c2">Anthropic</span><span class="chip c2">SpaceX</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Google DeepMind · 2026-09-30</div>
+    <a class="ptitle" href="https://www.huxiu.com/ainews/15385.html">SynthID Bio：给 AI 设计的蛋白质打上「由 AI 生成」水印（Nature）</a>
+    <p><b>一句话：</b>对蛋白质序列微调氨基酸选择、对 AlphaFold 3 预测结构微调原子坐标，嵌入可机器验证的签名；VEGF-A、新冠 RBD、PD-L1 三个靶点湿实验中功能无损；代码、数据与权重开源，作者含诺奖得主 Hassabis。</p>
+    <p><b>为什么值得看：</b>AI for Science 配上「溯源层」——上周 Claude 发现新酶、这周谷歌给 AI 蛋白质发身份证，AI 生物制造的治理基建开始成型。</p>
+    <div class="chips"><span class="chip c1">AI for Science</span><span class="chip c1">AI安全</span><span class="chip c1">水印</span><span class="chip c2">Google</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">白宫 × 二十余家科技公司 · 2026-10-01</div>
+    <a class="ptitle" href="https://aihot.news/daily/2026-10-01">白宫《超级智能协议》签署：四层控制承诺落地</a>
+    <p><b>一句话：</b>承诺训练部署期内部监控、授权内部团队验证控制有效性、独立外部评估者审计、董事会独立委员会监督四层控制，定期会商制定共同安全标准；协议无法律约束力，Trump 称其有「道德约束力」。</p>
+    <p><b>为什么值得看：</b>前沿 AI 治理从各家自律走向行业公约；四层控制清单几乎就是 AI 安全/治理岗位的职责说明书。</p>
+    <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">监管</span><span class="chip c1">治理</span><span class="chip c2">OpenAI</span><span class="chip c2">Google</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">FTC · 2026-10-01</div>
+    <a class="ptitle" href="https://www.toutiao.com/w/1877813281823756/">FTC 以消费者保护为由对 OpenAI、Anthropic 等 AI 实验室启动全面调查</a>
+    <p><b>一句话：</b>FTC 主席计划以有法律约束力的《民事调查要求》强制调取文件并质询高管，命令预计数周内发出；第三方评测机构 METR 也在审查范围内。</p>
+    <p><b>为什么值得看：</b>监管从「自愿协议」升级到「带法律约束的调查」；AI 合规、消费者保护方向的法务与政策岗位需求看涨。</p>
+    <div class="chips"><span class="chip c1">监管</span><span class="chip c1">AI安全</span><span class="chip c2">OpenAI</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-09-30</div>
+    <a class="ptitle" href="https://www.myaifast.com/news/87">OpenAI 披露并处置一起有组织的模型蒸馏攻击</a>
+    <p><b>一句话：</b>识别并处置一起系统性提取模型「受保护推理内容」的攻击行动，活动最早可追溯到 7 月第一周；同期 Anthropic 在新模型中内置反蒸馏分类器，攻防同步升级。</p>
+    <p><b>为什么值得看：</b>头部模型的推理过程本身成了需要防守的资产——模型安全岗位新增一条攻防战线。</p>
+    <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">模型安全</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">科创板日报 · 2026-10-04</div>
+    <a class="ptitle" href="https://www.chinastarmarket.cn/detail/2497741">推理支出 2026 年首超训练：「Token 工厂」崛起</a>
+    <p><b>一句话：</b>IDC：2025 年中国公有云大模型调用量 1944 万亿 token、同比增 16 倍，火山引擎 49.5% 份额居首；硅基流动年内融资近 29 亿元，Fireworks AI 被传考虑以 300 亿美元估值再融资。</p>
+    <p><b>为什么值得看：</b>行业重心从「炼模型」转向「卖调用」——与前两周价格战一脉相承：token 越便宜、用量越大，推理工程越值钱。</p>
+    <div class="chips"><span class="chip c1">推理成本</span><span class="chip c1">基础设施</span><span class="chip c1">趋势</span><span class="chip c2">火山引擎</span><span class="chip c2">硅基流动</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <h2>🎓 本周零基础科普</h2>
+  <div class="paper">
+    <a class="ptitle" href="../../learn/2026-10-05-rsi-explained/">「我教不动它了」：从一条咖啡师推文看懂递归自我改进（RSI）</a>
+    <p><b>一句话：</b>小黑漫画科普：从「滚雪球」看懂 AI 自己改进自己的递归循环，从「拧螺丝 vs 照镜子」看懂 Gemini 4 离真正的 RSI 还差哪一步，从「雪地摩托与护栏」看懂为什么监管同一周开始跟进。</p>
+    <p><b>为什么值得看：</b>看懂本周头条（Gemini 4 Argon + RSI 争论 + 白宫协议/FTC 调查）需要的全部背景：RSI 是什么、为什么它既是圣杯也是警报。</p>
+    <div class="chips"><span class="chip c1">科普</span><span class="chip c1">AI安全</span><span class="chip c1">新模型</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="snap">周次: 2026-W41（ISO）
+时间范围: 2026-09-28 ~ 2026-10-05
+精选: 12 条 + 1 篇科普 ｜ 公司/机构: 14 家 ｜ 主题: 算账周
+Top3: Gemini 4 Argon / OpenAI DevDay 三连 / AMD 收购 World Labs
+科普: 「我教不动它了」：从一条咖啡师推文看懂递归自我改进（learn/2026-10-05-rsi-explained/）
+去重: 素材池候选为空（9/28 起条目均已入选 W40），本期 12 条全部为本周新检索收录 + 1 篇科普；W39/W40 已入选条目不重复出现
+静默: 字节 Seed / MiniMax / Mistral / xAI / Meta / 腾讯混元 窗口内未检索到够入选标准的新论文或发布</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：各公司官方发布与第三方报道，链接见各条目；数据以 2026-10-05 检索时为准。本周静默：字节 Seed、MiniMax、Mistral、xAI、Meta、腾讯混元等在窗口内未检索到符合入选标准的新论文/发布。随刊科普配图由小黑（ian-xiaohei-illustrations）演绎。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
