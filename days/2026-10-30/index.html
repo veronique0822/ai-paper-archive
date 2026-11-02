@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-10-30 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-10-30</h1>
+  <div class="sub">2026-10-30 08:00 发布 ｜ 本期 5 条 ｜ 2 个旗舰模型动态、1 篇技术报告、1 条商业化资讯、1 篇具身智能论文</div>
+  <div class="trend"><div>💡 亮点：<b>Gemini 4 Carbon 与 Mistral Large 4 开源权重同日对垒</b>——Google 闭源 gated 发布（先给网络防御者），Mistral 直接把万亿参数权重交出来，「封顶能力该锁着还是该放开」的路线分歧在这 48 小时里格外清晰。</div><div>🔊 副线：<b>NVIDIA 把语音也做成「可提示的 LLM」</b>——转写、翻译、说话人分离一个模型一句指令搞定，语音流水线正在复刻文本模型的收敛路径。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">1 ｜ 模型发布 ｜ Google DeepMind ｜ 2026-10-28</div>
+    <a class="ptitle" href="https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/">Google 发布 Gemini 4 Carbon：AA 智能指数 v5.0 登顶，主打网络安全与长时程任务</a>
+    <p><b>一句话：</b>两周内第二张旗舰牌：Artificial Analysis 智能指数 v5.0 以 59 分重回第一（超 Claude Opus 5.5 的 58、GPT-6 Astra 的 57）；SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0% 三项网安评测领先，介绍价 $2/$10，但首批仅向 Fairwind 计划的网络防御者开放。</p>
+    <p><b>为什么值得看：</b>前沿模型换代节奏缩短到「两周一换」，且 Carbon 复刻 Argon「先给防御者」的 gated 发布模式——能力天花板层的发布正被安全框架深度塑形，是观察「负责任发布」如何影响产品节奏的最新样本。</p>
+    <div class="chips"><span class="chip c3">#新模型</span><span class="chip c3">#网络安全</span><span class="chip c3">#AI安全</span><span class="chip c2">@Google</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">2 ｜ 模型发布 / 开源 ｜ Mistral ｜ 2026-10-29</div>
+    <a class="ptitle" href="https://thenextweb.com/news/mistral-large-4-open-weights-release">Mistral Large 4 开源权重：1T 参数 MoE，Terminal-Bench 三周从 28% 提到 41%</a>
+    <p><b>一句话：</b>万亿参数 MoE（52B 激活、1M 上下文）权重上架 Hugging Face；三周客户反馈强化学习后 Terminal-Bench 4.0 28%→41% 略超 GLM-5.3，CyberGym-E2E 79% 打平 MiMo-V2.6-Pro，新增低/中推理档位，量化版 4 张 B200/B300 可跑。</p>
+    <p><b>为什么值得看：</b>欧洲阵营把「前沿级」权重真正交到用户手里、主打企业与政府的网络防御自主可控；3 周 RL 把代理式编程拉高 13 个点，是「发布后持续迭代」节奏的标杆案例，做开源模型选型必读。</p>
+    <div class="chips"><span class="chip c3">#开源</span><span class="chip c3">#MoE</span><span class="chip c3">#编程</span><span class="chip c2">@Mistral</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">3 ｜ 技术报告 / 语音 ｜ NVIDIA ｜ 2026-10-28</div>
+    <a class="ptitle" href="https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/">NVIDIA Nemotron 3.5 Transcribe 技术报告：一个模型用自然语言指令搞定转写/翻译/说话人分离</a>
+    <p><b>一句话：</b>语音增强 LLM（34B 总参、约 4.3B 激活，Mamba-Transformer 混合 MoE）：40 语言转写、31 语言翻译、最长 1 小时录音、最多 8 说话人分离，Open ASR 英文榜开源第一（平均 WER 4.71%），同步开放 46.3 万小时 Granary v2 数据集与 NeMo 微调工具链。</p>
+    <p><b>为什么值得看：</b>语音赛道从「ASR+分离+翻译」流水线收敛到「一个可提示的语音 LLM」——「提示词即配置」的思路正向所有模态扩散；权重+数据+微调方案三件套齐发，是语音 Infra 与多模态岗位的好谈资。</p>
+    <div class="chips"><span class="chip c3">#语音</span><span class="chip c3">#开源</span><span class="chip c3">#多模态</span><span class="chip c2">@NVIDIA</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">4 ｜ 行业 / 商业化 ｜ OpenAI ｜ 2026-10-28</div>
+    <a class="ptitle" href="https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions">OpenAI 给 ChatGPT Pro/Business 订阅每月返等值 API 额度（最高 $500）</a>
+    <p><b>一句话：</b>10 月 28 日帮助中心更新：Pro 100/200/500 每月分别返 $100/$200/$500 API 额度，Business 按席位池化、每工作区封顶 $500；当月清零、不含 Codex API——与 Anthropic 三周前给 Max 用户返 $100/$200 的动作几乎一一对应。</p>
+    <p><b>为什么值得看：</b>订阅与 API 计费的边界开始模糊：两家头部不约而同把订阅费变成 API 储值卡，本质是把聊天用户导流成开发者生态；Agent 应用的试错成本被进一步压低，「模型采购成本结构」正在改写。</p>
+    <div class="chips"><span class="chip c3">#API</span><span class="chip c3">#商业化</span><span class="chip c3">#降价</span><span class="chip c2">@OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">5 ｜ 论文 / 具身智能 ｜ X-Era AI 拓元智慧 · 开源 ｜ 2026-10-29</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.36011">E0.5：拓元智慧开源原生 4D 世界动作模型，真机大幅超越 π0.5</a>
+    <p><b>一句话：</b>从「重建过去」转向「预测未来」的 3D 基础：2.32B 策略核心以未来帧几何（深度图/点图/相机参数）为训练监督做世界-动作联合建模，RoboTwin 2.0 清洁/随机设定 89.9%/50.1%，真机表现大幅超过 π0.5。</p>
+    <p><b>为什么值得看：</b>具身智能「世界模型路线」又添一员：不靠海量机器人数据预训练、靠几何原生的未来预测拿到竞争力，说明「先想象后果再动手」正收敛成主流候选路线，聊具身岗位时的最新素材。</p>
+    <div class="chips"><span class="chip c3">#具身智能</span><span class="chip c3">#世界模型</span><span class="chip c3">#机器人</span><span class="chip c2">@X-Era AI</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>本期由「AI论文猎手」每日晨检任务（周一至周五 08:00）自动生成：条目按 url 去重追加进 data.js（firstSeen=2026-10-30），day 期次已登记于 issues[]。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-02 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-02</h1>
+  <div class="sub">2026-11-02 08:00 发布 ｜ 本期 9 条 ｜ 5 篇论文/技术报告、4 条行业资讯（周末窗口合并覆盖）</div>
+  <div class="trend"><div>💡 亮点：<b>CLASHarness 是今天最值得细读的一篇</b>——现有 Agent 基准都假设队友百分百靠谱，它第一次系统考核多智能体协作中的「不盲从、会核实」；步数放宽后 Gemini 3.8 Flash 通过率翻倍的发现尤其有嚼头。</div><div>🔧 主线：<b>Agent 工程化</b>——Google 同日放出两个执行级基准（CLASHarness、T2J-Bench），复旦 OpenMOSS 把混合架构拆成机制结论，浙大 MAESTRO 已在省级应急平台跑真实台风预警：Agent 正从刷榜走向「真实工作流里的可靠性」。</div><div>💰 另一条线：<b>订阅制重构</b>——OpenAI 把 ChatGPT 与 Codex 关进同一个 Token 计费池，Anthropic 则给 Claude Code 注入版权红线，头部厂商同时在「算力怎么卖」和「能力让不让你用」上立规矩。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">1 ｜ 论文 / Agent 基准 ｜ arXiv 2610.19128 · Google × Emory/USC/UF/UChicago/UCSB/Columbia ｜ 2026-11-01</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.19128">CLASHarness：当 Agent 遇上「猪队友」——Google 联合六校发布多智能体冲突基准</a>
+    <p><b>一句话：</b>Google 与 Emory、USC、UF、UChicago、UCSB、Columbia 联合发布多智能体冲突基准：20 个真实领域、600 个多轮可执行冲突任务、7,970 张 4K 视觉证据图，首测 15 个主流大模型在「队友报错、缓存过期、权限撞车」下的表现，代码与数据集已在 GitHub 开源。</p>
+    <p><b>为什么值得看：</b>现有 Agent 基准都假设队友百分百靠谱，CLASHarness 第一次系统考核「不盲从、会核实」的协作可靠性；步数放宽到 40 步后 Gemini 3.8 Flash 通过率从 12.8% 飙到 29.2%，说明长程探索能力是分水岭——聊多 Agent 系统落地时的绝佳话题。</p>
+    <div class="chips"><span class="chip c3">#Agent</span><span class="chip c3">#多智能体</span><span class="chip c3">#基准测试</span><span class="chip c2">@Google</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">2 ｜ 论文 / 架构 ｜ arXiv 2610.10114 · 复旦大学·上海创智学院 OpenMOSS（邱锡鹏团队）｜ 2026-11-01</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.10114">混合架构的长文力学：线性注意力还是滑窗注意力？OpenMOSS 团队答「我全都要」</a>
+    <p><b>一句话：</b>复旦/上海创智邱锡鹏团队系统比较全注意力、滑窗注意力与门控线性注意力的混合架构，提出「混合位置」视角与滑窗线性注意力（SWLA），实现 4k 训练 64k 外推 16 倍免训练且 100% 准确。</p>
+    <p><b>为什么值得看：</b>混合架构是当前大模型设计主流（Qwen、MiniMax 都在用），这篇把「为什么有效」拆成六条可复用结论——跷跷板效应、潮汐效应、马太效应，是理解长上下文架构选型的机制级参考。</p>
+    <div class="chips"><span class="chip c3">#长上下文</span><span class="chip c3">#混合架构</span><span class="chip c3">#注意力机制</span><span class="chip c2">@复旦大学</span><span class="chip c2">@OpenMOSS</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">3 ｜ 技术报告 / 具身智能 ｜ arXiv 2609.39388 · 飞捷科思 × 复旦 CITLab ｜ 2026-11-01</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2609.39388">Fysiverse-UniWAM：不靠大规模机器人预训练，24 项真机测试拿下导航与移动操作双第一</a>
+    <p><b>一句话：</b>飞捷科思（Fysics AI）联合复旦 CITLab 提出统一世界动作模型：从预训练视频世界模型出发，用 Mixed-Stream 共享骨干 + MAP 操作锚定位姿，在 4 种机器人平台 24 项真机任务中导航位置误差全部第一、移动操作平均成功率 80.0%（领先 π₀.₅ 达 17.5 个百分点）。</p>
+    <p><b>为什么值得看：</b>挑战「机器人必须大规模预训练」的主流路线——从视频世界模型冷启动也能打，若成立将大幅降低具身智能的数据成本门槛；150 万条轨迹的 MAP-Data 也值得关注。</p>
+    <div class="chips"><span class="chip c3">#具身智能</span><span class="chip c3">#世界模型</span><span class="chip c3">#机器人</span><span class="chip c2">@飞捷科思</span><span class="chip c2">@复旦大学</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">4 ｜ 论文 / AI4S ｜ npj Artificial Intelligence · 浙江大学 × 华中科技大学 × 浙江省应急管理厅 ｜ 2026-11-01</div>
+    <a class="ptitle" href="https://doi.org/10.1038/s44387-026-00124-z">MAESTRO：浙大联合团队的多智能体灾害预警系统，已接入浙江省级应急平台</a>
+    <p><b>一句话：</b>浙江大学、华中科技大学与浙江省应急管理厅联合提出 LLM 多智能体系统 MAESTRO（发表于 npj Artificial Intelligence）：角色化智能体组织气象/水文/地质专业模型协同，100 个台风情景预警判定准确率 98.4%、耗时仅专家流程 15%，已接入省级平台完成 80 余次真实预警循环。</p>
+    <p><b>为什么值得看：</b>多智能体系统少见的「真实生产环境验证」样本：不是刷榜，而是在省级应急平台跑了四次台风响应；「大模型负责组织计算而非生成结论」的架构思路对 Agent 落地很有借鉴意义。</p>
+    <div class="chips"><span class="chip c3">#Agent</span><span class="chip c3">#多智能体</span><span class="chip c3">#AI4S</span><span class="chip c2">@浙江大学</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">5 ｜ 论文 / 多模态 ｜ arXiv 2609.38597 · NVIDIA × 滑铁卢大学 ｜ 2026-11-01</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2609.38597">PixelUMM：NVIDIA 开源无编码器统一多模态模型，在像素空间读写图像与视频</a>
+    <p><b>一句话：</b>NVIDIA 与滑铁卢大学开源 PixelUMM：彻底移除 VAE 与视觉编码器，基于 Qwen3-8B 构建 Mixture-of-Transformers，15.2B 参数统一覆盖文生图、文生视频、图像/视频理解、图生视频与视频编辑六大任务。</p>
+    <p><b>为什么值得看：</b>「做减法」的架构探索：一个 Transformer 直接读写原始像素，省掉两个分别训练的组件；理解精度虽仍落后 BAGEL，但若规模化后差距收敛，下一代多模态模型可能真的不再需要 VAE——架构方向的信号意义大于当前跑分。</p>
+    <div class="chips"><span class="chip c3">#多模态</span><span class="chip c3">#架构创新</span><span class="chip c3">#开源</span><span class="chip c2">@NVIDIA</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">6 ｜ 行业 / 计费 ｜ OpenAI 官方帮助文档 ｜ 2026-11-01</div>
+    <a class="ptitle" href="https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits">OpenAI 官宣 12 月起 ChatGPT 与 Codex 共用额度池：统一按 Token 计费</a>
+    <p><b>一句话：</b>OpenAI 帮助文档确认：12 月起 Plus/Pro/Business 用户的 ChatGPT 与 Codex 共享同一额度池、统一按 Token 计量，Instant 即时聊天不扣额度；同期上线设备绑号上限，封堵「多开叠号」。</p>
+    <p><b>为什么值得看：</b>前脚 Pro 额度翻倍、后脚聊天与编程合池——订阅制正从「按产品配额」变成「跨产品算力钱包」，与 Anthropic 的共享额度殊途同归；算力成本结构正在重塑，值得跟踪对 Coding Agent 使用习惯的影响。</p>
+    <div class="chips"><span class="chip c3">#计费</span><span class="chip c3">#订阅</span><span class="chip c3">#Codex</span><span class="chip c2">@OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">7 ｜ 行业 / AI 治理 ｜ Anthropic · Claude Code ｜ 2026-11-01</div>
+    <a class="ptitle" href="https://www.36kr.com/p/4050382051005574">Claude Code 悄悄更新：Anthropic 远程下发规则，Opus 5.5 不再复刻现有游戏</a>
+    <p><b>一句话：</b>Claude Code 在 10 月 27 日前后被服务端推送一条不可关闭的提示词规则：可做原创游戏与类型游戏，但不得复刻某款特定现有游戏；Anthropic 工程师确认系依据知识产权使用政策。背景是多家独立游戏工作室因 AI 克隆焦虑撤下试玩版。</p>
+    <p><b>为什么值得看：</b>模型能力越强，「做的是谁的游戏」越难回避——这是头部厂商第一次把版权约束直接注入编程 Agent 的提示词层；软性约束能拦住多少人、误伤边界在哪，是观察 AI 治理落地的活样本。</p>
+    <div class="chips"><span class="chip c3">#AI治理</span><span class="chip c3">#版权</span><span class="chip c3">#Claude Code</span><span class="chip c2">@Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">8 ｜ 论文 / 代码迁移 ｜ arXiv 2605.29054 · Google Cloud AI Research × DeepMind 等 ｜ 2026-10-31</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2605.29054">谷歌 T2J-Bench：把 PyTorch 整仓迁移 JAX 交给 Coding Agent，训练与推理行为还能对齐吗？</a>
+    <p><b>一句话：</b>Google Cloud AI Research 联合 UIUC、USC、圣母大学与 DeepMind 发布 T2J-Bench：63 个整仓迁移任务检验 PyTorch→JAX 迁移质量，最强基线 0.676；配套 TwinHarness 让 Agent 利用可运行原始仓库逐轮定位修复行为差异，将得分从 0.649 提至 0.723（+11.4%）。</p>
+    <p><b>为什么值得看：</b>「代码能跑≠行为对齐」——先平方再平均和先平均再平方只差一步，训练轨迹就已偏离；这类执行级基准比静态代码评测更接近真实工程，是做 Coding Agent 评测与框架迁移的重要参照。</p>
+    <div class="chips"><span class="chip c3">#Agent</span><span class="chip c3">#代码迁移</span><span class="chip c3">#基准测试</span><span class="chip c2">@Google</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">9 ｜ 行业 / 大会 ｜ 世界互联网大会乌镇峰会 ｜ 2026-11-02</div>
+    <a class="ptitle" href="https://www.ithome.com/1/008/310.htm">2026 世界互联网大会乌镇峰会今日开幕：27 个分论坛聚焦人工智能开源开放</a>
+    <p><b>一句话：</b>乌镇峰会 11 月 2 日至 5 日举行，主题「开源开放 共建共享」，设 27 个分论坛覆盖机器人与具身智能等议题，主论坛「人工智能乌镇对话」邀请全球科技企业与开源大模型负责人同台。</p>
+    <p><b>为什么值得看：</b>今年主题直接锁定「AI 开源开放」，是观察国产开源模型阵营政策风向与头部厂商表态的窗口；后续几天的分论坛可能释放模型开源与治理的新信号。</p>
+    <div class="chips"><span class="chip c3">#行业动态</span><span class="chip c3">#开源</span><span class="chip c3">#政策</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>本期由「AI论文猎手」每日晨检任务（周一至周五 08:00）自动生成：条目按 url 去重追加进 data.js（firstSeen=2026-11-02），day 期次已登记于 issues[]；本次执行一并恢复归档了 2026-10-26 ~ 10-30 期间因 push 失败积压的 5 期日报与 19 条条目。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
