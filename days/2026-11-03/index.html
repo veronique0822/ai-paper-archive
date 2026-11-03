@@ -9,44 +9,93 @@
   <a class="back" href="../../index.html">← 返回档案馆主页</a>
   <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
   <h1>每日晨检 · 2026-11-03</h1>
-  <div class="sub">2026-11-03 08:00 发布 ｜ 本期 4 条 ｜ 1 篇论文、3 条行业资讯</div>
-  <div class="trend"><div>💡 亮点：<b>LongCat-2.5 是今天的主角</b>——1.6 万亿参数全程国产算力训练，官方成绩卡在 Opus 4.8 与 Opus 5 之间；比起跑分，超节点协同优化把单卡吞吐提升 86% 的工程细节更值得做 Infra 的人细读。</div><div>🔧 主线：<b>世界模型从「生成」走向「规划」</b>——LeCun 团队 ID-WM 把「去哪」（高层可达性）和「怎么去」（低层逆动力学）拆开解，长程任务较单级 MPC 提升 135%，接住了上周 Genie 4 的世界模型热度。</div><div>🛡 另一条线：<b>防御者优先成为行业惯例</b>——OpenAI 的 Grid Protectors Program 与上周 Gemini 4 Carbon 的邀请制同向；robots.txt 统一 AI 训练信号则让数据治理首次有了跨厂商标准。</div></div>
+  <div class="sub">2026-11-03 发布 ｜ 本期 11 条 ｜ 6 篇论文、5 条行业资讯（两轮检索合并补全）</div>
+  <div class="trend"><div>💡 亮点：<b>LongCat-2.5 是今天的头条</b>——1.6 万亿参数全程国产算力训练，官方成绩卡在 Opus 4.8 与 Opus 5 之间；比起跑分，超节点协同优化把单卡吞吐提升 86% 的工程细节更值得做 Infra 的人细读。</div><div>🔧 主线一：<b>世界模型从「生成」走向「规划」</b>——LeCun 团队 ID-WM 把「去哪」和「怎么去」拆开解，长程任务较单级 MPC 提升 135%，接住上周的世界模型热度。</div><div>🤖 主线二：<b>RL 配方全面迁移</b>——CaPtain 把「SFT+多轮 RL」搬进机器人代码策略（4B 反超前沿 Agent），R²Orch 用递归自博弈训练编排器拿下 12 项基准第一，WeFair 的 SFT→DPO→GRPO 三段对齐已在视频号日服 1 亿+ 查询。</div><div>🛡 另一条线：<b>防御者优先成为行业惯例</b>——OpenAI Grid Protectors Program 与 Gemini 4 Carbon 邀请制同向；GPT-6.2 Astra 与 Claude 5.5 同周末泄露，11 月旗舰混战开局；robots.txt 统一 AI 训练信号让数据治理首次有了跨厂商标准。</div></div>
   <h2>本期条目</h2>
   <div class="paper">
     <div class="meta">美团 · 2026-11-02</div>
     <a class="ptitle" href="https://www.caixin.com/2026-11-03/102500141.html">美团发布 LongCat-2.5：1.6 万亿参数全程国产算力训练，成绩介于 Opus 4.8 与 Opus 5 之间</a>
-    <p><b>一句话：</b>面向长程智能体任务的原生多模态模型：总参数 1.6 万亿、每 token 激活约 480 亿，训练全程由国产算力完成；官方评测介于 Claude Opus 4.8 与 Opus 5 之间、部分超过后者，Terminal-Bench v2.1 70.8→88.4、AutomationBench 15.8→51.8；长上下文训练单卡吞吐较 DDP 基线提升 86%，推理采用 W4A4 量化吞吐提升约四成；API 同步开放，权重即将开源。</p>
-    <p><b>为什么值得看：</b>「国芯国模」路线迄今最大规模验证：超节点通信优化把单卡效率做到接近翻倍，工程细节比跑分更有参考价值；王兴「不做 Token 工厂」的定位是大厂模型战略的对照样本。注意评测均为官方自报，第三方验证待开源后。</p>
+    <p><b>一句话：</b>面向长程智能体任务的原生多模态模型：总参数 1.6 万亿、每 token 激活约 480 亿，训练全程由国产算力完成；官方评测介于 Claude Opus 4.8 与 Opus 5 之间、部分超过后者，Terminal-Bench v2.1 70.8→88.4、AutomationBench 15.8→51.8；长上下文训练单卡吞吐较 DDP 基线提升 86%，推理采用 W4A4 量化吞吐提升约四成；API 同步开放（输入 2 元/百万 token），权重即将开源。</p>
+    <p><b>为什么值得看：</b>「国芯国模」路线迄今最大规模验证：万亿参数全流程国产训练+超节点通信优化把单卡效率做到接近翻倍，工程细节比跑分更有参考价值；王兴「不做 Token 工厂、模型服务主业」的定位也是观察大厂模型战略的对照样本。注意评测均为官方自报，第三方验证待开源后。</p>
     <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">国产算力</span><span class="chip c1">Agent</span><span class="chip c2">美团</span><span class="chip cg">难度：入门</span></div>
   </div>
   <div class="paper">
     <div class="meta">OpenAI · 2026-11-02</div>
     <a class="ptitle" href="https://openai.com/news/">OpenAI 宣布 Grid Protectors Program：新一轮安全冲刺，为防御者提供更高漏洞赏金</a>
-    <p><b>一句话：</b>OpenAI Global Affairs 11 月 2 日宣布 Grid Protectors Program：准备下一轮安全冲刺，以更高额漏洞赏金强化防御侧能力，延续「能力越强、先武装防守方」的发布策略。</p>
-    <p><b>为什么值得看：</b>头部实验室把前沿能力定向输送给防御者正在从个案变成行业惯例；模型公司安全团队的预算和优先级都在上移，安全方向候选人值得重点关注。</p>
+    <p><b>一句话：</b>OpenAI Global Affairs 11 月 2 日宣布 Grid Protectors Program：准备下一轮安全冲刺（security sprint），以更高额漏洞赏金强化防御侧能力，延续其「能力越强、先武装防守方」的发布策略（与上周 Gemini 4 Carbon 凭邀请发放给网安机构同向）。</p>
+    <p><b>为什么值得看：</b>头部实验室把前沿能力定向输送给防御者正在从个案变成行业惯例；对安全方向的候选人是明确信号：模型公司的安全团队预算和优先级都在上移。</p>
     <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">网络安全</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
   </div>
   <div class="paper">
-    <div class="meta">NYU × Meta FAIR × AMI Labs（LeCun 团队）· 2026-11-02</div>
-    <a class="ptitle" href="https://arxiv.org/abs/2610.42146">ID-WM（NeurIPS 2026）：分层世界模型，把「去哪」和「怎么去」拆开解</a>
-    <p><b>一句话：</b>高层扩散模型只负责在状态流形上采样「可达的邻近状态」（隐式动作），低层世界模型作为逆动力学求解器把子目标落实为精确动作；三组导航/操作任务上较最优规划器提升 38.5%，较单级世界模型 MPC 提升 135%。</p>
-    <p><b>为什么值得看：</b>接住了上周 Genie 4/Mundo/GO-3 的世界模型热度，但给出规划侧的机制性答案：分层+隐式动力学是长程任务的关键拆解——做具身智能规划的人选聊天时值得一问。</p>
+    <div class="meta">Meta · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.42146">ID-WM（NeurIPS 2026）：LeCun 团队的分层世界模型，把「去哪」和「怎么去」拆开解</a>
+    <p><b>一句话：</b>NYU + Meta FAIR + AMI Labs 的分层世界模型：高层扩散模型只负责在状态流形上采样「可达的邻近状态」（隐式动作），低层世界模型作为逆动力学求解器把子目标落实为精确动作；三组导航/操作任务上较最优规划器提升 38.5%，较单级世界模型 MPC 提升 135%，长程任务累积误差显著缓解。</p>
+    <p><b>为什么值得看：</b>与上周 Genie 4/Mundo/GO-3 的世界模型热潮一脉相承，但给出了规划侧的机制性答案：分层+隐式动力学是长程任务的关键拆解；做具身智能规划的人选聊天时值得一问。</p>
     <div class="chips"><span class="chip c1">世界模型</span><span class="chip c1">具身智能</span><span class="chip c1">规划</span><span class="chip c2">Meta</span><span class="chip cg">难度：进阶</span></div>
   </div>
   <div class="paper">
-    <div class="meta">Google × OpenAI × Microsoft × Anthropic · 2026-10-30</div>
+    <div class="meta">Google、OpenAI、Microsoft、Anthropic · 2026-10-30</div>
     <a class="ptitle" href="https://www.joinmassive.com/blog/robots-txt-ai-training-opt-out">四大厂同日承诺支持 robots.txt 共享 AI 训练控制信号（IETF AIPREF）</a>
-    <p><b>一句话：</b>四家分别声明支持同一个 IETF AIPREF 工作组草案——在 robots.txt 中用统一信号表达「是否允许 AI 训练抓取」：Anthropic 称已开始实施，OpenAI 未来数月落地，Microsoft 定于 2027 年 2 月 1 日生效，Google 争取 2027 年内同步支持。</p>
-    <p><b>为什么值得看：</b>AI 训练数据治理首次有了跨厂商的统一技术信号；内容版权、数据合规方向的岗位会随这套标准落地持续受益。</p>
+    <p><b>一句话：</b>Google、OpenAI、Microsoft、Anthropic 分别声明支持同一个 IETF AIPREF 工作组草案——在 robots.txt 中用统一信号表达「是否允许 AI 训练抓取」：Anthropic 称已开始实施，OpenAI 称未来数月落地，Microsoft 定于 2027 年 2 月 1 日生效，Google 争取 2027 年内与其他厂商同步支持。</p>
+    <p><b>为什么值得看：</b>AI 训练数据治理首次有了跨厂商的统一技术信号；内容版权、数据合规方向的岗位会随这套标准的落地持续受益。</p>
     <div class="chips"><span class="chip c1">AI治理</span><span class="chip c1">数据</span><span class="chip c1">版权</span><span class="chip c2">Google</span><span class="chip c2">OpenAI</span><span class="chip c2">Microsoft</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenAI、Anthropic · 2026-11-02</div>
+    <a class="ptitle" href="https://original.ifeng.com/c/8xib04OQtJo">OpenAI GPT-6.2 Astra 被曝在 Codex 后台灰度测试，Anthropic Claude 5.5 系列同步泄露</a>
+    <p><b>一句话：</b>多位 X 用户发现 Codex 使用统计中出现 gpt-6.2-astra 标识、约 19.8% 请求被路由至该模型，界面模型名仍显示 GPT-6 Astra；同期 Anthropic 官网源码泄露 Claude Fable 5.5（百万上下文通用旗舰）与 Mythos 5.5（仅向顶尖网安机构开放的特种版）。</p>
+    <p><b>为什么值得看：</b>Gemini 4 Carbon 登顶没几天，OpenAI 与 Anthropic 下一代旗舰在同一周末先后泄露——11 月旗舰混战开局；爆料称 GPT-6.2 系 6.1 安全测试「翻车」回炉后的跳级版，是观察头部模型迭代节奏与安全门禁的信号事件。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">爆料</span><span class="chip c1">编程</span><span class="chip c2">OpenAI</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">阿里 · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.40799">CaPtain：把「SFT + 多轮 RL」配方搬到机器人代码策略，4B 开源小模型反超前沿闭源 Agent</a>
+    <p><b>一句话：</b>开源后训练流水线：让策略对着机器人 API 写代码（Code-as-Policy），先用合成轨迹 SFT 对齐接口，再用带「物理 critic」的多轮 RL 精调；从 Qwen3.5-4B（零样本 0%）出发，LIBERO 上 SFT 后 55.4%、RL 后 73.8%，LIBERO-PRO 78.5% 超过多个前沿模型 Agent，并可迁移到真机。</p>
+    <p><b>为什么值得看：</b>「先学接口、再靠 RL 精通」这条在编程 Agent 上验证过的配方第一次系统搬进机器人操作，且代码、数据、权重全开源；物理 critic 利用仿真特权信息给每步请求记信用，是长链路奖励归因的漂亮设计。</p>
+    <div class="chips"><span class="chip c1">具身智能</span><span class="chip c1">强化学习</span><span class="chip c1">Agent</span><span class="chip c2">阿里</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">学术界 · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.40945">LLM 强化学习的训练-推理错位从哪来？拆解「数值偏差」与「策略滞后」并给出 DLC 校正</a>
+    <p><b>一句话：</b>把 RL 训练中采样器与训练器之间的错位拆成两部分：近乎恒定的数值偏差，以及会随训练步累积的策略滞后；据此推出 discrepancy-lag correction（DLC），让使用过期采样的 stale-sampler 训练保持在 on-policy 运行的噪声范围内。</p>
+    <p><b>为什么值得看：</b>异步 RL 管线里「采样器用的是旧策略」是吞吐与稳定性的核心矛盾，这篇给出了可量化的拆分和可直接落地的校正项——做 RL Infra / 后训练工程的人值得精读的机制型论文。</p>
+    <div class="chips"><span class="chip c1">强化学习</span><span class="chip c1">RL Infra</span><span class="chip c1">后训练</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">腾讯 · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.16927">微信视频号搜索的个性化改写模型 WeFair：SFT→DPO→GRPO 三段对齐，日服务 1 亿+ 查询</a>
+    <p><b>一句话：</b>腾讯提出保真度对齐框架 WeFair：把示范（SFT）、偏好（DPO）、可验证反馈（GRPO）分别对齐到训练的不同阶段；2B 模型线上 A/B 带来有效视频播放率相对 +2.593%、查询改写率相对 -2.350%，已在微信短视频搜索部署、日服 1 亿+ 查询。</p>
+    <p><b>为什么值得看：</b>少见的「已上线生产系统」对齐工程论文，核心结论很反直觉：更丰富的行为奖励不一定带来更忠实的改写，严格可验证的人工反馈才最防意图漂移——对所有做线上 RLHF 的团队都有参考价值。</p>
+    <div class="chips"><span class="chip c1">RLHF</span><span class="chip c1">搜索</span><span class="chip c1">工业落地</span><span class="chip c2">腾讯</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">学术界 · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.34722">CEPO：多智能体系统的提示词优化框架——「协调者」与「执行者」分开优化</a>
+    <p><b>一句话：</b>把多智能体系统的提示词拆成共享的协调者提示与各 Agent 专属的执行者提示，按角色分别指导更新；套用到 4 种现有提示词优化器上，在 4 个领域 11 个基准上一致提升，且性能随 Agent 数量扩展、优化预算效率更高。</p>
+    <p><b>为什么值得看：</b>多 Agent 落地进入「提示词工程」阶段后，这篇给出结构与优化解耦的通用框架，兼容现有优化器即可复用——做 Agent 工作流编排时可直接借鉴的设计模式。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">多智能体</span><span class="chip c1">提示词优化</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">学术界 · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.22740">R²Orch：递归自博弈训练 Agent 编排器，9B 模型「零技能」部署拿下 12 项基准第一</a>
+    <p><b>一句话：</b>内层自博弈提升编排器、外层循环改进自博弈本身：Proposer 因「撤掉某技能后结果仍分化」的任务获得奖励（递归可学性），被学会的技能随即内化撤回；9B 编排器在 QA/数学/代码/交互 12 项基准平均分从最强基线 86.0 提到 89.8（分布外 76.1→78.8），AIME 2026 从 74.0 升至 81.3。</p>
+    <p><b>为什么值得看：</b>Agent 编排不再需要人工设计课程表——「技能学会就收回、走向零技能部署」把工具使用变成可内化的能力，是多 Agent 自我改进方向的代表作，且模型与代码均已开源。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">自博弈</span><span class="chip c1">强化学习</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">ServiceNow · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.40738">Apriel Voice 27B Preview：ServiceNow 开源语音-推理-工具调用一体化模型</a>
+    <p><b>一句话：</b>开源语音语言模型：语音理解、推理与工具调用共享同一骨干，通过两阶段训练加在线蒸馏，在多项音频基准上取得强结果。</p>
+    <p><b>为什么值得看：</b>语音模型从「听得懂」走向「会推理、能调工具」，是语音 Agent 的关键拼图；开源发布意味着企业级语音 Agent 多了一枚可自托管的新底座。</p>
+    <div class="chips"><span class="chip c1">语音</span><span class="chip c1">多模态</span><span class="chip c1">开源</span><span class="chip c2">ServiceNow</span><span class="chip cg">难度：入门</span></div>
   </div>
   <div class="snap">晨检: 2026-11-03
 窗口: 2026-11-02 08:00 ~ 2026-11-03 08:00
-入选: 4 条（1 论文 + 3 资讯）｜ 机构: 6 家
-亮点: 美团 LongCat-2.5（国产算力最大规模验证）
-主线: 世界模型从生成走向规划（ID-WM）｜防御者优先成为惯例（Grid Protectors）
-去重: 与既有 87 条按链接/标题比对无重复</div>
-  <div class="end"><div class="t">收录信息</div><p>信息来源：财新、OpenAI 官方、arXiv、IETF AIPREF 相关声明与第三方报道，链接见各条目；数据以 2026-11-03 08:00 检索时为准。</p></div>
+入选: 11 条（6 论文 + 5 资讯）｜ 机构: 10+ 家
+亮点: 美团 LongCat-2.5（国产算力最大规模验证）｜GPT-6.2 Astra / Claude 5.5 泄露
+主线: 世界模型规划化（ID-WM）｜RL 配方迁移（CaPtain/R²Orch/WeFair）｜防御者优先（Grid Protectors）
+去重: 与既有条目按链接/标题比对；本期由两轮检索合并补全（第二轮 7 条曾因 token 失效滞留本地，已恢复推送）</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：财新、OpenAI 官方、凤凰科技、arXiv 及第三方报道，链接见各条目；数据以 2026-11-03 检索时为准。</p></div>
   <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
 </div>
 </body></html>
