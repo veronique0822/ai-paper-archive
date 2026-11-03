@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-03 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-03</h1>
+  <div class="sub">2026-11-03 08:00 发布 ｜ 本期 4 条 ｜ 1 篇论文、3 条行业资讯</div>
+  <div class="trend"><div>💡 亮点：<b>LongCat-2.5 是今天的主角</b>——1.6 万亿参数全程国产算力训练，官方成绩卡在 Opus 4.8 与 Opus 5 之间；比起跑分，超节点协同优化把单卡吞吐提升 86% 的工程细节更值得做 Infra 的人细读。</div><div>🔧 主线：<b>世界模型从「生成」走向「规划」</b>——LeCun 团队 ID-WM 把「去哪」（高层可达性）和「怎么去」（低层逆动力学）拆开解，长程任务较单级 MPC 提升 135%，接住了上周 Genie 4 的世界模型热度。</div><div>🛡 另一条线：<b>防御者优先成为行业惯例</b>——OpenAI 的 Grid Protectors Program 与上周 Gemini 4 Carbon 的邀请制同向；robots.txt 统一 AI 训练信号则让数据治理首次有了跨厂商标准。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">美团 · 2026-11-02</div>
+    <a class="ptitle" href="https://www.caixin.com/2026-11-03/102500141.html">美团发布 LongCat-2.5：1.6 万亿参数全程国产算力训练，成绩介于 Opus 4.8 与 Opus 5 之间</a>
+    <p><b>一句话：</b>面向长程智能体任务的原生多模态模型：总参数 1.6 万亿、每 token 激活约 480 亿，训练全程由国产算力完成；官方评测介于 Claude Opus 4.8 与 Opus 5 之间、部分超过后者，Terminal-Bench v2.1 70.8→88.4、AutomationBench 15.8→51.8；长上下文训练单卡吞吐较 DDP 基线提升 86%，推理采用 W4A4 量化吞吐提升约四成；API 同步开放，权重即将开源。</p>
+    <p><b>为什么值得看：</b>「国芯国模」路线迄今最大规模验证：超节点通信优化把单卡效率做到接近翻倍，工程细节比跑分更有参考价值；王兴「不做 Token 工厂」的定位是大厂模型战略的对照样本。注意评测均为官方自报，第三方验证待开源后。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">国产算力</span><span class="chip c1">Agent</span><span class="chip c2">美团</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-11-02</div>
+    <a class="ptitle" href="https://openai.com/news/">OpenAI 宣布 Grid Protectors Program：新一轮安全冲刺，为防御者提供更高漏洞赏金</a>
+    <p><b>一句话：</b>OpenAI Global Affairs 11 月 2 日宣布 Grid Protectors Program：准备下一轮安全冲刺，以更高额漏洞赏金强化防御侧能力，延续「能力越强、先武装防守方」的发布策略。</p>
+    <p><b>为什么值得看：</b>头部实验室把前沿能力定向输送给防御者正在从个案变成行业惯例；模型公司安全团队的预算和优先级都在上移，安全方向候选人值得重点关注。</p>
+    <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">网络安全</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">NYU × Meta FAIR × AMI Labs（LeCun 团队）· 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.42146">ID-WM（NeurIPS 2026）：分层世界模型，把「去哪」和「怎么去」拆开解</a>
+    <p><b>一句话：</b>高层扩散模型只负责在状态流形上采样「可达的邻近状态」（隐式动作），低层世界模型作为逆动力学求解器把子目标落实为精确动作；三组导航/操作任务上较最优规划器提升 38.5%，较单级世界模型 MPC 提升 135%。</p>
+    <p><b>为什么值得看：</b>接住了上周 Genie 4/Mundo/GO-3 的世界模型热度，但给出规划侧的机制性答案：分层+隐式动力学是长程任务的关键拆解——做具身智能规划的人选聊天时值得一问。</p>
+    <div class="chips"><span class="chip c1">世界模型</span><span class="chip c1">具身智能</span><span class="chip c1">规划</span><span class="chip c2">Meta</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Google × OpenAI × Microsoft × Anthropic · 2026-10-30</div>
+    <a class="ptitle" href="https://www.joinmassive.com/blog/robots-txt-ai-training-opt-out">四大厂同日承诺支持 robots.txt 共享 AI 训练控制信号（IETF AIPREF）</a>
+    <p><b>一句话：</b>四家分别声明支持同一个 IETF AIPREF 工作组草案——在 robots.txt 中用统一信号表达「是否允许 AI 训练抓取」：Anthropic 称已开始实施，OpenAI 未来数月落地，Microsoft 定于 2027 年 2 月 1 日生效，Google 争取 2027 年内同步支持。</p>
+    <p><b>为什么值得看：</b>AI 训练数据治理首次有了跨厂商的统一技术信号；内容版权、数据合规方向的岗位会随这套标准落地持续受益。</p>
+    <div class="chips"><span class="chip c1">AI治理</span><span class="chip c1">数据</span><span class="chip c1">版权</span><span class="chip c2">Google</span><span class="chip c2">OpenAI</span><span class="chip c2">Microsoft</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="snap">晨检: 2026-11-03
+窗口: 2026-11-02 08:00 ~ 2026-11-03 08:00
+入选: 4 条（1 论文 + 3 资讯）｜ 机构: 6 家
+亮点: 美团 LongCat-2.5（国产算力最大规模验证）
+主线: 世界模型从生成走向规划（ID-WM）｜防御者优先成为惯例（Grid Protectors）
+去重: 与既有 87 条按链接/标题比对无重复</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：财新、OpenAI 官方、arXiv、IETF AIPREF 相关声明与第三方报道，链接见各条目；数据以 2026-11-03 08:00 检索时为准。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
