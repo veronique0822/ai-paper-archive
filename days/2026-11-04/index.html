@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-04 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-04</h1>
+  <div class="sub">2026-11-04 发布 ｜ 本期 4 条 ｜ 2 篇论文、2 条行业资讯</div>
+  <div class="trend"><div>💡 亮点：<b>奥特曼亲自预告「下一代 GPT」</b>——9 月攻克纳维-斯托克斯千禧难题的正是它：1 万个无层级 Agent 协作 88 小时，交换 270 万条消息、1300 亿 Token。Agent 组织形态从「包工头拆任务」走向「去中心化蜂群」，这是今天最值得记住的一件事。</div><div>🔓 另一条主线：<b>开源权重第一今天换人</b>——Kimi K3.1 Pro 按计划开放完整权重，AA 智能指数 55 分全球第四、距闭源第一仅 3 分；Moonshot 还罕见公开了主动剔除网络安全数据的「能力削减」幅度。</div><div>🧪 研究侧：<b>生成式方法继续攻陷「硬科学」</b>——PhysLDM 用隐空间扩散一次性生成整段物理仿真轨迹（毫米级、零样本泛化）；Strategist 则把 Agent 的「推理策略」本身变成可自我进化、可复用的资产。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-11-03</div>
+    <a class="ptitle" href="https://finance.sina.com.cn/tech/roll/2026-11-03/doc-inixkzym8903921.shtml">奥特曼 ADIPEC 演讲预告「下一代 GPT」：1 万个无层级 Agent 协作 88 小时攻克纳维-斯托克斯难题</a>
+    <p><b>一句话：</b>奥特曼在阿布扎比 ADIPEC 2026 开幕式上确认：9 月证明千禧年难题 NS 方程（有限时间奇点情形）的内部模型就是即将发布的下一代 GPT——1 万个 Agent 在无总控、无层级的情况下协作约 88 小时完成核心探索，交换 270 万条消息、生成约 1300 亿 Token，随后 GPT-6 Astra 用 17 小时完成 Lean 形式化验证。</p>
+    <p><b>为什么值得看：</b>这是「万级 Agent 自主协同科研」第一次与下一代旗舰模型官方挂钩：Agent 自选方向、实时共享进展、第 50 小时一支小分队打开缺口后数千 Agent 自发转向——多智能体编排的候选人聊这个话题，立刻能分出「看过新闻」和「想过架构」两档。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">多智能体</span><span class="chip c1">AI for Science</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Moonshot · 2026-11-04</div>
+    <a class="ptitle" href="https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart">Kimi K3.1 Pro 完整权重今日按计划开放：开源权重模型首次跻身全球智能榜前四</a>
+    <p><b>一句话：</b>月之暗面按计划于 11 月 4 日前开放 K3.1 Pro 完整权重：2.8 万亿总参数（激活 1040 亿）、100 万上下文，Artificial Analysis 智能指数 55 分位列全球第四；Terminal-Bench 4.0 得 65.7% 超过 GPT-6 Astra（58.2%）、距 Claude Opus 5.5（66.4%）仅 0.7 分，API 价格较 K3 下调三分之一。</p>
+    <p><b>为什么值得看：</b>「可自部署的最强开源模型」正式换人，开源与闭源的差距从 12 分缩到 3 分——有本地部署/微调需求的团队选型清单要重排；Moonshot 主动剔除网络安全训练数据并公开削减幅度（xdev-bench-hard 90.5%→81.0%），这种透明在开源发布中几乎没有先例，安全治理话题的好素材。</p>
+    <div class="chips"><span class="chip c1">开源</span><span class="chip c1">新模型</span><span class="chip c1">Agent</span><span class="chip c1">后训练</span><span class="chip c2">Moonshot</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">上海AI Lab、南洋理工大学 · 2026-11-03</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.07609">PhysLDM：物理仿真的 Latent Diffusion 范式，一次性生成整段高保真形变轨迹</a>
+    <p><b>一句话：</b>首个面向体网格可变形动力学的高保真时空自编码器+隐空间扩散范式：把每帧拆成「刚体运动+局部形变」，用一组可学习时间 query 把整段轨迹压缩至 78 倍，再用扩散模型一次生成；毫米级重建精度、零样本泛化到未见物体，端到端可微。</p>
+    <p><b>为什么值得看：</b>一个反直觉发现是全文灵魂：同一输入在 GPU 求解器上跑五次，终点能差 442 毫米——物理仿真本质是「多解」的，扩散模型天然比回归更懂这种混沌；可微特性还能 40 秒反推材料刚度（传统可微仿真要 20 多分钟甚至失败），世界模型与机器人仿真方向都值得跟进。</p>
+    <div class="chips"><span class="chip c1">世界模型</span><span class="chip c1">物理仿真</span><span class="chip c1">扩散模型</span><span class="chip c1">具身智能</span><span class="chip c2">上海AI Lab</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Taiming Lu、Qi Xu、Zhigang Hua、Zhuang Liu 等 · 2026-11-02</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.03618">Strategist：让「推理策略」自我进化的元 Agent——30 个基准上 24 个反超最强基线，推理成本反降 39%</a>
+    <p><b>一句话：</b>把 Agent 系统中「怎么调用模型」的推理策略写成可复用的代码蓝图（blueprint）：元 Agent 检索相关蓝图、生成候选策略、在真实样本上测试并修订，全部入库供后续任务复用；30 个基准上 24 个胜过最强基线（74.7% vs 74.0%）且推理成本降低 39%，策略无需再次搜索即可迁移到新任务与其他模型。</p>
+    <p><b>为什么值得看：</b>它指出一个常被忽视的事实：模型只是 Agent 系统的一半，另一半「推理策略」长期靠手写、经验无法沉淀；把策略库做成可积累资产，等于给 Agent 工程补上了「自我改进」的拼图——做 Agent 编排与推理优化的团队可直接借鉴。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">推理</span><span class="chip c1">自我改进</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="snap">晨检: 2026-11-04
+窗口: 2026-11-03 08:00 ~ 2026-11-04 08:00
+入选: 4 条（2 论文 + 2 资讯）｜ 机构: OpenAI / Moonshot / 上海AI Lab 等
+亮点: 奥特曼预告下一代 GPT（万级 Agent 攻克 NS 方程）｜Kimi K3.1 Pro 权重开放
+主线: 去中心化 Agent 蜂群｜开源权重跻身全球前四｜生成式方法攻陷物理仿真
+去重: 与既有 98 条按链接/标题比对；美团 LongCat-2.5 昨日已收录，跳过</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：新浪财经（ADIPEC 2026 演讲报道）、Kimi 官方文档、机器之心、arXiv 及第三方报道，链接见各条目；数据以 2026-11-04 检索时为准。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
