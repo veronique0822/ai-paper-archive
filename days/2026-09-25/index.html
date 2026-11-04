@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-09-25 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-09-25</h1>
+  <div class="sub">2026-09-25 08:00 发布 ｜ 本期 4 条 ｜ 1 条资讯、3 篇论文</div>
+  <div class="trend"><div>💡 亮点：<b>NSA 被曝每年付数十亿美元「攻模型」</b>。</div><div>🔊 副线：<b>Agent 记忆开始走向平台化中间件</b>。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">1 ｜ 资讯 ｜ NSA ｜ 2026-09-25</div>
+    <a class="ptitle" href="https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models">NSA 被曝每年支付数十亿美元测试 AI 模型（华盛顿太阳报援引机密评估）</a>
+    <p><b>一句话：</b>机密评估显示：NSA 每年投入数十亿美元用于测试（并尝试红队攻破）前沿 AI 模型，预算规模与增长曲线首次被媒体拼出全貌。</p>
+    <p><b>为什么值得看：</b>「政府成为前沿模型最重要的评测买家」这一趋势拿到具体数字：当主权机构花钱请人攻击自家模型，红队、评测、模型审计的岗位需求就有了独立于商业市场的第二引擎。</p>
+    <div class="chips"><span class="chip c3">#AI安全</span><span class="chip c3">#国家安全</span><span class="chip c3">#评测</span><span class="chip c2">@NSA</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">2 ｜ 论文 ｜ IBM ｜ 2026-09-25</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2609.32091">Memory as Middleware：把记忆做成 Agent 的可插拔中间件（IBM Research）</a>
+    <p><b>一句话：</b>IBM 提出把「记忆读写」从 Agent 应用代码里抽出来变成独立中间件层：统一接口、按用途分库、支持跨应用共享记忆，并给出自改进 Agent 的参考实现。</p>
+    <p><b>为什么值得看：</b>Agent 记忆正在从「每个应用自己造轮子」走向「平台层标准件」——和数据库当年从应用代码中独立出来的路径几乎一样，做 Agent 平台/Infra 方向的人选一定会被问到这一层怎么设计。</p>
+    <div class="chips"><span class="chip c3">#Agent</span><span class="chip c3">#记忆</span><span class="chip c3">#架构</span><span class="chip c2">@IBM</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">3 ｜ 论文 ｜ 2026-09-25</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2609.31995">Before the Rollout Ends：长程 Coding Agent 的「提前结算」奖励预测</a>
+    <p><b>一句话：</b>在 rollout 还没跑完时就用部分轨迹预测最终奖励，让长程编程 Agent 的 RL 训练不必等整条任务结束才回传信号，样本效率与收敛速度同步提升。</p>
+    <p><b>为什么值得看：</b>长程 Agent 训练的卡点之一是「奖励太稀疏、反馈太滞后」：提前结算相当于给训练装上仪表盘，是聊 Agentic RL 工程细节（credit assignment、样本效率）时的具体抓手。</p>
+    <div class="chips"><span class="chip c3">#Agent</span><span class="chip c3">#强化学习</span><span class="chip c3">#编程</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">4 ｜ 论文 ｜ 2026-09-25</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2609.31893">GT-VLA：给机器人操作加上「目标轨迹引导」的泛化 VLA 模型</a>
+    <p><b>一句话：</b>在视觉-语言-动作模型中引入以目标物体为条件的轨迹引导信号，让机器人在新物体、新位姿下依然能规划出可执行动作，泛化能力显著优于基线 VLA。</p>
+    <p><b>为什么值得看：</b>VLA 路线的核心难题是「训练分布之外的物体怎么办」：把「要去哪」显式编码进条件，是绕开海量数据覆盖问题的一条巧路，聊具身岗位时可用来探候选人对 condition 设计的理解。</p>
+    <div class="chips"><span class="chip c3">#具身智能</span><span class="chip c3">#VLA</span><span class="chip c3">#机器人</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="snap">日期: 2026-09-25
+窗口: 前一日 08:00 ~ 当日 08:00
+条目: 4 条 ｜ 按 url 去重追加，firstSeen=2026-09-25
+说明: 本期为缺刊回填期次（原执行窗口任务未运行，内容依据 arXiv 与 HN 当日记录补做）</div>
+  <div class="end"><div class="t">收录信息</div><p>本期由「AI论文猎手」每日晨检任务归档：条目按 url 去重追加进 data.js（firstSeen=2026-09-25），day 期次已登记于 issues[]。本期为缺刊回填。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>

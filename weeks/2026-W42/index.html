@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每周精选 · 2026-W42（Agent编程与AI数学周）· AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">WEEKLY · 论文猎手周报</div>
+  <h1>每周精选 · 2026-W42（Agent编程与AI数学周）</h1>
+  <div class="sub">2026-10-05 ~ 2026-10-11 ｜ 本期 10 条 + 1 篇零基础科普</div>
+  <div class="trend"><b>本周一句话趋势：</b>本周是「推理能力变现」周：OpenAI 官方披露 AI 已在数学证明上常态化打下手（11 个正方形最优装箱），同一天韩国通报 AI Agent 被用于银行攻击——同一周，Agent 的上限与下限同时被刷新；工程侧 SPROUT 把 Agentic RL 推向长程软件工程、Kronecker 分解给 KV Cache 动手术、谷歌披露生产级 Agent 编程修复系统——推理基建与 Agent 训练的「长程化」成为共同主题。</div>
+  <h2>🏆 本周 Top 3</h2>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-10-07</div>
+    <a class="ptitle" href="https://openai.com/index/sharing-ai-progress-in-mathematics/">OpenAI 官方披露 AI 数学研究进展：11 个正方形最优装箱被 AI 辅助证明</a>
+    <p><b>一句话：</b>OpenAI 官方博客分享数学进展：AI 辅助完成「11 个正方形最优装箱」证明（含 Lean 形式化），并公布与数学家长期合作的方法论。</p>
+    <p><b>为什么值得看：</b>「AI 数学家」从演示走向日常协作的标志性披露：AI 提出引理、人类组装证明、机器验证的三角分工开始标准化，AI for Science 岗位的热度直接受益。</p>
+    <div class="chips"><span class="chip c1">#AI数学</span><span class="chip c1">#OpenAI</span><span class="chip c1">#形式化验证</span><span class="chip c2">@OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-09</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.14405">SPROUT：把 Agentic RL 扩展到「长程软件工程」任务</a>
+    <p><b>一句话：</b>面向需要多文件、多小时完成的软件工程任务设计 RL 训练管线：环境沙箱化、奖励分层与轨迹压缩三件套让长程 Agentic RL 首次稳定收敛。</p>
+    <p><b>为什么值得看：</b>「长程」是 Agentic RL 2026 的关键词：从 SWE-bench 单 issue 走向完整工程任务，训练范式需要全部重做，这篇是路线参照。</p>
+    <div class="chips"><span class="chip c1">#Agent</span><span class="chip c1">#强化学习</span><span class="chip c1">#编程</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-08</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.12657">Kronecker Product Attention：结构化矩阵分解压缩 KV Cache</a>
+    <p><b>一句话：</b>用 Kronecker 积结构替代 KV 矩阵：在几乎无损注意力的前提下大幅压缩 KV Cache 占用，长上下文推理的显存压力显著缓解。</p>
+    <p><b>为什么值得看：</b>KV Cache 压缩是长上下文推理成本的核心杠杆：从低秩到结构化分解，这条线的每篇代表作都值得推理 Infra 方向候选人跟进。</p>
+    <div class="chips"><span class="chip c1">#注意力</span><span class="chip c1">#KV Cache</span><span class="chip c1">#长上下文</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <h2>📋 其余入选</h2>
+  <div class="paper">
+    <div class="meta">Google · 2026-10-05</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.07289">Catching Developers in the Flow：谷歌的「低延迟 Agent 编程修复」实战</a>
+    <p><b>一句话：</b>Google 披露生产环境的 Agentic 程序修复系统：开发者还在写代码时，后台 Agent 已根据上下文预测缺陷并备好修复建议，延迟预算与采纳率数据完整公开。</p>
+    <p><b>为什么值得看：</b>「IDE 内嵌 Agent」的旗舰级工程报告：不是 benchmark 分数，而是真实工作流里的时延-采纳率权衡，做 Coding Agent 方向的必读样本。</p>
+    <div class="chips"><span class="chip c1">#Agent</span><span class="chip c1">#编程</span><span class="chip c1">#工业界实践</span><span class="chip c2">@Google</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-08</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.12569">SWE-Duel：Coding Agent 的「自我缩放竞技场」</a>
+    <p><b>一句话：</b>让 Coding Agent 两两对决解决真实 issue：胜负信号自动回流生成新题目与对手策略，竞技场随使用自我扩展，避免 benchmark 过拟合。</p>
+    <p><b>为什么值得看：</b>「静态 benchmark 半年就饱和」的应对思路之一：用对抗式竞技场持续制造分布外难度，聊 Agent 评测时的前沿方案。</p>
+    <div class="chips"><span class="chip c1">#Agent</span><span class="chip c1">#编程</span><span class="chip c1">#评测</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">社区/媒体 · 2026-10-07</div>
+    <a class="ptitle" href="https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/">韩国称银行黑客事件「疑似由 AI Agent 实施」（Reuters）</a>
+    <p><b>一句话：</b>韩国官方通报：针对多家银行的网络攻击初步研判由 AI Agent 执行——攻击链的侦察、漏洞利用与横向移动均呈现自动化特征。</p>
+    <p><b>为什么值得看：</b>「AI 进攻方」正式登上国家级通报：攻防两侧的 Agent 军备竞赛升级，安全方向的 Agent 研究（防御、审计、溯源）获得政策级需求背书。</p>
+    <div class="chips"><span class="chip c1">#AI安全</span><span class="chip c1">#Agent</span><span class="chip c1">#网络攻击</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Meta · Microsoft · Anthropic · 2026-10-08</div>
+    <a class="ptitle" href="https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/">Meta 与微软「限制员工使用 Claude」：企业 AI 使用的地缘政治化</a>
+    <p><b>一句话：</b>报道显示 Meta、微软相继出台内部指引限制员工使用 Claude，理由是数据安全与竞品敏感性——头部公司之间的「模型隔离墙」开始立起。</p>
+    <p><b>为什么值得看：</b>「员工每天用哪家模型」成为企业级竞争议题：模型选型不只看能力榜，还看数据边界——做企业 AI 产品/合规的人选需要理解这种新格局。</p>
+    <div class="chips"><span class="chip c1">#行业动态</span><span class="chip c1">#企业AI</span><span class="chip c1">#竞争</span><span class="chip c2">@Meta</span><span class="chip c2">@Microsoft</span><span class="chip c2">@Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-08</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.12815">RDMA 在分布式推理与训练中的大规模部署实践</a>
+    <p><b>一句话：</b>系统性梳理 RDMA 在万卡级训练与推理集群的部署经验：拥塞控制、故障隔离、与集合通信库的协同调优，附完整工程参数。</p>
+    <p><b>为什么值得看：</b>「AI 集群网络」的工程手册型论文：RDMA 调优经验极少公开，这类材料对 Infra 团队是直接可复用的知识资产。</p>
+    <div class="chips"><span class="chip c1">#AI基础设施</span><span class="chip c1">#RDMA</span><span class="chip c1">#集群</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-09</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.14406">Memory Without Curation：机器人策略的「多流潜在记忆」</a>
+    <p><b>一句话：</b>不让工程师手工挑选记忆样本：机器人策略自动维护多条潜在记忆流，按需检索与融合，长程操作任务成功率超过人工策划记忆的基线。</p>
+    <p><b>为什么值得看：</b>「记忆该存什么」从人工经验走向自动学习：具身智能的记忆工程刚刚起步，这条线的人选储备极少，值得提前建立认知。</p>
+    <div class="chips"><span class="chip c1">#具身智能</span><span class="chip c1">#记忆</span><span class="chip c1">#机器人</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-06</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.09227">Quantize by Drift：无需标签的文本嵌入混合精度量化</a>
+    <p><b>一句话：</b>利用嵌入向量在预训练过程中呈现的自然「漂移」模式自动确定量化精度分配，无需任何标注数据即可实现混合精度 PTQ。</p>
+    <p><b>为什么值得看：</b>「零数据量化」是模型压缩落地的最后一公里：嵌入模型量化的痛点被一个新的观测角度解决，聊推理优化时展示「问题敏感度」的好素材。</p>
+    <div class="chips"><span class="chip c1">#量化</span><span class="chip c1">#推理优化</span><span class="chip c1">#嵌入模型</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <h2>🎓 本周零基础科普</h2>
+  <div class="paper">
+    <a class="ptitle" href="../../learn/2026-10-11-ai-math-proofs/">AI 是怎么帮数学家找证明的？一文看懂人机协作证明流水线</a>
+    <p><b>一句话：</b>小黑漫画科普：从「猜谜俱乐部」看懂 AI 提出引理，从「接力校对厂」看懂人类组装证明，从「盖章机器」看懂 Lean 形式化验证。</p>
+    <p><b>为什么值得看：</b>看懂本周 OpenAI 数学进展的底层逻辑：AI 提候选、人类组装、机器验证的三步流水线，以及 AI for Science 岗位在做什么。</p>
+    <div class="chips"><span class="chip c1">科普</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="snap">周次: 2026-W42（ISO）
+时间范围: 2026-10-05 ~ 2026-10-11
+精选: 10 条 + 1 篇科普 ｜ 主题: Agent编程与AI数学周
+Top3: OpenAI 官方披露 AI 数学研究进展：11 个正方形最优装箱被 AI 辅助证明 / SPROUT：把 Agentic RL 扩展到「长程软件工程」任务 / Kronecker Product Attention：结构化矩阵分解压缩 KV Cache
+科普: AI 是怎么帮数学家找证明的？一文看懂人机协作证明流水线（learn/2026-10-11-ai-math-proofs/）
+去重: 本期条目均选自本馆对应日期日报池（firstSeen 在窗口内），已入选往期的条目不重复出现
+说明: 本期为缺刊回填周报（原窗口任务未运行，依据 arXiv 与 HN 记录补做后追补归档）</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：arXiv 论文库与 Hacker News 当日记录，链接见各条目；数据以回填检索时为准。本期为缺刊追补。随刊科普配图由小黑（ian-xiaohei-illustrations）演绎。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>

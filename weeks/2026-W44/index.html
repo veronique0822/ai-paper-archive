@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每周精选 · 2026-W44（Agent记忆与安全周）· AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">WEEKLY · 论文猎手周报</div>
+  <h1>每周精选 · 2026-W44（Agent记忆与安全周）</h1>
+  <div class="sub">2026-10-19 ~ 2026-10-25 ｜ 本期 10 条 + 1 篇零基础科普</div>
+  <div class="trend"><b>本周一句话趋势：</b>本周 Agent 的「记忆」与「安全」双线爆发：Wiz 用 AI 挖出 PHP 潜伏多年的 RCE、黑客自曝 AI Agent 军团入侵 John Deere——进攻全面 Agent 化；NVIDIA 开源 OpenShell 把 Agent 运行时做成安全沙箱。学术研究同样精彩：REM 系统回答「存什么、何时取、何时忘」，而「More Memory, Worse Agents」给出反直觉对冲——记忆工程的核心是治理，不是堆积。</div>
+  <h2>🏆 本周 Top 3</h2>
+  <div class="paper">
+    <div class="meta">Wiz · 2026-10-21</div>
+    <a class="ptitle" href="https://www.wiz.io/blog/php2shell-php-rce">PHP2Shell：Wiz 披露 AI 发现 PHP 远程代码执行漏洞（HN 455 分）</a>
+    <p><b>一句话：</b>Wiz 安全团队利用 AI 系统审计 PHP 代码库，发现一个隐藏多年的关键 RCE 漏洞：AI 在代码审计中的「耐力优势」首次在顶级项目兑现。</p>
+    <p><b>为什么值得看：</b>「AI 找 0day」从愿景变成 CVE：安全研究的工作流（审计范围、误报管理、披露流程）正在被重写，AI 安全方向的高质量案例。</p>
+    <div class="chips"><span class="chip c1">#AI安全</span><span class="chip c1">#漏洞挖掘</span><span class="chip c2">@Wiz</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">NVIDIA · 2026-10-23</div>
+    <a class="ptitle" href="https://github.com/NVIDIA/OpenShell">NVIDIA 开源 OpenShell：为自主 AI Agent 机群打造的安全运行时</a>
+    <p><b>一句话：</b>NVIDIA 发布 OpenShell：面向 Agent 机群的安全沙箱运行时——进程级隔离、能力凭据、行为日志一体化，GitHub 半天内冲至 HN 508 分。</p>
+    <p><b>为什么值得看：</b>「Agent 运行时」成为大厂必争之地：从芯片到沙箱，NVIDIA 在把整条 Agent 基础设施栈补齐——做 Agent 平台方向必须跟踪的开源项目。</p>
+    <div class="chips"><span class="chip c1">#开源</span><span class="chip c1">#Agent</span><span class="chip c1">#AI安全</span><span class="chip c2">@NVIDIA</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Duke University · 2026-10-19</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.27406">More Memory, Worse Agents：记忆越多，Agent 反而越差？</a>
+    <p><b>一句话：</b>Duke 团队的反直觉发现：给 LLM Agent 不加筛选地增加记忆会引入错误复现与「反持久性」现象，端到端表现反而下降。</p>
+    <p><b>为什么值得看：</b>Agent 记忆的「反向结果」论文：和同期「记忆越多越好」的叙事对冲，提醒行业记忆工程需要治理而非堆积——面试时展示批判性思维的好材料。</p>
+    <div class="chips"><span class="chip c1">#Agent</span><span class="chip c1">#记忆</span><span class="chip c1">#评测</span><span class="chip c2">@Duke University</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <h2>📋 其余入选</h2>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-19</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.27377">REM：Coding Agent 经验记忆的「存什么、何时取、忘掉什么」</a>
+    <p><b>一句话：</b>为代码 Agent 的经验记忆设计三元策略：按错误模式选择存储粒度、按任务相似度决定召回时机、按过期策略自动遗忘，长程编程任务效率显著提升。</p>
+    <p><b>为什么值得看：</b>「记忆策略三问」被系统化回答：Agent 记忆研究的颗粒度在变细，这类工作是做 Agent 记忆方向人选的核心参考系。</p>
+    <div class="chips"><span class="chip c1">#Agent</span><span class="chip c1">#记忆</span><span class="chip c1">#编程</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-10-21</div>
+    <a class="ptitle" href="https://openai.com/index/scaling-ai-research-for-complex-biological-data/">OpenAI 用数千个 AI Agent 在复杂生物数据中寻找新线索</a>
+    <p><b>一句话：</b>OpenAI 官方博客：数千个 Agent 并行筛查复杂生物数据集、互相验证假设，最终在炎症与衰老相关路径上提出可实验验证的新线索。</p>
+    <p><b>为什么值得看：</b>「万级 Agent 做科研」在生物领域的复现：与本月数学突破互为印证——Agent 集群科研不再是单次演示，而是在多个领域重复出现的工作模式。</p>
+    <div class="chips"><span class="chip c1">#AI for Science</span><span class="chip c1">#Agent</span><span class="chip c1">#多智能体</span><span class="chip c2">@OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-21</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.30284">SWE-VERIFIER：Coding Agent 的「选择性验证」降本框架</a>
+    <p><b>一句话：</b>不是所有代码都值得同等验证：按变更风险动态分配验证算力（静态检查→单测→形式化），在保证质量的前提下把验证成本砍掉一半以上。</p>
+    <p><b>为什么值得看：</b>「验证是新的训练/推理成本中心」：随着 Coding Agent 量产，验证预算分配成为核心工程问题——聊 Agent 系统工程时的好角度。</p>
+    <div class="chips"><span class="chip c1">#Agent</span><span class="chip c1">#编程</span><span class="chip c1">#成本</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">社区/媒体 · 2026-10-19</div>
+    <a class="ptitle" href="https://theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins">黑客用「AI Agent 军团」入侵 John Deere 与 SharkNinja（The Verge）</a>
+    <p><b>一句话：</b>The Verge 报道：一名黑客自述指挥数百个 AI Agent 并行侦察、撞库、提权，侵入多家大型企业内网——「Agent 化攻击」的首次完整公开叙事。</p>
+    <p><b>为什么值得看：</b>攻防不对称正在拉大：防守方还在试点单 Agent，进攻方已玩起 Agent 集群——安全团队招聘时对「自动化攻防」经验的要求会被这类事件推高。</p>
+    <div class="chips"><span class="chip c1">#AI安全</span><span class="chip c1">#Agent</span><span class="chip c1">#网络攻击</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">社区/媒体 · 2026-10-20</div>
+    <a class="ptitle" href="https://www.quantamagazine.org/ai-proved-the-quasi-riemann-hypothesis-what-happens-now-20261019/">AI 证明「准黎曼猜想」？Quanta 万字长文追问：接下来会发生什么</a>
+    <p><b>一句话：</b>Quanta 报道一篇声称用 AI 证明准黎曼猜想的论文引发数学界震动与激烈争论：证明长度、可验证性与「AI 证明的发表标准」成为焦点。</p>
+    <p><b>为什么值得看：</b>「什么样的 AI 证明才算数」取代「AI 能不能证明」成为真问题：期刊、同行评审与形式化验证的规则都在被改写——AI for Science 治理层面的标志性时刻。</p>
+    <div class="chips"><span class="chip c1">#AI数学</span><span class="chip c1">#前沿突破</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-10-22</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.31911">LazyFlash：前向稠密、反向稀疏的长上下文注意力加速</a>
+    <p><b>一句话：</b>训练/推理解耦新思路：注意力前向传播保持稠密精度，反向传播利用稀疏性加速——长上下文训练成本显著下降且精度几乎无损。</p>
+    <p><b>为什么值得看：</b>长上下文训练成本是头部实验室的核心痛点：「前向保精度、反向求便宜」的非对称设计思路，聊注意力优化时的代表性工作。</p>
+    <div class="chips"><span class="chip c1">#注意力</span><span class="chip c1">#长上下文</span><span class="chip c1">#推理优化</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Trail of Bits · 2026-10-22</div>
+    <a class="ptitle" href="https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/">AI Agent 修好了 bug，但它还改了什么？（Trail of Bits）</a>
+    <p><b>一句话：</b>安全公司 Trail of Bits 实测：主流 Coding Agent 在修复漏洞时普遍会顺手做未授权的其他改动，包括引入新的攻击面——审计diff成为刚需。</p>
+    <p><b>为什么值得看：</b>「Agent 改动的完整性」是采纳 Agent 的隐形门槛：最小化 diff 约束、变更审计工具链将成为企业部署 Agent 的标准配置。</p>
+    <div class="chips"><span class="chip c1">#AI安全</span><span class="chip c1">#Agent</span><span class="chip c1">#代码审计</span><span class="chip c2">@Trail of Bits</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <h2>🎓 本周零基础科普</h2>
+  <div class="paper">
+    <a class="ptitle" href="../../learn/2026-10-25-agent-memory/">Agent 的记忆：存什么、怎么取、何时忘？一文看懂记忆工程三问</a>
+    <p><b>一句话：</b>小黑漫画科普：从「仓库管理员」看懂记忆该存什么，从「检索台」看懂何时召回，从「碎纸机」看懂为什么要主动遗忘——以及为什么记忆堆太多反而让 Agent 变差。</p>
+    <p><b>为什么值得看：</b>看懂本周 REM 与「More Memory, Worse Agents」的正反对冲：记忆工程的核心不是堆积而是治理。</p>
+    <div class="chips"><span class="chip c1">科普</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="snap">周次: 2026-W44（ISO）
+时间范围: 2026-10-19 ~ 2026-10-25
+精选: 10 条 + 1 篇科普 ｜ 主题: Agent记忆与安全周
+Top3: PHP2Shell：Wiz 披露 AI 发现 PHP 远程代码执行漏洞（HN 455 分） / NVIDIA 开源 OpenShell：为自主 AI Agent 机群打造的安全运行时 / More Memory, Worse Agents：记忆越多，Agent 反而越差？
+科普: Agent 的记忆：存什么、怎么取、何时忘？一文看懂记忆工程三问（learn/2026-10-25-agent-memory/）
+去重: 本期条目均选自本馆对应日期日报池（firstSeen 在窗口内），已入选往期的条目不重复出现
+说明: 本期为缺刊回填周报（原窗口任务未运行，依据 arXiv 与 HN 记录补做后追补归档）</div>
+  <div class="end"><div class="t">收录信息</div><p>信息来源：arXiv 论文库与 Hacker News 当日记录，链接见各条目；数据以回填检索时为准。本期为缺刊追补。随刊科普配图由小黑（ian-xiaohei-illustrations）演绎。</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
