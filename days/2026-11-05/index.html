@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-05 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-05</h1>
+  <div class="sub">2026-11-05 发布 ｜ 本期 7 条 ｜ 3 篇论文、4 条行业资讯</div>
+  <div class="trend"><div>🔓 今日主线一：<b>开源阵营双响炮</b>——腾讯混元 Hy4 正式版发布（770B、首次视觉理解 + Computer Use、价格不变、权重近期开源），Anthropic 则开源了方向完全不同的 FlashProve：用零知识证明给大模型推理办「防伪身份证」，你调的模型是不是你付费的那个，第一次可以被数学验证。</div><div>🧭 今日主线二：<b>世界模型的「冷水与热水」</b>——百度 Apollo World 把世界模型变成无人驾驶的「考官」（日行十万公里虚拟路测），普林斯顿 SSoN 基准却测出模型连静态跨视角理解都没过关（人类 83.3% vs 最强 VLM 39.7%）。热潮与短板同框，才是真实的行业进度条。</div><div>🍎 落地侧：<b>国行 Apple 智能终于来了</b>——Siri 正式接入阿里千问，12 月随 iOS 27.3 推送，国产大模型拿到迄今最大的消费级分发入口。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">腾讯 · 2026-11-04</div>
+    <a class="ptitle" href="https://www.cnr.cn/tech/techgd/20261104/t20261104_527862108.shtml">腾讯混元 Hy4 正式版发布：770B 首次引入视觉理解与电脑操作，能力升级价格不变</a>
+    <p><b>一句话：</b>770B 总参、49B 激活的 MoE 模型，1M 上下文；相比 8 月的 Hy4 preview 显著扩展预训练与后训练规模，首次引入视觉理解、首次支持 Computer Use（结合命令行与图形界面干活），并针对 Blender、CAD 等专业软件做专项训练；API 价格不变（输入 6 元/百万 token），权重将于近期开源，极致性价比的 Hy4 Flash 也在路上。</p>
+    <p><b>为什么值得看：</b>国产旗舰更新空档期的第一张新牌：能力涨、价格不动，腾讯还罕见承认「与顶尖闭源仍有较大差距」——开源第一梯队的竞争已从刷榜转向真实生产力任务与成本。做模型选型、推理成本工程的人，选型清单该更新了。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">多模态</span><span class="chip c1">Computer Use</span><span class="chip c1">开源</span><span class="chip c2">腾讯</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-11-03</div>
+    <a class="ptitle" href="https://www.anthropic.com/research/provable-inference">Anthropic 开源 FlashProve：给大模型推理办一张「防伪身份证」</a>
+    <p><b>一句话：</b>基于 zkSNARK 零知识证明的「可证明推理」系统：不公开模型权重，就能证明某个回答确实由指定模型生成。已在 4000 亿参数的 Llama 4 Maverick 上实测：单张 H100 约 110 token/s 生成证明、每 1024 token 证明约 19MB，纯 CPU 约 17 秒即可验证；证明生成器、C++ 验证器与 Lean 形式化证明全部以 Apache 2.0 开源。</p>
+    <p><b>为什么值得看：</b>第一次把「你调用的模型真是你付费的那个吗」从信任问题变成可验证的数学问题——API 中转站偷换便宜模型、评测跑分临时换强模型，都能被证伪。注意它证明的是「来源」而非「内容正确」，但对 AI 审计、合规与模型采购，这是基础设施级的一步。</p>
+    <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">可验证推理</span><span class="chip c1">零知识证明</span><span class="chip c1">开源</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">普林斯顿 AI Lab · 2026-11-04</div>
+    <a class="ptitle" href="https://m.36kr.com/p/4054651667813510">普林斯顿 SSoN 空间智能大考：人类 83.3%，最强 VLM 仅 39.7%</a>
+    <p><b>一句话：</b>1000 道跨视角空间推理题：给你同一场景的多角度照片，找出「被动过手脚」的那张。人类准确率 83.3%，六个受测 VLM 中 GPT-6 Astra Pro 最高仅 39.7%，其余五个全部低于四选一随机基线；换 17 个 CLIP/ViT/DINOv2 视觉编码器做「找不同」也全部低于随机；且模型答对的题中 29.5% 推理依据不成立。</p>
+    <p><b>为什么值得看：</b>世界模型大热（Genie 4、Apollo World）的同一周，这个基准冷静指出：模型连静态跨视角理解都没过关——「看出不一样」不等于「理解空间关系」。好消息是可训练：带推理依据微调后准确率近乎翻倍。聊空间智能/具身方向候选人时，83.3% vs 39.7% 是最好的开场问题。</p>
+    <div class="chips"><span class="chip c1">基准测试</span><span class="chip c1">空间智能</span><span class="chip c1">多模态</span><span class="chip c1">世界模型</span><span class="chip c2">普林斯顿大学</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">复旦大学、港中文 MMLab、上海交大 · 2026-10-13</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.18484">ReTerm：让 Code Agent 从自己的失败现场学恢复，9B 模型 Terminal-Bench 提升 14.6 分</a>
+    <p><b>一句话：</b>失败驱动的递归自我改进（RSI）：先让教师模型在基础模型自己的失败现场示范如何恢复，构建 ReTerm-10K 数据集冷启动；再用 ReTerm-GRPO 从失败状态分叉出多种恢复尝试、按任务验证器结果更新参数。ReTerm-9B 在 Terminal-Bench 2.0 达 34.8%（+14.6）、SWE-bench Verified +13.2，并泛化到 AIME 2025 数学（73.3%→93.3%）；代码、数据、模型全公开。</p>
+    <p><b>为什么值得看：</b>把「失败」从执行终点变成训练燃料，是 RSI 从概念走向可复现工程的一步：模型变了，它制造的失败也跟着变，新失败继续成为下一轮教材——这个闭环以前只在概念里，现在有了 9B 可复现版本，做 Agent 后训练的团队可直接抄作业。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">强化学习</span><span class="chip c1">递归自我改进</span><span class="chip c1">编程</span><span class="chip c2">复旦大学</span><span class="chip c2">港中文MMLab</span><span class="chip c2">上海交通大学</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">NVIDIA、UT-Austin · 2026-10-22</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.22155">Realtime-Bench：实时交互任务难倒前沿模型，最佳成功率仅 44%</a>
+    <p><b>一句话：</b>用三种「时钟」测试时间压力下的行动能力：Wall Clock（环境按真实推理延迟推进）下最佳成功率仅 44%（GPT-6 Astra）、最佳 Pass^3 仅 36%；Paused Clock 消除延迟作理想参照，Token Clock 按生成 token 数推进时间、专测时间感知。一个反直觉发现：更高的推理努力在时间压力下效果不一，甚至反转——想得更久，反而误事。</p>
+    <p><b>为什么值得看：</b>把「实时交互」从聊天流畅度问题重新定义为「延迟即失败」的行动问题：语音 Agent、座舱、游戏 NPC、实时交易这些场景终于有了可量化的基准。「决策质量 vs 及时执行」的权衡，会成为实时 Agent 系统设计的新课题。</p>
+    <div class="chips"><span class="chip c1">基准测试</span><span class="chip c1">实时交互</span><span class="chip c1">Agent</span><span class="chip c1">多模态</span><span class="chip c2">NVIDIA</span><span class="chip c2">UT-Austin</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">百度 · 2026-11-03</div>
+    <a class="ptitle" href="http://www.news.cn/tech/20261104/38e7bae3b4094da796b3f51e2252cefe/c.html">百度首次披露 Apollo World：智能体驱动的全模态世界模型，「日行十万公里」虚拟路测</a>
+    <p><b>一句话：</b>百度 AI Day·Apollo 专场首次披露面向物理 AI 的世界模型 Apollo World：虚拟城市里的车辆、行人全部被建模为会决策、会互动的 AI 智能体，无人车减速变道都会引发连锁反应；支持任意起终点连续通行，已用于萝卜快跑全球化测试，一天虚拟路测约等于真实测试车跑三年；并提出世界模型「2+3」标准（因果性、交互性两条门槛 + 物理准确性、持久性、实时性三项指标）。</p>
+    <p><b>为什么值得看：</b>世界模型从「生成好看视频的画师」转向「给无人驾驶当考官」——百度明确说重点不是画质，而是能否忠实还原物理规律与行为因果。继本周 Genie 4 之后，世界模型落地又添一重磅信号，技术栈还计划拓展到机器人。</p>
+    <div class="chips"><span class="chip c1">世界模型</span><span class="chip c1">自动驾驶</span><span class="chip c1">具身智能</span><span class="chip c2">百度</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Apple、阿里 · 2026-11-04</div>
+    <a class="ptitle" href="https://www.ithome.com/1/020/389.htm">苹果智能国行 Beta 上线：Siri 正式接入阿里千问</a>
+    <p><b>一句话：</b>Apple 智能首批功能随 iOS 开发者 Beta 版在中国开放测试：Siri、写作工具、视觉智能可直接调用千问，相机对准物体可「询问千问」，「千问创作」可从零生成文本与图像；采用 Opt-in 授权、发送前逐次征得同意，阿里承诺不将用户请求用于训练；12 月随 iOS 27.3 正式推送，首批限 iPhone 15 Pro 及更新机型。</p>
+    <p><b>为什么值得看：</b>跳票两年的国行 Apple 智能终于落地，「端侧归苹果、云端归阿里」的竞合样本正式跑通——这是国产大模型迄今最大规模的消费级分发入口。端云协同、隐私合规工程方向的人才需求，会跟着这个口子起来。</p>
+    <div class="chips"><span class="chip c1">端侧AI</span><span class="chip c1">消费电子</span><span class="chip c1">大模型落地</span><span class="chip c2">Apple</span><span class="chip c2">阿里</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>【晨检快照】日期: 2026-11-05 ｜ 时间窗口: 2026-11-04 08:00 ~ 2026-11-05 08:00 ｜ 候选约 12 条，入选 7 条（腾讯 Hy4 / FlashProve / SSoN / ReTerm / Realtime-Bench / Apollo World / Apple 智能×千问）｜ 跳过：蚂蚁智能体身份注册平台（偏工程通告）、天数智芯端侧算力（缺技术细节）、预训练 RSI「801 教室」（与 ReTerm 主题重叠）等 ｜ 来源：机器之心、央广网、新华社、财新、IT之家、36氪、arXiv、Anthropic 官方博客（双源交叉验证）</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
