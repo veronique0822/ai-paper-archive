@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-06 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-06</h1>
+  <div class="sub">2026-11-06 发布 ｜ 本期 5 条 ｜ 1 篇论文、4 条行业资讯</div>
+  <div class="trend"><div>🤝 今日主线：<b>AI 大厂围猎 Git 工作流</b>——OpenAI 官宣收购 Pierre（代码托管底座 Code Storage 并入 Codex），Meta 同日收购并行编程神器 Conductor（全员进 MSL）。一个买「存储」，一个买「协作界面」：编程 Agent 的竞争正式从模型层打到工作流层，微软 GitHub 的后院起火。</div><div>🤖 具身侧：<b>世界模型卷进机器人操作</b>——清华 00 后博士的 LiberAI 发布世界动作模型 Liber-0，220 万小时人类经验预训练，600 次真机零样本测试成功率 36% 远超 GPT-6 Astra，「用人类经验替代真机数据」的路线第一次有了硬核验证。</div><div>💰 资本侧：<b>Sand.ai 十个月融 3 亿美元</b>跻身独角兽，资本押注的是开源视频模型的推理成本战（10 秒 1080P 约 0.5 元），不是画质竞赛。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-11-05</div>
+    <a class="ptitle" href="https://openai.com/index/openai-to-acquire-pierre/">OpenAI 官宣收购 Pierre：Codex 要吞掉 Git 工作流，正面对上微软 GitHub</a>
+    <p><b>一句话：</b>OpenAI 宣布收购开发者工具公司 Pierre Computer（Bootstrap 联合作者 Jacob Thornton 创办）：其代码托管产品 Code Storage 专为 AI Agent 高并发读写设计（Lovable 每周靠它新建超 800 万个 Git 仓库），开源库 Trees/Diffs 已在 Codex 中使用；叠加两天前自研 Git 后端 Pando（推送提速近 5 倍、日传近 1PB），OpenAI 正式杀入大股东微软旗下 GitHub 的后院。Pierre 的开源项目将继续保持开源。</p>
+    <p><b>为什么值得看：</b>Agent 并行写代码先把 OpenAI 自家 Git 冲到可靠性跌破 90%，逼出 Pando、再逼出收购——「代码托管为机器而重构」从内部自救变成对外战略。Cursor 的 Origin、Anthropic 的 Scion、前 GitHub CEO 的新公司同时在围猎同一块地，开发者基础设施的格局要重排了。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">编程</span><span class="chip c1">并购</span><span class="chip c1">AI基础设施</span><span class="chip c2">OpenAI</span><span class="chip c2">微软</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Meta · 2026-11-05</div>
+    <a class="ptitle" href="https://www.aibase.com/zh/news/32096">Meta 同日收购并行编程神器 Conductor，全员并入超级智能实验室</a>
+    <p><b>一句话：</b>Meta 确认收购 AI 编码初创 Conductor：可把多个智能体部署到并行工作区协同推进软件项目，平台上跑的是 Anthropic、OpenAI 等实验室的模型而非自研；创始人 Charlie Holtz 带队加入 Meta 超级智能实验室（MSL），将与首席 AI 官 Alexandr Wang、产品负责人 Nat Friedman 打造「下一代交互界面」，云服务 11 月 20 日关闭。</p>
+    <p><b>为什么值得看：</b>与 OpenAI 收购 Pierre 同一天官宣，不是巧合是信号：两大厂同日分别买下 Agent 编程的「存储底座」与「并行协作界面」——编程 Agent 的竞争从模型层打到工作流层，编排与协作工具成了最抢手的并购标的。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">编程</span><span class="chip c1">并购</span><span class="chip c1">多智能体</span><span class="chip c2">Meta</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">LiberAI、清华大学 · 2026-11-04</div>
+    <a class="ptitle" href="https://www.donews.com/news/detail/1/6764869.html">清华 00 后博士创企 LiberAI 发布世界动作模型 Liber-0：220 万小时人类经验预训练，真机零样本远超 GPT-6 Astra</a>
+    <p><b>一句话：</b>LiberAI（创始人刘松铭，清华 00 后博士、师从朱军）发布世界动作模型 Liber-0：用超 220 万小时人类视频 + 自研 LiberSense Glove 数据手套的人手动作数据预训练，把人类操作经验迁移到机器人；在 GPT-6 随机生成的 60 项任务、600 次真机零样本测试中总体成功率 36%，显著超过 GPT-6 Astra，且真机数据减少 75% 仍优于全量真机数据训练。</p>
+    <p><b>为什么值得看：</b>世界模型的战火从视频生成、自动驾驶烧到机器人操作：用「人类经验」替代稀缺真机数据是具身智能最关键的降本路径，600 次真机零样本的验证方式也比 demo 视频硬核得多——聊具身/世界模型方向候选人时的最新谈资。</p>
+    <div class="chips"><span class="chip c1">世界模型</span><span class="chip c1">具身智能</span><span class="chip c1">机器人</span><span class="chip c2">LiberAI</span><span class="chip c2">清华大学</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">香港大学 · 2026-05-10（NeurIPS 2026）</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2605.09640">NeurIPS 2026｜港大 RaPO：打破「RFT 天然免疫遗忘」共识，用 Retention Reward 治好 MLLM 灾难性遗忘</a>
+    <p><b>一句话：</b>港大提出 Retention-aware Policy Optimization：Retention Reward 把轨迹级分布漂移转成连续奖励信号，在同组 rollout 中优先强化「不忘旧知识」的轨迹；Cross-Task Advantage Normalization 跨任务维持奖励统计的指数滑动平均以稳定优化。五个视觉持续学习设定上显著降低遗忘且保持可塑性，即插即用接入 PPO/GRPO，代码已开源。</p>
+    <p><b>为什么值得看：</b>第一次系统性地把强化微调放进持续学习场景做压力测试，并推翻「RFT 不会遗忘」的流行假设——问题被精确定位到「轨迹级漂移不可知」。做 MLLM 后训练、终身学习与具身系统持续进化的团队可直接复用这套奖励设计。</p>
+    <div class="chips"><span class="chip c1">强化学习</span><span class="chip c1">多模态</span><span class="chip c1">持续学习</span><span class="chip c1">NeurIPS</span><span class="chip c2">香港大学</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Sand.ai · 2026-11-05</div>
+    <a class="ptitle" href="https://www.jiemian.com/article/15296685.html">Sand.ai 完成 2 亿美元 A+ 轮：10 个月融 3 亿美元跻身独角兽，MAGI-2 正式版将至</a>
+    <p><b>一句话：</b>视频生成公司 Sand.ai（三呆科技，创始人曹越为 Swin Transformer 作者之一）完成 2 亿美元 A+ 轮，基石资本与网宿科技联合领投，上海国资等参投；10 个月累计融资 3 亿美元。8 月已开源 114B MoE 视频模型 MAGI-2 Preview（蒸馏后 10 秒 1080P 生成成本约 0.5 元），MAGI-2 正式版近期发布，创作者产品 VidMuse 上线两月 ARR 破千万美元。</p>
+    <p><b>为什么值得看：</b>下半年少见的大额融资落在「开源视频模型」路线：0.5 元一条 10 秒 1080P 的成本曲线，加上网宿的边缘算力渠道，说明资本在押注视频生成的「推理成本战」而非单纯画质竞赛——视频生成赛道的估值锚点又抬高了一格。</p>
+    <div class="chips"><span class="chip c1">融资</span><span class="chip c1">视频生成</span><span class="chip c1">开源</span><span class="chip c1">MoE</span><span class="chip c2">Sand.ai</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>【晨检快照】日期: 2026-11-06 ｜ 时间窗口: 2026-11-05 08:00 ~ 2026-11-06 08:00 ｜ 候选约 9 条，入选 5 条（OpenAI×Pierre / Meta×Conductor / Liber-0 / RaPO / Sand.ai）｜ 跳过：Kimi K3.1 Pro 权重开放（11-04 日报已收录，按 url/事件去重）、RTX 30 系 BF16 内核解锁（非官方补丁，风险存疑）、美团 LongCat-2.5（11-02 发布，超出 24h 窗口）等 ｜ 来源：OpenAI 官方博客、Axios/TechCrunch、DoNews、arXiv、机器之心、界面新闻、IT之家（多源交叉验证）</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
