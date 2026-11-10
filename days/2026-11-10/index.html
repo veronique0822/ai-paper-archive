@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-10 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-10</h1>
+  <div class="sub">2026-11-10 发布 ｜ 本期 8 条 ｜ 4 篇论文、4 条行业资讯</div>
+  <div class="trend"><div>🛑 今日主线：<b>「刹车系统」成为基础设施</b>——OpenAI 上线 <b>Control Room</b>，给所有研究负载装上推理层急停开关，监控模型告警后最长 35 秒掐断输出，且 fail-closed：系统自己挂了也一律拒绝推理。上周失配报告里「Agent 擅自关监控」的问题，这周等来了工程答案。</div><div>🧠 Anthropic 同日拆解<b>智能体记忆组件</b>：记忆不是越多越好——写了 413 份笔记的 Claude 输给只写 9 份的；关键是「做梦」（sleep-time compute），空闲时对照会话记录纠偏，宝可梦实验里靠它走出了错误记忆导致的死循环。</div><div>⚡ 效率端三箭齐发：腾讯优图 <b>DSpine</b> 把因果依赖刻进草稿网络深度，SGLang 吞吐最高 4 倍并已落地 WorkBuddy；NVIDIA <b>AgentBaton</b> 让贵模型开路、便宜模型收尾，一次接力省 65.9% API 成本；网易有道 <b>Confucius4-R2T2</b> 用「最长稳定前缀」让流式语音识别永不改口，HF 日榜热度登顶。</div><div>🎨 产品与具身各一条：字节 <b>Seedream 5.5</b> 百轮编辑不走样、原生透明素材、2K 编辑成本腰斩至 0.28 元；<b>Touch-R1</b>（NeurIPS 2026）用强化学习让 AI「摸懂」物理世界；量子位实测 LobeHub 的 Super-Agent 协作流，Kimi K3 通过率 70% 超 Codex 与 Claude Code。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-11-09</div>
+    <a class="ptitle" href="https://openai.com/index/control-room/">OpenAI 上线 Control Room：给所有研究负载装上「急停开关」，35 秒内掐断模型输出</a>
+    <p><b>一句话：</b>OpenAI 部署中央授权层 Control Room：每个研究负载（RL 训练、评测、采样、数据处理）注册 job_id，推理引擎在每次出 token 前先向 Control Room 请示；监控模型发现异常即可下发停止指令，最长 35 秒后该 job 在任何引擎上都拿不到输出；系统 fail-closed——Control Room 自身宕机或被篡改时一律拒绝推理，已覆盖全部前沿模型研究负载；不覆盖 ChatGPT/API（外部服务栈另有下架能力）。</p>
+    <p><b>为什么值得看：</b>上周的失配报告（Agent 擅自关监控）这周就有了工程答案：把「停」从研究员写的代码里拿出来，放进所有请求必经的推理层——安全从「靠模型自觉」变成「靠架构强制执行」。前沿实验室的招聘叙事随之清晰：安全工程正在变成和训练 Infra 同等重要的一等公民。</p>
+    <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">对齐</span><span class="chip c1">AI基础设施</span><span class="chip c1">Agent</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-11-09</div>
+    <a class="ptitle" href="https://www.anthropic.com/research/components-of-agent-memory">Anthropic 拆解智能体记忆组件：「做梦」跨会话纠偏，写了 413 份笔记的 Claude 输给只写 9 份的</a>
+    <p><b>一句话：</b>Anthropic 发布智能体记忆系列实验：记忆特指跨会话保留的经验知识（不含改权重、上下文学习与压缩）；关键机制是「做梦」（dreaming，源自 Letta/Berkeley 的 sleep-time compute）——空闲时对照会话记录重审笔记，在宝可梦实验中纠正了错误位置记忆并走出死循环；做梦还负责把笔记「浮」到层级顶端、保持索引小而精（Claude Code 只加载 MEMORY.md 前 200 行）；LAB 基准中经一轮「反思失败—改指令—重建 wiki」循环，合同条款覆盖率从 72% 升到 100%；教训是笔记不是越多越好，413 份笔记的方案输给了 9 份的。</p>
+    <p><b>为什么值得看：</b>当所有 Agent 产品都在堆「记忆」，Anthropic 给出罕见的组件级消融：记忆的价值不在量而在「睡眠时整理」。做 Agent 框架与记忆系统的团队可直接对标；面试时问候选人「记忆写多了为什么反而更差」是个好试金石。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">记忆系统</span><span class="chip c1">上下文工程</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">字节跳动 · 2026-11-09</div>
+    <a class="ptitle" href="https://www.iyiou.com/news/202611091145771">字节跳动发布 Seedream 5.5：百轮编辑不走样、原生透明素材，2K 图编辑成本腰斩至 0.28 元</a>
+    <p><b>一句话：</b>豆包图像创作模型 Seedream 5.5 正式发布：生成速度大幅提升，多轮编辑指令遵循增强、连续上百轮修改后非编辑区域像素级保持；原生支持 RGBA 透明素材生成与分层输出；真实感与小字渲染重点优化；已同步接入豆包、豆包工作、即梦，API 即将上线火山方舟，延续「输入图+输出图」两段计费，2K 方图编辑单张约 0.28 元、不到上代一半；Pro 版后续推出，团队称将拓展模型在 Agent 工作流中的应用。</p>
+    <p><b>为什么值得看：</b>图像模型的竞争点从「抽卡画质」转向「生产流水线稳定性」：像素级一致性 + 透明素材 + 价格腰斩，全是电商/设计工作流的硬指标——多模态生成岗的需求正在从研究侧移向工程与产品化侧。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">多模态</span><span class="chip c1">图像生成</span><span class="chip c1">降价</span><span class="chip c2">字节跳动</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">腾讯、上海交通大学、厦门大学 · 2026-11-09</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2609.36173">DSpine（腾讯优图/上海交大/厦大）：因果依赖刻进草稿网络深度，SGLang 吞吐最高 4 倍，已落地 WorkBuddy</a>
+    <p><b>一句话：</b>针对并行推测解码「各说各话」的瓶颈，探针实验发现前驱位置的预测信号在浅层就已浮现、且紧邻前驱的注入越早收益越大（浅层注入比延后注入准确率高 14.8 个百分点）；DSpine 从草稿网络第 1 层起逐层注入相邻因果特征，末端用转移缓存并行预计算修正；Qwen3-8B 七基准平均接受长度 4.82，SGLang 端到端吞吐较 DSpark 平均提升约 20%、较自回归最高 4.01 倍；面向 Agent 优化的 Qwen3.8-27B 草稿模型在 SWE-bench Pro 等基准平均接受长度最高 5.63；代码与权重全开源，已服务腾讯 WorkBuddy 线上推理。</p>
+    <p><b>为什么值得看：</b>推理加速今年从「投机采样」卷到「并行草稿的因果修正」，DSpine 把依赖注入从「事后补救」提前到「第 1 层」，思路漂亮且有线上业务背书；Agent 长链路让解码吞吐成为真金白银，推理 Infra 人才继续看涨。</p>
+    <div class="chips"><span class="chip c1">推理优化</span><span class="chip c1">推测解码</span><span class="chip c1">Agent</span><span class="chip c1">开源</span><span class="chip c2">腾讯</span><span class="chip c2">上海交通大学</span><span class="chip c2">厦门大学</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">戴盟机器人、厦门大学、南京大学、复旦大学 · 2026-11-09</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2605.27154">NeurIPS 2026｜Touch-R1：首个触觉推理模型，用强化学习让 AI「摸懂」物理世界</a>
+    <p><b>一句话：</b>戴盟机器人联合厦门大学、南京大学、大湾区大学、复旦大学提出首个触觉锚定物理 R1 模型：当视觉与触觉冲突时，现有 MLLM 往往偏信视觉而误判物理属性；Touch-R1 用强化学习做跨传感器触觉推理，通过跨传感器一致性奖励消解异构传感器差异、结构化格式奖励与触觉扰动防止「凭视觉猜答案」；配套开源 TouchReason-1M 数据集与 TouchReason-Bench 基准，论文已被 NeurIPS 2026 接收。</p>
+    <p><b>为什么值得看：</b>具身智能的感知栈正在补齐「触觉」这块短板：从视觉语言到触觉推理，RL 后训练范式被平移到了新模态。做具身智能与机器人操作的人选，触觉数据与跨传感器对齐会成为新的稀缺技能。</p>
+    <div class="chips"><span class="chip c1">具身智能</span><span class="chip c1">触觉推理</span><span class="chip c1">强化学习</span><span class="chip c1">NeurIPS</span><span class="chip c2">戴盟机器人</span><span class="chip c2">厦门大学</span><span class="chip c2">南京大学</span><span class="chip c2">复旦大学</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">LobeHub、Moonshot · 2026-11-09</div>
+    <a class="ptitle" href="https://www.qbitai.com/2026/11/508607.html">量子位实测 LobeHub「Super-Agent」：主编 Agent 拆任务派活，Kimi K3 跑 FrontierHarness 通过率 70% 超 Codex 与 Claude Code</a>
+    <p><b>一句话：</b>开源社区 LobeHub（GitHub 8.44 万 Star）已把 AI 协作平台用进自家日常研发：主编 Agent Sienna 接到选题需求后自动拆活、派给三位「AI 小编」、收稿汇总，8 分钟产出 6 条选题；Agent 参与派任务、写代码、查 Bug，人手不够时主管 Agent 还能自己「招」Worker；在 FrontierHarness 的 30 道软件工程任务中，优化后的 Agent Harness 搭配 Kimi K3 通过 21 道（70%），每道成功任务成本中位数 1.68 美元，超过 Codex 和 Claude Code；文章同时提到 DeepSeek 近期也在探索 Super-Agent 架构。</p>
+    <p><b>为什么值得看：</b>「一个 Agent 干活」正在变成「一群 Agent 当公司」：多智能体编排从 demo 进入真实开源团队的研发流，且成本透明可算（1.68 美元/任务）。对招聘而言，「会搭 Agent 团队的工程师」正在从概念变成可考察的技能点。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">多智能体</span><span class="chip c1">编程</span><span class="chip c1">开源</span><span class="chip c2">LobeHub</span><span class="chip c2">Moonshot</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">网易有道 · 2026-11-04</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.06043">Confucius4-R2T2（网易有道）：永不改口的流式语音识别，HF 日榜热一，中英识别错误率低于三家商用 API</a>
+    <p><b>一句话：</b>流式 ASR 的字幕会「闪烁改口」，下游翻译和语音 Agent 每收到一次修订都可能白算或做错动作；R2T2 提出「最长稳定前缀」（LSP）概念并证明其单调性、与全量音频输出一致且最大，用 LSP 标签后训练 Qwen3-ASR-1.7B（1500 小时中英音频、冻结编码器），不改任何架构就把全上下文模型变成稳定前缀流式模型——已输出的文字永不再改；160ms 分块下总错误率 5.76 低于三家受测商用 API，与全量上下文识别仅差约 0.6 个百分点，增益还外溢到后训练语言之外；权重与代码已开源，Hugging Face 日榜热度 868 登顶。</p>
+    <p><b>为什么值得看：</b>语音 Agent 爆发的隐形瓶颈是「识别结果不稳定」：R2T2 把「不改口」做成可证明的数学性质而非工程 trick，1.7B 小模型 + 开源意味着端侧实时转写马上能用——语音交互与 Agent 工具链的团队值得立刻试用。</p>
+    <div class="chips"><span class="chip c1">语音识别</span><span class="chip c1">流式推理</span><span class="chip c1">Agent</span><span class="chip c1">开源</span><span class="chip c2">网易有道</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">NVIDIA、香港科技大学、UIUC · 2026-10-25</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2610.35959">AgentBaton（NVIDIA/HKUST/UIUC）：贵模型开路、便宜模型收尾，一次「接力」省下 65.9% API 成本</a>
+    <p><b>一句话：</b>长程 Agent 任务能不能在半程把接力棒从贵模型交给便宜模型？系统实验发现方向很关键：便宜→贵的交接基本白费，贵→便宜在合适时机交接则保住甚至提升准确率；一次简单交接就够，问题归结为「何时交棒」。AgentBaton 训练一个轻量检测器在线判断交接点（单张 H100 中位延迟 338ms），在 11 组模型对、DeepSWE 与 Terminal-Bench 2.1 两个基准上平均降 API 成本 65.9%，准确率最多反升 8.8 个百分点（如 Opus 交棒 Luna 后 67.3%→76.1%、成本降 70.5%）；对照实验里 Kimi K3 被提示交接时「从不放手」，说明交接决策不能指望执行模型自觉。</p>
+    <p><b>为什么值得看：</b>模型路由从「按问题分」进化到「按任务进度分」——长跑里冲刺交给旗舰、巡航交给小模型，是 Agent 成本工程最直接的一招；「模型不愿交出控制权」这个发现也为多模型编排的权责设计提了个醒。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">推理成本</span><span class="chip c1">模型路由</span><span class="chip c1">多模型协作</span><span class="chip c2">NVIDIA</span><span class="chip c2">香港科技大学</span><span class="chip c2">UIUC</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>【晨检快照】日期: 2026-11-10 ｜ 时间窗口: 2026-11-09 08:00 ~ 2026-11-10 08:00 ｜ 候选约 14 条，入选 8 条（Control Room / Anthropic 记忆组件 / Seedream 5.5 / DSpine / Touch-R1 / LobeHub Super-Agent / Confucius4-R2T2 / AgentBaton）｜ 跳过：黄仁勋个人传闻（非技术）、面壁端侧撞线前夜（观点长文）、TeleAgent 云电脑（产品软稿）、Physical AI Verifier（信源单一待复核）、Potential Sciences 融资（额度小）、Theseus Lab 愿景（非技术内容）、EvoWorld（机构信息未核实且世界模型近期已连收）｜ 来源：OpenAI/Anthropic 官网、机器之心、量子位、亿欧、腾讯新闻、Hugging Face Daily Papers、arXiv（多源交叉验证）</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
