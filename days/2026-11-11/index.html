@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-11 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-11</h1>
+  <div class="sub">2026-11-11 发布 ｜ 本期 7 条 ｜ 1 篇论文、6 条行业资讯</div>
+  <div class="trend"><div>🧮 今日主线：<b>「让机器检查机器」双响</b>——Google DeepMind 上线 <b>AlphaProof Code</b>，多智能体团队生成 650 万行 Lean 证明，首次把 Signal 协议的安全性质验到机器码级；同一天 Anthropic 披露 <b>Fable 5.2</b> 用约 1000 个 Agent 协作 30 小时完成费马大定理形式化（此前要 11 天）。密码学与数学两座山头，同日被「形式化」插上旗。</div><div>🚀 Anthropic 旗舰换代：<b>Fable 5.2 / Mythos 5.2</b> 提速 30%、降价 20%，千级 Agent 8 天从零造出操作系统，机器人模拟 27.6%→64.9%；但主动把「AI 改进 AI」的能力（芯片内核优化、架构改进）限制在上代水平——IPO 前夜，能力和安全被拆成两个版本卖。</div><div>🖐️ 触觉日：蚂蚁灵波开源 <b>LingBot-Touch</b>，5000 小时真实触觉数据炼出统一触觉 Token，26 项真机测试成功率 +14~26 个百分点；NVIDIA 同日在 CoRL 公布 <b>GR00T 2</b> 全栈开源计划，连触觉数采硬件 DexUMI 都安排上了——具身智能的瓶颈正从「脑」转向「手感」。</div><div>🔁 自我进化进生产：百度首次披露 RSI 框架 <b>ERNIE Evolve</b>，AI 自己改推理代码，已在昆仑芯 P800 上把文心 5.5 Flash 生成速度提至基线 623.6%；<b>WorkflowArena</b> 给多智能体编排开出第一张考卷——最强系统完全解决率仅 36.95%，会做不等于会指挥。</div></div>
+  <h2>本期条目</h2>
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-11-10</div>
+    <a class="ptitle" href="https://www.ifanr.com/1688605">Anthropic 发布 Claude Fable 5.2 / Mythos 5.2：1000 个 Agent 30 小时形式化费马大定理，提速 30% 降价 20%</a>
+    <p><b>一句话：</b>Anthropic 旗舰双模型：同一底层权重，Fable 5.2 全量开放（带网络安全/生物防护），Mythos 5.2 仅向审核机构开放；约 1000 个 Fable 5.2 Agent 协作 30 小时完成费马大定理形式化证明（此前专用工具加人工指导耗时 11 天；同配置 Opus 5.5 仅完成约 27%），证明长度缩至七分之一、操作 token 降至三分之一；FrontierCode 2.0 达 49.1%（Opus 5.5 为 45.5%），机器人模拟从 27.6% 升至 64.9%；还从空文件夹连续 8 天造出可启动操作系统、解决两个黑洞物理开放问题、独立设计三款可正常工作的电子设备；生成提速最高 30%，价格降至每百万 token 8/40 美元（较 5.1 降 20%），Fast Mode 再提速 2.5 倍；发布当日登顶 Artificial Analysis 智能榜；Anthropic 主动把 AI 芯片内核优化与模型架构改进能力限制在 Opus 5.5 水平，以压低 AI 加速研发 AI 的风险。</p>
+    <p><b>为什么值得看：</b>IPO 路演前夜的旗舰发布，直接把「千级 Agent 长程协作」做成可量化演示（30 小时 vs 11 天）；主动限能加分版本开放，是前沿实验室「能力/安全分轨」商业化的最清晰样本——招 Agent 编排、形式化验证、安全工程方向的人都该更新叙事。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">Agent</span><span class="chip c1">多智能体</span><span class="chip c1">形式化验证</span><span class="chip c1">降价</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Google DeepMind · 2026-11-10</div>
+    <a class="ptitle" href="https://deepmind.google/blog/introducing-alphaproof-code/">Google DeepMind AlphaProof Code：AI 首次把 Signal 协议「验明正身」到机器码级，生成 650 万行 Lean 证明</a>
+    <p><b>一句话：</b>多智能体形式化验证框架：人类专家与模型先把 Signal 的安全目标写成 Lean 规范（一种能被计算机逐步核验的数学证明语言）并逐条人工审核，Gemini Carbon 驱动的证明智能体团队生成约 650 万行机器可检验的 Lean 证明，依托约 2.6 万行可信规范与 AArch64 机器码语义；覆盖 Signal 后量子 PQXDH 握手与 Triple Ratchet 协议，证明前向保密、认证、妥协后安全与握手保密性；Lean 内核自动验收证明，人工只需复核约 1% 的代码；这是首次把广泛部署的密码协议的安全证明连接到未经修改的真实实现代码。</p>
+    <p><b>为什么值得看：</b>形式化验证（用数学证明「这段代码绝对没有某类 bug」）历史上贵到只有芯片厂和航天用得起，这次被 AI 拉到真实系统可承受的成本线——与昨天 OpenAI 的 Control Room、上周 Anthropic 的 FlashProve 连成一条线：行业正在给「信任」铺数学与工程地基，形式化方法与安全验证方向的人才需求看涨。</p>
+    <div class="chips"><span class="chip c1">形式化验证</span><span class="chip c1">AI安全</span><span class="chip c1">Agent</span><span class="chip c1">密码学</span><span class="chip c2">Google DeepMind</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">蚂蚁灵波 · 2026-11-10</div>
+    <a class="ptitle" href="http://sh.news.cn/20261110/b0111d7a4db04d9183f02b720f2c94fe/c.html">蚂蚁灵波开源 LingBot-Touch：5000 小时真实触觉数据炼出统一「手感」，拧瓶盖成功率 56%→90%</a>
+    <p><b>一句话：</b>触觉基础模型：基于近 5000 小时真实触觉数据预训练，按磁触觉、视触觉、压阻式三类传感原理分设编码入口，把异构信号映射到统一指尖坐标空间、输出统一触觉 Token，实现跨传感器、跨灵巧手、跨动作模型、跨任务复用；在 Sharpa Wave 与 XHand1 两款灵巧手的 26 项真机测试中，接入后 LingBot-VLA、π0.5、Diffusion Policy、T-Rex 四种动作模型平均任务成功率较无触觉时提高约 14 至 26 个百分点（T-Rex 拧瓶盖从 56.25% 升至 90%）；XHand1 所用传感器型号不在预训练数据中，验证了跨硬件迁移；轻量版 Tiny 仅约 530 万参数、接入仅增加 0.13%-0.16% 参数量；技术报告、模型与代码已在 Hugging Face、GitHub、魔搭开源。</p>
+    <p><b>为什么值得看：</b>昨天刚收 NeurIPS 的 Touch-R1（触觉推理），今天触觉基础模型就开源落地——触觉正在从论文主题变成可下载的基础设施；「不绑定自家动作模型、硬件厂商自由选配」的开放姿态，会明显降低整个具身栈的适配成本。</p>
+    <div class="chips"><span class="chip c1">具身智能</span><span class="chip c1">触觉模型</span><span class="chip c1">开源</span><span class="chip c1">机器人</span><span class="chip c2">蚂蚁灵波</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">百度 · 2026-11-10</div>
+    <a class="ptitle" href="https://www.qbitai.com/2026/11/508694.html">百度首次披露 RSI 进展：ERNIE Evolve 双层循环自我进化，已把文心 5.5 Flash 在昆仑芯 P800 上生成速度提至基线 623.6%</a>
+    <p><b>一句话：</b>ERNIE Evolve 采用双层循环：外层结合历史实验结果提出新研究方向并多线并行，内层针对具体方向改代码、跑评测、沉淀经验；内部由 Director 选方向、Selector 定目标与代码起点、Executor 改代码、Evaluator 独立评测、Reviewer 复核是否偏离目标或存在评测漏洞，双重把关通过的改动才保留；在 NanoChat AutoResearch 与 NanoGPT Speedrun 三项指标上取得公开验证的 SOTA；已用于文心 5.5 Flash 推理优化：昆仑芯 P800 低时延场景约 168 小时、4 轮探索后生成速度达基线 623.6%，确定性推理吞吐 3 天提升至 133.7%（每 token 时间缩短 26%），极致解码累计提升至 114.9% 且精度不变。</p>
+    <p><b>为什么值得看：</b>RSI（递归自我改进，即 AI 自己改进自己的训练/推理过程）从概念验证走进生产环境：AI 自己改推理代码，还在国产芯片上跑出 6 倍提速——「模型自我进化」第一次与国内算力栈深度绑定，做推理优化与 AI4AI 方向的团队应立刻跟进。</p>
+    <div class="chips"><span class="chip c1">递归自我改进</span><span class="chip c1">推理优化</span><span class="chip c1">国产算力</span><span class="chip c1">Agent</span><span class="chip c2">百度</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Einsia AI · 2026-11-10</div>
+    <a class="ptitle" href="https://www.163.com/dy/article/LBD90JJO0511AQHO.html">WorkflowArena（Einsia AI）：行业首个多智能体编排基准，最强系统完全解决率仅 36.95%</a>
+    <p><b>一句话：</b>145 项长程任务覆盖软件工程、企业运营、科学研究、数学推导、金融、法律、内容设计与 3D 制作 8 大领域，评测 9 个前沿模型的 25 种推理配置：只给目标不规定工作流，编排动作本身计入推理预算，判题隐藏、过程留痕；完全解决率榜首 Claude Opus 5.5（max）仅 36.95%，法律领域最高仅 9.09%，没有全能选手；编排风格明显分化——Claude 系「谋定后动」（平均每题 0.86 次调度、每次 5.55 个子智能体），GPT 系「小步快跑」（2.09 次调度、每次仅 1.72 个）；工作流迁移实验中 Claude Opus 5.5 担任编排者让 Kimi K3.1 Pro 从 35.75 分升至 46.61 分，而自身更强的 GPT-6 Astra 编排反而拉低执行模型成绩——自己会做不等于会编排。</p>
+    <p><b>为什么值得看：</b>接上昨天 LobeHub 的 Super-Agent 实践：当「一群 Agent 当公司」成为默认形态，「编排能力」第一次有了独立考场；「强模型未必是好指挥」直接挑战按单一模型能力选型的惯性，多智能体系统设计岗多了一套现成面试题。</p>
+    <div class="chips"><span class="chip c1">基准测试</span><span class="chip c1">Agent</span><span class="chip c1">多智能体</span><span class="chip c1">评测</span><span class="chip c2">Einsia AI</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">NVIDIA · 2026-11-10</div>
+    <a class="ptitle" href="https://www.bjnews.com.cn/detail/1794320456129670.html">NVIDIA 公布 GR00T 2 与全栈开源计划：机器人模型、仿真、智能体框架、数据集到硬件设计全覆盖</a>
+    <p><b>一句话：</b>Jim Fan 在机器人学习会议 CoRL 2026 上介绍新一代机器人基础模型 GR00T 2 及配套技术，公布覆盖机器人模型、仿真环境、智能体框架、数据集乃至硬件设计的开源计划；其中灵巧手数据采集可穿戴设备 DexUMI 从指尖到手掌全部采用他山科技触觉传感器——双方合作从 Isaac Sim 触觉仿真层延伸到硬件层，形成软硬件协同闭环；同日蚂蚁灵波开源触觉基础模型 LingBot-Touch，触觉数据与采集硬件突然成为具身赛道焦点。</p>
+    <p><b>为什么值得看：</b>与 LingBot-Touch 同日「撞车」不是巧合：大模型能力外溢到物理世界后，瓶颈正从「脑」转向「手感」与数据采集基建；英伟达把开源做到硬件设计层，是在给具身生态定标准——具身数据工程、触觉传感方向的人选会突然变抢手。</p>
+    <div class="chips"><span class="chip c1">具身智能</span><span class="chip c1">机器人</span><span class="chip c1">开源</span><span class="chip c1">触觉</span><span class="chip c2">NVIDIA</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">OpenEnvision · 2026-11-10</div>
+    <a class="ptitle" href="https://github.com/OpenEnvision/WorldFoundry">WorldFoundry 登顶 HF 日榜：世界模型也要有「统一基建」，推理与评测一个框架搞定</a>
+    <p><b>一句话：</b>开源的世界模型推理与评测统一基础设施：把视频生成、交互式世界、3D/4D 重建与具身动作纳入同一工作流；技术报告 11 月 10 日上线 arXiv，指出视觉逼真不等于成功的世界模型——缺乏持久状态与物理一致性的输出只是「好看的视频」；项目 7 月开源首日即获超 100 Star，本次技术报告发布后登顶 Hugging Face 日榜（322 赞）。</p>
+    <p><b>为什么值得看：</b>世界模型这周争议不断（资本撤离、空间智能大考），WorldFoundry 的思路是先把「怎么跑、怎么评」标准化——基础设施先行往往意味着赛道从 demo 期进入工程期；做世界模型评测与工具链的人值得关注。</p>
+    <div class="chips"><span class="chip c1">世界模型</span><span class="chip c1">AI基础设施</span><span class="chip c1">开源</span><span class="chip c1">评测</span><span class="chip c2">OpenEnvision</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>【晨检快照】日期: 2026-11-11 ｜ 时间窗口: 2026-11-10 08:00 ~ 2026-11-11 08:00 ｜ 候选约 13 条，入选 7 条（Fable 5.2/Mythos 5.2 / AlphaProof Code / LingBot-Touch / ERNIE Evolve / WorkflowArena / GR00T 2 / WorldFoundry）｜ 跳过：银河星仔ET1 CES 获奖（产品类）、CellNet 单细胞图像集（偏生物垂直）、DGP VLM 架构（信源单一待复核）、清华 Asking the World（细节不足待复核）、TensorWorld 融资（昨日已收世界模型资本面）、陆兮 LuxiInfer 安卓端（社区小工具）｜ 来源：Google DeepMind 官网、爱范儿、The Verge、机器之心、量子位、新华网、新京报、Hugging Face Daily Papers（多源交叉验证）</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
