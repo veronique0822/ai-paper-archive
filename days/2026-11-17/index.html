@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- 内容页模板（日报/周报/科普共用，AI Paper Scout 风格）。复制到目标目录后替换 {{...}} 占位符。 -->
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-17 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-17</h1>
+  <div class="sub">2026-11-17 发布 ｜ 本期 8 条 ｜ 5 篇论文、3 条行业资讯</div>
+  <div class="trend"><div>💰 资本超级周：<b>Anthropic 周四挂牌</b>——发行价 70-78 美元、IPO+私募配售最高 904 亿美元，谷歌/微软/英伟达等七巨头按发行价团购 260 亿美元；首家上市前沿实验室的定价，将成为 OpenAI 明年 IPO 的估值锚。</div><div>🧭 算力地震周后续：黄仁勋辞职第五天，<b>16 万人次签名请愿回归</b>、马斯克表态会签、美国会质疑供应链；SemiAnalysis 补刀：<b>OpenAI 九成芯片靠英伟达，Anthropic 只占三分之一</b>——「算力篮子分散度」第一次成为 IPO 路演核心考题。</div><div>🤖 Agent 工程三件套（arXiv 新榜）：<b>ModHarness-RL</b> 把 Agent 脚手架变成可学习进化的程序；<b>Gamer</b> 用数万小时键鼠轨迹练出打通 2D 界面与 3D 世界的通用操作智能体；DeepMind 资深作者参与的<b>探针研究</b>能在网页 Agent 幻觉动手前 0.80 AUC 预警——「调模型」正在变成「调模型周围的系统」。</div><div>🔭 范式观察：<b>WeightBench</b> 给「大模型直接读写别的网络权重」开出第一套 42 题考卷（上周刚有人泼冷水，这周就有考卷）；<b>MIT</b> 把演化选择引入对齐——合规不靠规则清单，靠「不适应就淘汰」。</div></div>
+  <h2>本期条目</h2>
+  <!-- 每个条目按此结构排列 -->
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-11-16</div>
+    <a class="ptitle" href="https://www.chinastarmarket.cn/detail/2535827">Anthropic IPO 进入读秒：11 月 19 日挂牌纳斯达克，科技七巨头 260 亿美元私募配售护航</a>
+    <p><b>一句话：</b>发行价区间 70-78 美元，发行 8.25 亿股，基础发行最高募资约 644 亿美元；叠加谷歌、微软、英伟达、AMD、博通、美光、台积电按发行价认购的 260 亿美元 N 类股私募配售，合计最高 904 亿美元；按上限定价市值约 1 万亿美元、完全摊薄约 1.4 万亿美元；预计 11 月 18 日定价、次日开始交易，股票代码 ANT。</p>
+    <p><b>为什么值得看：</b>首家上市的前沿 AI 实验室，几乎绑定整个科技产业链（巨头们既是股东又是供应商）——它的定价将成为 OpenAI 明年 IPO 与整个 AI 板块的估值锚；上市后一批「上市公司期权」筹码进入市场，做高端岗位 mapping 的该盯紧 Anthropic 系的股权与人才结构变化。</p>
+    <div class="chips"><span class="chip c1">IPO</span><span class="chip c1">融资</span><span class="chip c1">AI基础设施</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">NVIDIA · 2026-11-16</div>
+    <a class="ptitle" href="https://www.caixin.com/2026-11-16/102505215.html">黄仁勋辞职后续：16 万人次签名请愿回归，马斯克称「我也会签」，美国会质疑担忧不减</a>
+    <p><b>一句话：</b>黄仁勋 11 月 12 日辞去英伟达 CEO、总裁及董事职务后，硅谷持续呼吁其回归：请愿签名已超 16 万人次，马斯克 11 月 14 日公开表示「我也会签」，Ruby on Rails 创始人 DHH 等多位科技人士声援；同时美国国会对英伟达领导层真空下的供应链稳定与出口管制执行提出质疑，事件仍在发酵。</p>
+    <p><b>为什么值得看：</b>全球 AI 算力供给的「总开关」处在人事真空期——这直接影响所有实验室的芯片交付节奏与价格预期；做算力/Infra 方向招聘，未来几周英伟达体系的人才流动值得高频刷新。</p>
+    <div class="chips"><span class="chip c1">英伟达</span><span class="chip c1">人事变动</span><span class="chip c1">算力供应链</span><span class="chip c2">NVIDIA</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">SemiAnalysis / 财联社 · 2026-11-16</div>
+    <a class="ptitle" href="https://k.sina.com.cn/article_7857201856_1d45362c001908v22q.html">英伟达 CEO 真空搅动「AI 一哥」之争：SemiAnalysis 称 Anthropic 受冲击远小于 OpenAI</a>
+    <p><b>一句话：</b>SemiAnalysis 创始人 Dylan Patel 在播客中指出：OpenAI 超过 90% 的芯片依赖英伟达，而英伟达芯片在 Anthropic 业务中占比仅约三分之一甚至更低（Anthropic 大量使用谷歌 TPU 与亚马逊自研芯片）；英伟达 CEO 人选混乱正冲击整个供应链，两家临近 IPO 的头部实验室受到的冲击程度并不相同，Anthropic 或暂时领先。</p>
+    <p><b>为什么值得看：</b>供应链多元化第一次被量化成竞争力指标——「谁的算力篮子更分散」成了 IPO 路演的核心考题；做 Infra/算力采购、芯片方向岗位的人，这条叙事能帮你判断各家未来两年的招聘强弱与预算走向。</p>
+    <div class="chips"><span class="chip c1">算力</span><span class="chip c1">TPU</span><span class="chip c1">供应链</span><span class="chip c1">IPO</span><span class="chip c2">NVIDIA</span><span class="chip c2">OpenAI</span><span class="chip c2">Anthropic</span><span class="chip c2">Google</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-11-13</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.18533">ModHarness-RL：把 Agent 的「脚手架」也变成可学习、可进化的程序（arXiv:2611.18533）</a>
+    <p><b>一句话：</b>Agentic RL 普遍在固定的人工脚手架（harness——决定模型看到哪些交互信息、收到什么引导的外围程序）下训练，但好脚手架随领域、数据与模型状态不断变化；ModHarness-RL 把交互记录为结构化 State 类型块，将脚手架的压缩与引导两个核心组件改写成可学习程序，随 RL 训练一起进化。</p>
+    <p><b>为什么值得看：</b>Agent 赛道正在从「调模型」转向「调模型周围的系统」——脚手架可学习意味着上下文/编排工程从手艺变成可优化对象；招 Agent 工程方向的人，「harness engineering」这个词可以开始写进 JD 和面试题了。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">强化学习</span><span class="chip c1">脚手架工程</span><span class="chip c2">学术研究</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-11-13</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.18397">Gamer：面向长程实时任务的通用游戏智能体，键鼠级操作打通 2D 界面与 3D 世界（arXiv:2611.18397）</a>
+    <p><b>一句话：</b>通用 VLA（视觉-语言-动作）智能体框架：在数万小时设备级键盘鼠标交互轨迹上继续预训练，轨迹横跨模拟游戏与具身环境，让模型同时学习物理与虚拟世界的动态规律；配合稀疏思考指令微调，端到端整合感知、记忆管理与多步推理，同一套训练与部署管线同时支持传统 2D 图形界面和复杂 3D 模拟世界。</p>
+    <p><b>为什么值得看：</b>「用游戏练出来的操作能力迁移到电脑操作」是 Computer Use 赛道的平价数据路线——数万小时键鼠轨迹比真实办公软件数据好拿得多；做 GUI Agent、具身智能方向的团队会关心它的数据配方。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">多模态</span><span class="chip c1">VLA</span><span class="chip c1">游戏智能体</span><span class="chip c2">学术研究</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Google DeepMind 等 · 2026-11-13</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.18514">可解释性实战：线性探针能在网页 Agent「幻觉操作」发生前预警，AUC 达 0.80（arXiv:2611.18514）</a>
+    <p><b>一句话：</b>机制可解释性（MI，即打开模型「黑箱」观察内部神经活动）一直被质疑只能解释玩具任务；本文以真实网页 Agent 的经典翻车场景——幻觉出页面上不存在的可点元素——做案例：对 Qwen2.5-7B 最后一个提示 token 训练线性探针，可在生成开始前以 0.80 AUC 预测幻觉，且引导向量干预可降低幻觉；资深作者 Mor Geva 来自 Google DeepMind。</p>
+    <p><b>为什么值得看：</b>「在 Agent 动手前就知道它要犯错」正是 Agent 安全监控最想要的能力——这篇把 MI 从论文秀场拉进 Agent 可靠性工程；做 Agent 评测与安全监控方向的岗位，「探针预警」很快会变成面试常考题。</p>
+    <div class="chips"><span class="chip c1">可解释性</span><span class="chip c1">Agent</span><span class="chip c1">AI安全</span><span class="chip c1">幻觉</span><span class="chip c2">Google DeepMind</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">arXiv · 2026-11-13</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.18553">WeightBench：让大模型直接「读写」别的神经网络的权重，42 项任务开出第一套考卷（arXiv:2611.18553）</a>
+    <p><b>一句话：</b>权重空间编程（WSP）：大模型不经梯度下降，直接读懂一个网络的训练目标、修好坏网络、甚至从零写出可用网络；WeightBench 用 42 项任务、五条赛道（读权重、修权重、写权重、识别不可能编辑、无数据压缩）系统评测不同能力档的 LLM，被操作的网络从 2K 参数的控制器起步。</p>
+    <p><b>为什么值得看：</b>上周无涯智远的对照实验刚给这条路线泼过冷水，这周考卷就来了——如果模型真能直接操作权重，「训练」可能被「生成」部分替代，这是比 RSI 更激进的自我改进路径；目前还在玩具规模，但范式信号值得招聘经理放进观察清单。</p>
+    <div class="chips"><span class="chip c1">权重空间编程</span><span class="chip c1">新范式</span><span class="chip c1">评测</span><span class="chip c2">学术研究</span><span class="chip cg">难度：前沿</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">MIT · 2026-11-13</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.18531">MIT「Alignment by Socialization」：用演化选择让 Agent 学会在规则与任务之间做权衡（arXiv:2611.18531）</a>
+    <p><b>一句话：</b>MIT 学者（含金融工程名家 Andrew W. Lo）研究选择压力如何塑造 Agent 在「完成任务」与「遵守规则」之间的取舍：让 Agent 副本面对共同的不确定奖励状态，只有采取被奖励行动的副本才能「繁殖」；理论证明长期增长最大化时每种行动的执行频率应等于环境奖励它的频率；纯任务导向策略在沙盒里繁荣、在规则场景里崩溃，而经「社会化」选择压力塑造的策略更能抵抗后续压力。</p>
+    <p><b>为什么值得看：</b>对齐研究借来了演化生物学的工具——不靠规则清单，而靠「环境选择」让合规行为变成生存优势；Anthropic 上市后 AI 安全与治理是各家合规刚需，这类「机制设计」背景的人才需求会跟着上来。</p>
+    <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">对齐</span><span class="chip c1">演化机制</span><span class="chip c2">MIT</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>【晨检快照】日期: 2026-11-17 ｜ 时间窗口: 2026-11-16 08:00 ~ 2026-11-17 08:00 ｜ 候选约 14 条，入选 8 条（Anthropic IPO 读秒 / 黄仁勋辞职后续·请愿与国会质疑 / SemiAnalysis 算力依赖分化 / ModHarness-RL / Gamer / MI 探针预警网页 Agent 幻觉 / WeightBench / MIT Alignment by Socialization）｜ 跳过：欧洲央行管委 AI 风险评论（泛表态）、ARCHER 小模型可执行推理（增量有限）、TradeGauntlet 交易合规基准（垂直）、WaferTetris 晶圆级映射（偏硬件 EDA）、LECAT 预训练数据类别学习（偏小众）、复盘中美元首会晤科技议题（非 AI 本体）｜ 来源：财新、财联社/科创板日报、新浪科技、arXiv cs.AI/cs.CL 2026-11-16 新榜（多源交叉验证）</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
