@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- 内容页模板（日报/周报/科普共用，AI Paper Scout 风格）。复制到目标目录后替换 {{...}} 占位符。 -->
+<html lang="zh-CN"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>每日晨检 · 2026-11-18 · AI 论文猎手档案馆</title>
+<link rel="stylesheet" href="../../assets/site.css"/>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">← 返回档案馆主页</a>
+  <div class="kicker" style="margin-top:26px">DAILY SCOUT · 每日晨检</div>
+  <h1>每日晨检 · 2026-11-18</h1>
+  <div class="sub">2026-11-18 发布 ｜ 本期 9 条 ｜ 3 篇论文、6 条行业资讯</div>
+  <div class="trend"><div>🚀 旗舰周中局：<b>OpenAI 发布 GPT-6.2 Astra 与 Sol</b>——Astra 降价 20%（$8/$40）、Agents' Last Exam +5.2 分且单任务成本不到上代三分之一，并成为 OpenAI 首个自评达「AI 自我改进 High」的外部署模型；两个月前 6.1 因安全测试回炉、如今跳号发布，「升级+降价+收紧闸门」三件事同天发生。</div><div>🧭 战略转向信号：<b>Moonshot 官宣 Kimi 从卷编程转向科学</b>（生物/化学/制药），K3.1 Pro 已接入 DP Technology 的 BioMaster 做基因筛选——首家公开承认编程榜收益递减并换赛道的头部公司；同周 Anthropic 用 Pokémon 实验证明 Agent 记忆的关键是「知道忘掉什么」。</div><div>🛡️ Agent 安全双重奏：Google GTIG 披露<b>朝鲜关联组织篡改 .claude/settings.json 让 Claude Code 启动即下载后门</b>，并首见全自动「补丁→漏洞利用」管线；arXiv 侧的 <b>SPILLWAY</b> 给出确定性防御——不靠模型自觉，靠「目标准入」架构，AgentDojo 全部 12 格零攻破。</div><div>👥 人才与算力：Anthropic IPO 定价前夜，<b>Google DeepMind 首席战略官 Jas Sekhon 跳槽 Anthropic</b>；CEO 真空期的 NVIDIA 在 SC26 照常出牌——<b>四台 DGX Spark 环形直连的桌面超算套件</b>，512GB 内存本地跑 700B 模型。</div></div>
+  <h2>本期条目</h2>
+  <!-- 每个条目按此结构排列 -->
+  <div class="paper">
+    <div class="meta">OpenAI · 2026-11-17</div>
+    <a class="ptitle" href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI 发布 GPT-6.2 Astra 与 Sol：旗舰降价 20%，首个自评达「AI 自我改进 High」的外部署模型</a>
+    <p><b>一句话：</b>OpenAI 一次放出双子星：旗舰 GPT-6.2 Astra（API $8/$40 每百万 token，比 GPT-6 Astra 便宜 20%，Agents&#x27; Last Exam 高 5.2 分且单任务成本不到三分之一，1.05M 上下文）+ 日用型 GPT-6.2 Sol（维持 $2/$10，FrontierCode 2.0 上与 Astra 仅差 0.5 分、成本约五分之一）；两者当天进 ChatGPT Work/Codex 和 API，不进普通 Chat；Astra 成为 OpenAI 首个在自备框架里被评为「AI 自我改进 High」的外部署模型，网络与生化均为更高档防护。</p>
+    <p><b>为什么值得看：</b>GPT-6.1 Astra 两个月前因安全测试不过被回炉、直接跳号发 6.2——「能力升级 + 降价 + 安全闸门收紧」三件事同时发生，是头部模型迭代节奏与定价战的信号事件；Artificial Analysis 上 Astra 以 62 分仅次于 Claude Fable 5.2（65），但单任务成本仅约其 1/7，性价比叙事开始压过跑分叙事。</p>
+    <div class="chips"><span class="chip c1">新模型</span><span class="chip c1">降价</span><span class="chip c1">Agent</span><span class="chip c1">AI安全</span><span class="chip c2">OpenAI</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Moonshot · 2026-11-16</div>
+    <a class="ptitle" href="https://the-decoder.com/moonshot-ai-pivots-kimi-models-from-coding-to-science-as-benchmark-gains-flatten/">Moonshot 官宣战略转向：Kimi 从卷编程转向科学（生物/化学/制药），K3.1 Pro 接入 DP Technology 的 BioMaster</a>
+    <p><b>一句话：</b>Moonshot 国际总监 Giacomo Ficari 在里斯本 Web Summit 表示：编程基准的边际收益正在递减，Kimi 将转向生物、化学与制药研究——「科学比法律、金融、代码更需要聪明的模型」；DP Technology 已把 Kimi K3.1 Pro 接入科研助手 BioMaster，实测 90 分钟从 3696 个小鼠胰腺细胞基因数据中筛出 100 个候选基因（人工约需 4 小时）；此前还有 Kimi 桌面端藏有未发布的「科学工作台」（分子/基因组/医学影像查看器）的报道。</p>
+    <p><b>为什么值得看：</b>首家公开宣布「不卷编程卷科学」的头部模型公司——编程榜挤水分、收益递减已是行业共识，Moonshot 把差异化押在 AI4Science 上；对招聘来说，「科学方向的大模型后训练/评测」岗位叙事从此有了官方背书，也值得对照看 DeepSeek、智谱会不会跟进。</p>
+    <div class="chips"><span class="chip c1">公司战略</span><span class="chip c1">AI4Science</span><span class="chip c1">生物医药</span><span class="chip c1">Kimi</span><span class="chip c2">Moonshot</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Google · Anthropic · 2026-11-16</div>
+    <a class="ptitle" href="https://www.helpnetsecurity.com/2026/11/17/ai-powered-cyberattacks-gtig-report/">Google GTIG《AI 威胁追踪》：朝鲜关联组织篡改 .claude/settings.json，让 Claude Code 一启动就下载后门</a>
+    <p><b>一句话：</b>Google 威胁情报组（GTIG）在 11 月 16 日《Agentic Threat Activity Crosses a Significant Threshold》中披露两条线：①疑似朝鲜关联组织 MIDNIGHT NEPTUNE 先用带 SynthID 水印的 AI 生成假招聘者+ClickFix 诱饵打入目标公司，再篡改内部仓库的 .claude/settings.json，让开发者每次启动 Claude Code 都自动下载 SOMBERMEME 后门，生成的 GitHub 令牌还伪装成「Microsoft Copilot」命名；②首次观察到 AI Agent 把「新补丁→可用漏洞利用」全流程无人值守跑通（exploit_agent）。</p>
+    <p><b>为什么值得看：</b>「Agent 配置文件=代码执行授权」第一次出现在国家级威胁报告里——所有读仓库配置的编程 Agent（Claude Code、Cursor、MCP host）都有同样的信任面；做 Agent 安全/企业落地的人，settings 审计与钩子白名单会立刻变成面试和合规清单里的高频词。</p>
+    <div class="chips"><span class="chip c1">AI安全</span><span class="chip c1">Agent</span><span class="chip c1">供应链攻击</span><span class="chip c1">网络威胁</span><span class="chip c2">Google</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Google DeepMind · Anthropic · 2026-11-16</div>
+    <a class="ptitle" href="https://explainx.ai/catch-up-on-ai/2026-11-17">Google DeepMind 首席战略官 Jas Sekhon 跳槽 Anthropic，主攻 Claude 的「认知严谨性」</a>
+    <p><b>一句话：</b>The Information 报道并经本人公开确认：Google DeepMind 首席战略官 Jas Sekhon 离职加入 Anthropic，研究方向是 Claude 的「认知严谨性」（epistemic rigor——模型如何处理知识与不确定性）； Anthropic 未发官方新闻稿，时值其 IPO 定价前夜。</p>
+    <p><b>为什么值得看：</b>IPO 前夜从对手家挖来战略一把手，是 Anthropic 上市叙事里「人才背书」的活例子；对做高端岗位 mapping 的人来说，这是本周最有分量的一条人才流动信号——DeepMind 战略线的组织变化和 Anthropic 研究管理层的扩编都值得顺着摸。</p>
+    <div class="chips"><span class="chip c1">人才流动</span><span class="chip c1">高管变动</span><span class="chip c1">IPO</span><span class="chip c2">Google DeepMind</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">NVIDIA · 2026-11-16</div>
+    <a class="ptitle" href="https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/">NVIDIA 在 SC26 发布 DGX Spark HPC 开发套件：四台桌面机环形直连，512GB 内存本地跑 700B 模型</a>
+    <p><b>一句话：</b>芝加哥 SC26 超算大会上，NVIDIA 推出 DGX Spark HPC Developer Kit：四台 GB10 Grace Blackwell 桌面系统通过 ConnectX-7 环形直连（无需交换机），合计 512GB 统一内存、20TB NVMe，NVFP4 下可本地部署 700B 参数级模型（官方点名 DeepSeek V4.1），演示了 LAMMPS 材料模拟与 NAMD 分子动力学；配套 HPC SDK 安装手册即将发布，硬件已通过 OEM 与 NVIDIA Marketplace 开售。</p>
+    <p><b>为什么值得看：</b>CEO 真空期的英伟达仍在产品端密集出牌：「桌面四节点集群」把多节点并行开发的门槛压到一张办公桌上，高校实验室和中小团队的 Infra 采购清单要改写了；NVFP4 + 700B 本地部署也是在给「大模型私有化部署」递刀子。</p>
+    <div class="chips"><span class="chip c1">算力</span><span class="chip c1">HPC</span><span class="chip c1">本地部署</span><span class="chip c1">NVFP4</span><span class="chip c2">NVIDIA</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">IFM · MBZUAI · 2026-11-16</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.21003">K2-Horizon 技术报告：IFM 六模型「全开放」舰队的完整配方（0.9B 到 375B-A23B MoE）（arXiv:2611.21003）</a>
+    <p><b>一句话：</b>阿布扎比 IFM（MBZUAI 旗下，Eric Xing 创办）的 K2-Horizon 舰队技术报告登上 Hugging Face 日榜：六个全开放模型（0.9B Dense 到 375B-A23B MoE），共享 22T token 预训练配方，注意力侧稀疏化 MoVA（Mixture-of-Value Attention）+ 扩散蒸馏加速模块 Uno，数据、代码、中间 checkpoint、训练日志全量公开；此前 IFM 还主动用 Artificial Analysis 方法审计并下调了自己被奖励黑客污染的 Terminal-Bench 分数。</p>
+    <p><b>为什么值得看：</b>「开放权重」卷到「开放科学」：连训练日志和中间 checkpoint 都公开，还主动给自己的跑分挤水分——这是继 DeepSeek 之后对「开源到什么程度才算开源」最激进的一次回答；注意别和 Kimi K2 混淆，这是中东国家队对开源生态的卡位。</p>
+    <div class="chips"><span class="chip c1">开源</span><span class="chip c1">MoE</span><span class="chip c1">训练配方</span><span class="chip c1">技术报告</span><span class="chip c2">IFM</span><span class="chip c2">MBZUAI</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">学术研究 · 2026-11-16</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.20254">VoxMel TTS 技术报告：抛弃声学 tokenizer，直接在连续 Mel 频谱空间做自回归语音合成（arXiv:2611.20254）</a>
+    <p><b>一句话：</b>当日 Hugging Face 日榜热度最高的论文（75 票）：自回归 TTS 的主流路线是先把声音压成离散 token 再让语言模型生成，VoxMel 反其道而行——不训练声学 tokenizer，直接在连续 Mel 频谱空间做自回归生成，用小波分解把不同频段的声学信息分层建模，绕开「tokenizer 损失上限」这个老问题。</p>
+    <p><b>为什么值得看：</b>语音赛道正在复刻图像生成从「离散 token」回归「连续表示」的历史——如果连续空间路线成立，语音模型的音质上限和数据效率都会被重写；做语音/多模态方向的人，「去 tokenizer 化」是今年值得跟踪的技术暗线。</p>
+    <div class="chips"><span class="chip c1">语音合成</span><span class="chip c1">TTS</span><span class="chip c1">多模态</span><span class="chip c1">自回归</span><span class="chip c2">学术研究</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">学术研究 · 2026-11-16</div>
+    <a class="ptitle" href="https://arxiv.org/abs/2611.07222">SPILLWAY：把「目标准入」与「内容消毒」拆开，AgentDojo 上唯一全格零攻破的提示注入防线（arXiv:2611.07222）</a>
+    <p><b>一句话：</b>针对工具调用 Agent 的提示注入攻击，SPILLWAY 提出确定性防线：只有来自「用户明确输入的工具参数或任务本身」的目标才被准入执行，自由文本里的注入指令在准入层就被拦下，而不是事后靠模型「消毒」；在 AgentDojo 基准七种防御方案中，它是唯一在全部 12 个「骨干模型×攻击套件」格子里实现零在册攻击成功的方案，且即插即用（SPILLWAY 1.0.0 已开源）。</p>
+    <p><b>为什么值得看：</b>和本周 GTIG 报告的 settings.json 后门是同一枚硬币的两面：Agent 安全的实战重心正从「模型会不会被骗」转向「外围系统的确定性约束」——不靠模型自觉、靠架构保证；做 Agent 安全工程的人，deterministic guardrail 这个词可以进 JD 了。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">提示注入</span><span class="chip c1">AI安全</span><span class="chip c1">防御框架</span><span class="chip c2">学术研究</span><span class="chip cg">难度：进阶</span></div>
+  </div>
+  <div class="paper">
+    <div class="meta">Anthropic · 2026-11-17</div>
+    <a class="ptitle" href="https://the-decoder.com/anthropic-says-the-key-to-agent-memory-is-knowing-what-to-forget-not-how-much-to-store/">Anthropic 的 Agent 记忆实验：关键不是「存多少」，而是「忘掉什么」——Pokémon 实测 413 份笔记拖垮老模型</a>
+    <p><b>一句话：</b>Anthropic 用 Pokémon Red 实测 Agent 记忆策略：老模型 Claude Sonnet 3.7「什么都记」，1 万步游戏写了 413 个文件、225 个文件夹，后期光整理笔记不玩游戏，只拿到 1 枚徽章；新模型 Claude Fable 5 只记策略和验证过的规则，拿到 4 枚。结论：给强模型讲清记忆的「目的」、让它自己决定记什么，比硬性规则（如「只记错误」）更有效；其 Dreaming 记忆整理服务（读最多 100 个历史会话、去重去旧）仍在研究预览阶段。</p>
+    <p><b>为什么值得看：</b>Agent 记忆是明年产品差异化最确定的战场之一，Anthropic 这篇把「记忆工程」从玄学变成了可讨论的设计原则（少即是多、定期整理、防止错误笔记污染未来会话）；和候选人聊 Agent 产品设计时，这是一个现成的、有画面感的追问素材。</p>
+    <div class="chips"><span class="chip c1">Agent</span><span class="chip c1">记忆机制</span><span class="chip c1">产品设计</span><span class="chip c2">Anthropic</span><span class="chip cg">难度：入门</span></div>
+  </div>
+  <div class="end"><div class="t">收录信息</div><p>【晨检快照】日期: 2026-11-18 ｜ 时间窗口: 2026-11-17 08:00 ~ 2026-11-18 08:00 ｜ 候选约 15 条，入选 9 条（GPT-6.2 Astra &amp; Sol 发布 / Moonshot 转向科学 / GTIG Claude Code 后门与全自动 exploit / Jas Sekhon 跳槽 Anthropic / NVIDIA DGX Spark HPC 套件 / K2-Horizon 技术报告 / VoxMel TTS / SPILLWAY / Anthropic Agent 记忆实验）｜ 跳过：Anthropic IPO 定价今晚进行（昨日已收录「读秒」条目，今晚结果明早补）、OpenAI ChatGPT for Sales 与 Astra for Law（垂直产品发布）、NVIDIA Rubin HPC 预览（2028 年上市，偏远期）、Liquid AI d1.2（小众决策模型）、Calpha 蛋白质结构头（基于 Qwen3.5-9B 的学术复现）｜ 来源：OpenAI 官网、The Decoder、SCMP、Help Net Security、NVIDIA 官方博客、The Information、Hugging Face Daily Papers（2026-11-17）、arXiv cs.AI/cs.CL 新榜（多源交叉验证）</p></div>
+  <div class="foot">AI 论文猎手 · 个人学习档案馆 · 由定时任务自动维护</div>
+</div>
+</body></html>
